@@ -1,0 +1,15 @@
+PHASE 14A: CONSERVATIVE CONSISTENCY & ROBUSTNESS TESTS
+============================================================
+
+Locked ε = 1.4558030818e-03
+Analysis range: ℓ ∈ [800, 2500]
+
+14A-1: TE Cross-Spectrum Consistency: ✗ FAIL
+14A-2: Lensing Contamination Null: ✓ PASS
+14A-3: ℓ-Window Stability: ✓ PASS
+14A-4: Noise Robustness MC: ✓ PASS
+
+OVERALL: 3/4 tests passed
+
+CONCLUSION: Strong evidence for geometric origin,
+with one test requiring further investigation.

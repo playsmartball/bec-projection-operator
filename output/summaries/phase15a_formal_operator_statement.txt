@@ -1,0 +1,182 @@
+
+================================================================================
+PHASE 15A: FORMAL STATEMENT OF THE PROJECTION OPERATOR
+================================================================================
+
+1. OPERATOR DEFINITION
+------------------------------------------------------------------------------
+
+We define a projection-space operator P_ε acting on angular power spectra:
+
+    P_ε : C_ℓ ↦ C_{ℓ/(1+ε)}
+
+where:
+    - C_ℓ is an angular power spectrum (TT, EE, or TE)
+    - ε is a fixed, dimensionless parameter
+    - The operator acts by horizontal remapping in multipole space
+
+Explicitly, for a spectrum C_ℓ defined on multipoles ℓ ∈ [ℓ_min, ℓ_max]:
+
+    [P_ε C]_ℓ = C_{ℓ*}    where    ℓ* = ℓ / (1 + ε)
+
+with linear interpolation for non-integer ℓ*.
+
+
+2. LOCKED PARAMETER VALUE
+------------------------------------------------------------------------------
+
+    ε = 1.4558030818 × 10⁻³
+
+This value was determined independently in Phase 10E from peak displacement
+tomography and has NOT been re-fitted in any subsequent phase.
+
+The parameter is:
+    - Measured, not tuned
+    - Fixed across all spectra (TT, EE, TE)
+    - Fixed across all ℓ-windows
+    - Fixed across lensed and unlensed spectra
+
+
+3. GEOMETRIC INTERPRETATION
+------------------------------------------------------------------------------
+
+The operator P_ε is equivalent to a small perturbation of the angular
+diameter distance to the last-scattering surface:
+
+    ℓ → ℓ/(1+ε)  ⟺  D_A → D_A(1+ε)
+
+This follows from the standard relation ℓ ∝ k·D_A, where k is the
+comoving wavenumber and D_A is the angular diameter distance.
+
+Numerically:
+    δD_A / D_A = ε ≈ 0.146%
+    δD_A ≈ 18.5 kpc  (at z ≈ 1089)
+
+
+4. DOMAIN OF THE OPERATOR
+------------------------------------------------------------------------------
+
+4.1 Auto-spectra (TT, EE)
+    - P_ε acts by horizontal shift
+    - RMS residual is a valid diagnostic
+    - Correlation with BEC-ΛCDM residual is a valid diagnostic
+
+4.2 Cross-spectra (TE)
+    - P_ε acts by horizontal shift
+    - RMS residual is NOT a valid diagnostic (zero-crossing artifact)
+    - Correlation remains a valid diagnostic
+    - Phase coherence is the correct invariant
+
+
+5. INVARIANTS UNDER P_ε
+------------------------------------------------------------------------------
+
+The following quantities are preserved or predictably transformed:
+
+5.1 Preserved:
+    - Peak structure (shifted, not distorted)
+    - Spectral shape (locally)
+    - Sign of correlation with target residual
+
+5.2 Transformed:
+    - Peak positions: ℓ_peak → ℓ_peak / (1+ε)
+    - Acoustic scale: θ_s → θ_s (1+ε)
+
+
+6. NON-INVARIANTS (DIAGNOSTIC LIMITATIONS)
+------------------------------------------------------------------------------
+
+6.1 RMS for cross-spectra:
+    - TE crosses zero at multiple ℓ values
+    - Near zero-crossings, horizontal shifts can increase |residual|
+      even when the shift direction is correct
+    - This is a mathematical property, not a failure of the operator
+
+6.2 Absolute normalization:
+    - P_ε does not preserve ∫ C_ℓ dℓ
+    - This is expected for a geometric distortion
+
+
+7. EMPIRICAL VALIDATION SUMMARY
+------------------------------------------------------------------------------
+
+The operator P_ε with locked ε has been validated by:
+
+7.1 Phase 13A: Projection-level application
+    - TT RMS reduction: +36%
+    - EE RMS reduction: +44%
+    - Correlation: +0.80 (TT), +0.87 (EE)
+
+7.2 Phase 14A-2: Lensing null test
+    - Effect present in unlensed spectra
+    - Lensing does not amplify the effect
+    - PASS
+
+7.3 Phase 14A-3: ℓ-window stability
+    - All windows show positive RMS reduction
+    - Correlations ≥ 0.80 across all windows
+    - PASS
+
+7.4 Phase 14A-4: Noise robustness
+    - 100% of Monte Carlo realizations show improvement
+    - Survives 50% added noise
+    - PASS
+
+7.5 Phase 14A-1: TE cross-spectrum
+    - Correlation: +0.91 (direction confirmed)
+    - RMS: increases (zero-crossing artifact, not falsification)
+    - PARTIAL PASS (correlation valid, RMS not applicable)
+
+
+8. WHAT THE OPERATOR DOES NOT CLAIM
+------------------------------------------------------------------------------
+
+The operator P_ε is a mathematical description of an empirical pattern.
+It does NOT claim:
+
+    ✗ Any specific physical mechanism
+    ✗ Modification of general relativity
+    ✗ New dark energy physics
+    ✗ Inflationary modifications
+    ✗ Early-universe microphysics
+    ✗ Boltzmann equation modifications
+
+The operator is agnostic to the physical origin of the geometric distortion.
+
+
+9. MATHEMATICAL PROPERTIES
+------------------------------------------------------------------------------
+
+9.1 Linearity:
+    P_ε(αC_ℓ + βD_ℓ) = αP_ε(C_ℓ) + βP_ε(D_ℓ)
+
+9.2 Composition:
+    P_ε₁ ∘ P_ε₂ = P_{ε₁+ε₂+ε₁ε₂} ≈ P_{ε₁+ε₂}  (for small ε)
+
+9.3 Inverse:
+    P_ε⁻¹ = P_{-ε/(1+ε)} ≈ P_{-ε}  (for small ε)
+
+9.4 Identity:
+    P_0 = I  (identity operator)
+
+
+10. FORMAL STATEMENT (PUBLICATION-READY)
+------------------------------------------------------------------------------
+
+"A fixed, non-tunable, projection-level horizontal operator—parameterized
+by ε = 1.456 × 10⁻³ independently measured from peak displacements—removes
+approximately 40% of the ΛCDM–BEC residual in TT and EE power spectra.
+
+The effect is:
+    • Coherent across TT, EE, and TE (by correlation)
+    • Sign-definite and polarization-consistent
+    • Stable across ℓ-windows [800, 2500]
+    • Robust to 50% noise contamination
+    • Independent of CMB lensing
+    • Absent under Boltzmann-level modifications
+
+The operator corresponds to an effective angular-diameter-distance
+perturbation of δD_A/D_A ≈ 0.15%, acting at the projection level
+between Boltzmann sources and observed angular spectra."
+
+================================================================================

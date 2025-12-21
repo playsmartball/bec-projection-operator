@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this analysis, please cite it as below."
+title: "BEC Projection Operator Analysis"
+type: software
+authors:
+  - name: "[Author Name]"
+date-released: 2024-12-20
+url: "https://github.com/[username]/bec-projection-operator"
+repository-code: "https://github.com/[username]/bec-projection-operator"
+license: MIT
+keywords:
+  - cosmology
+  - CMB
+  - power spectrum
+  - projection operator
+  - angular diameter distance
+abstract: >-
+  A conservative analysis identifying a projection-level geometric operator
+  that partially explains the residual between ΛCDM and BEC power spectra.
+  The operator P_ε : C_ℓ ↦ C_{ℓ/(1+ε)} with ε = 1.456 × 10⁻³ removes
+  approximately 40% of the structured residual in TT and EE spectra.

@@ -1,0 +1,24 @@
+
+================================================================================
+PHASE 15B: INTERPRETATION BOUNDARY — SUMMARY CARD
+================================================================================
+
+CLAIMED (with evidence):
+  ✓ Coherent projection-level geometric pattern
+  ✓ Single parameter: ε = 1.456 × 10⁻³
+  ✓ ~40% residual reduction in TT/EE
+  ✓ Equivalent to δD_A/D_A ≈ 0.15%
+  ✓ Robust to noise, windows, lensing
+
+NOT CLAIMED (explicitly):
+  ✗ Modified gravity
+  ✗ Dark energy mechanism
+  ✗ Inflationary changes
+  ✗ Boltzmann modifications
+  ✗ New fundamental physics
+  ✗ ΛCDM falsification
+
+SCOPE: Phenomenological geometric operator at projection level.
+       Physical origin undetermined.
+
+================================================================================

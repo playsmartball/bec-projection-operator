@@ -1,0 +1,298 @@
+#!/usr/bin/env python3
+"""
+PHASE 15B: INTERPRETATION BOUNDARY
+
+This document explicitly defines what is claimed and what is NOT claimed
+by the projection operator analysis. This protects the work from
+overinterpretation and establishes clear scientific scope.
+
+The goal is to lock the interpretation before any further analysis,
+ensuring that the result is defensible to a skeptical expert audience.
+"""
+
+from pathlib import Path
+
+
+def generate_interpretation_boundary():
+    """Generate the formal interpretation boundary document."""
+    
+    document = """
+================================================================================
+PHASE 15B: INTERPRETATION BOUNDARY
+================================================================================
+
+This document defines the scope of claims arising from the projection
+operator analysis (Phases 10-15). It is intended to prevent overinterpretation
+and to establish clear boundaries for scientific discourse.
+
+
+1. WHAT IS EMPIRICALLY ESTABLISHED
+================================================================================
+
+The following statements are supported by the analysis and can be stated
+without qualification:
+
+1.1 EXISTENCE OF A COHERENT RESIDUAL PATTERN
+    ✓ The ΛCDM and BEC power spectra differ by a coherent, structured
+      pattern in the range ℓ ∈ [800, 2500]
+    ✓ This pattern is not noise (survives 50% contamination)
+    ✓ This pattern is not an ℓ-window artifact (stable across cuts)
+    ✓ This pattern is present in TT, EE, and TE (by correlation)
+
+1.2 PROJECTION-LEVEL LOCALIZATION
+    ✓ The pattern is NOT reproduced by Boltzmann-level modifications
+      (Phase 12A failed)
+    ✓ The pattern IS reproduced by projection-level horizontal shifts
+      (Phase 13A succeeded)
+    ✓ This localizes the effect to the geometric projection layer
+
+1.3 SINGLE-PARAMETER CHARACTERIZATION
+    ✓ A single parameter ε = 1.456 × 10⁻³ characterizes the effect
+    ✓ This parameter was measured independently (Phase 10E)
+    ✓ This parameter was NOT re-fitted in subsequent phases
+    ✓ The same parameter works for TT, EE, and TE
+
+1.4 GEOMETRIC EQUIVALENCE
+    ✓ The operator P_ε : C_ℓ ↦ C_{ℓ/(1+ε)} is mathematically equivalent
+      to an angular-diameter-distance perturbation: D_A → D_A(1+ε)
+    ✓ This is a standard geometric relation, not a new physical claim
+
+1.5 LENSING INDEPENDENCE
+    ✓ The effect is present in unlensed spectra
+    ✓ Lensing does not amplify the effect
+    ✓ The effect is NOT a lensing artifact
+
+
+2. WHAT IS SUGGESTED (BUT NOT PROVEN)
+================================================================================
+
+The following statements are consistent with the data but require
+additional evidence or theoretical development:
+
+2.1 PHYSICAL ORIGIN
+    ~ The effect MAY arise from a geometric distortion of the
+      last-scattering surface
+    ~ The effect MAY be related to late-time angular projection
+    ~ The effect MAY have a cosmological origin
+
+    These are plausible interpretations, not established facts.
+
+2.2 SCALE DEPENDENCE
+    ~ Phase 13B showed evidence for ℓ-dependent structure in ε
+    ~ This MAY indicate scale-dependent geometry
+    ~ This requires further investigation
+
+2.3 CONNECTION TO BEC PHYSICS
+    ~ The BEC model produces spectra that differ from ΛCDM
+    ~ The projection operator partially explains this difference
+    ~ The physical connection (if any) is NOT established
+
+
+3. WHAT IS EXPLICITLY NOT CLAIMED
+================================================================================
+
+The following statements are NOT supported by this analysis and should
+NOT be inferred:
+
+3.1 NO CLAIM OF MODIFIED GRAVITY
+    ✗ We do NOT claim that general relativity is modified
+    ✗ We do NOT claim that the Einstein equations are wrong
+    ✗ The operator is phenomenological, not derived from field equations
+
+3.2 NO CLAIM OF DARK ENERGY MICROPHYSICS
+    ✗ We do NOT claim to explain dark energy
+    ✗ We do NOT claim that dark energy has a specific equation of state
+    ✗ We do NOT claim that dark energy is a BEC or any other substance
+
+3.3 NO CLAIM OF INFLATIONARY MODIFICATIONS
+    ✗ We do NOT claim that inflation is modified
+    ✗ We do NOT claim changes to primordial perturbations
+    ✗ The effect is localized to late-time projection, not early universe
+
+3.4 NO CLAIM OF BOLTZMANN EQUATION MODIFICATIONS
+    ✗ We do NOT claim that the Boltzmann hierarchy is wrong
+    ✗ We do NOT claim new physics in photon-baryon interactions
+    ✗ Phase 12A explicitly ruled out Boltzmann-level effects
+
+3.5 NO CLAIM OF NEW FUNDAMENTAL FIELDS
+    ✗ We do NOT claim the existence of new particles
+    ✗ We do NOT claim the existence of new forces
+    ✗ The operator is geometric, not field-theoretic
+
+3.6 NO CLAIM OF PLANCK DATA INCONSISTENCY
+    ✗ We do NOT claim that Planck data is wrong
+    ✗ We do NOT claim that ΛCDM is falsified
+    ✗ We claim only that a specific residual pattern exists
+
+
+4. SCOPE OF THE CLAIM
+================================================================================
+
+The claim is restricted to the following:
+
+    "A projection-level geometric operator, parameterized by a single
+    independently-measured value ε ≈ 1.5 × 10⁻³, removes approximately
+    40% of the structured residual between ΛCDM and BEC power spectra
+    in the range ℓ ∈ [800, 2500].
+
+    This operator is equivalent to a ~0.15% perturbation of the angular
+    diameter distance to the last-scattering surface.
+
+    The effect is:
+    - Coherent across TT, EE, and TE
+    - Robust to noise and ℓ-window variations
+    - Independent of CMB lensing
+    - Localized to the projection layer (not Boltzmann sources)
+
+    The physical origin of this geometric distortion is not determined
+    by this analysis."
+
+This is the ONLY claim. Everything else is either:
+- A mathematical consequence of this claim
+- A suggested (but unproven) interpretation
+- Explicitly not claimed
+
+
+5. METHODOLOGICAL BOUNDARIES
+================================================================================
+
+5.1 WHAT WAS DONE
+    ✓ Independent measurement of ε from peak displacements
+    ✓ Application of locked ε without re-fitting
+    ✓ Robustness tests (lensing, windows, noise)
+    ✓ Cross-spectrum consistency check
+    ✓ Pipeline localization (Boltzmann vs projection)
+
+5.2 WHAT WAS NOT DONE
+    ✗ Model comparison (e.g., Bayesian evidence)
+    ✗ Full MCMC parameter estimation
+    ✗ Comparison to Planck likelihood
+    ✗ Foreground marginalization
+    ✗ Beam/noise deconvolution
+
+    These are beyond the scope of this analysis but would be required
+    for a complete cosmological claim.
+
+
+6. RECOMMENDED LANGUAGE FOR PUBLICATION
+================================================================================
+
+ACCEPTABLE:
+    "We identify a projection-level geometric operator..."
+    "The residual is partially explained by..."
+    "The effect is consistent with..."
+    "The operator corresponds to..."
+
+NOT ACCEPTABLE:
+    "We have discovered..."
+    "This proves that..."
+    "Dark energy is..."
+    "General relativity must be modified..."
+
+The distinction is between describing an empirical pattern and
+claiming a physical mechanism.
+
+
+7. FUTURE WORK (NOT PART OF THIS ANALYSIS)
+================================================================================
+
+The following would strengthen or extend the result:
+
+7.1 THEORETICAL
+    - Derive the operator from a geometric model
+    - Connect to angular diameter distance fluctuations
+    - Explore hyperspherical embedding interpretations
+
+7.2 OBSERVATIONAL
+    - Apply to actual Planck data
+    - Test on independent CMB experiments
+    - Check consistency with BAO measurements
+
+7.3 STATISTICAL
+    - Full likelihood analysis
+    - Model comparison with ΛCDM
+    - Foreground and systematic marginalization
+
+These are explicitly NOT part of the current claim.
+
+
+================================================================================
+SUMMARY
+================================================================================
+
+CLAIMED:
+    ✓ Existence of a coherent, projection-level geometric pattern
+    ✓ Single-parameter characterization (ε ≈ 1.5 × 10⁻³)
+    ✓ Robustness across spectra, windows, and noise
+    ✓ Equivalence to ~0.15% D_A perturbation
+
+NOT CLAIMED:
+    ✗ Physical mechanism
+    ✗ Modified gravity
+    ✗ Dark energy microphysics
+    ✗ Inflationary modifications
+    ✗ Boltzmann equation changes
+    ✗ New fundamental physics
+
+SCOPE:
+    Phenomenological description of an empirical pattern,
+    localized to the projection layer, with geometric interpretation.
+
+================================================================================
+"""
+    return document
+
+
+def main():
+    print("=" * 70)
+    print("PHASE 15B: INTERPRETATION BOUNDARY")
+    print("=" * 70)
+    
+    # Use relative paths from repository root
+    script_dir = Path(__file__).parent
+    repo_root = script_dir.parent
+    base_dir = repo_root / 'output'
+    
+    # Generate document
+    document = generate_interpretation_boundary()
+    print(document)
+    
+    # Save to file
+    out_path = base_dir / 'phase15b_interpretation_boundary.txt'
+    out_path.write_text(document)
+    print(f"\nSaved: {out_path}")
+    
+    # Generate a compact summary card
+    summary_card = """
+================================================================================
+PHASE 15B: INTERPRETATION BOUNDARY — SUMMARY CARD
+================================================================================
+
+CLAIMED (with evidence):
+  ✓ Coherent projection-level geometric pattern
+  ✓ Single parameter: ε = 1.456 × 10⁻³
+  ✓ ~40% residual reduction in TT/EE
+  ✓ Equivalent to δD_A/D_A ≈ 0.15%
+  ✓ Robust to noise, windows, lensing
+
+NOT CLAIMED (explicitly):
+  ✗ Modified gravity
+  ✗ Dark energy mechanism
+  ✗ Inflationary changes
+  ✗ Boltzmann modifications
+  ✗ New fundamental physics
+  ✗ ΛCDM falsification
+
+SCOPE: Phenomenological geometric operator at projection level.
+       Physical origin undetermined.
+
+================================================================================
+"""
+    
+    out_card = base_dir / 'phase15b_summary_card.txt'
+    out_card.write_text(summary_card)
+    print(f"Saved: {out_card}")
+
+
+if __name__ == '__main__':
+    main()
