@@ -49,14 +49,18 @@ def _load_phase10e_epsilon():
     delta_ee = data['delta_ee']
     centers = data['centers']
     
-    # ε = Δℓ / ℓ (mean over tomography range)
-    mean_delta = (np.mean(delta_tt) + np.mean(delta_ee)) / 2
-    mean_ell = np.mean(centers)
-    epsilon = mean_delta / mean_ell
+    # ε = mean(|Δℓ/ℓ|) over tomography range
+    # Note: We use absolute value because BEC peaks are at lower ℓ (negative Δℓ),
+    # but the operator ℓ → ℓ/(1+ε) with positive ε shifts ΛCDM toward BEC.
+    epsilon_tt = np.abs(delta_tt) / centers
+    epsilon_ee = np.abs(delta_ee) / centers
+    epsilon = np.mean(np.concatenate([epsilon_tt, epsilon_ee]))
     
-    print(f"  Phase 10E locked ε: {epsilon:.6e}")
-    print(f"    (from mean Δℓ = {mean_delta:.4f} at mean ℓ = {mean_ell:.1f})")
+    print(f"  Phase 10E locked ε: {epsilon:.10e}")
+    print(f"    (from mean(|Δℓ/ℓ|) over {len(centers)} windows)")
     
+    # Also compute mean Δℓ for summary output
+    mean_delta = (np.mean(np.abs(delta_tt)) + np.mean(np.abs(delta_ee))) / 2
     return epsilon, mean_delta
 
 
