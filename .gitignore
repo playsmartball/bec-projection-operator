@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environment
+venv_new/
+venv/
+.venv/
+
+# CLASS directories (will be cloned separately)
+class_public/
+class_v9_bec/
+
+# MCMC results (large files)
+v9_bec_mcmc_results/
+v9_bec_joint_mcmc_results/
+v9_bec_fsigma8_results/
+chains/
+
+# Cobaya cache
+.cobaya/
+
+# OS files
+.DS_Store
+*.swp
+*.swo
+
+# IDE
+.idea/
+.vscode/
+
+# Generated images
+*.png
