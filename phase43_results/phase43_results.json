@@ -1,0 +1,37 @@
+{
+  "decision": "LINEAR_STRATIFICATION",
+  "interpretation": "\u03a6 is monotonic coordinate without phase structure",
+  "curvature": {
+    "detected": false,
+    "max_curvature": 4486.062560758556,
+    "max_significance": 1.5349480260252604,
+    "phi_at_max": 0.04986322926476716,
+    "z_at_max": 8.0
+  },
+  "inflection": {
+    "detected": true,
+    "inflections": [
+      {
+        "phi_c": 0.0208442743506978,
+        "z_c": 1.0,
+        "F_triple_prime": -104591.12306886846
+      }
+    ],
+    "primary": {
+      "phi_c": 0.0208442743506978,
+      "z_c": 1.0,
+      "F_triple_prime": -104591.12306886846
+    }
+  },
+  "potential": {
+    "structure": "MONOTONIC",
+    "interpretation": "Simple stratification",
+    "n_minima": 0,
+    "n_maxima": 0,
+    "flat_fraction": 0.0
+  },
+  "controls": {
+    "lcdm_passed": false,
+    "null_passed": false
+  }
+}

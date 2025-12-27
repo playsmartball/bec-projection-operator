@@ -1,0 +1,19 @@
+============================================================
+PHASE 43b: PARAMETRIC SUPERCRITICALITY TEST - SUMMARY
+============================================================
+
+Decision: LINEAR_STRATIFICATION
+Interpretation: Pure depth stratification - no curvature required
+
+Best model: linear
+Preference: LINEAR
+
+Model parameters:
+  p0 = 1.000000 ± 0.010291
+
+χ²/dof = 0.000
+AIC = 2.00
+BIC = 2.40
+
+ΛCDM control: FAIL
+Randomization null: FAIL
