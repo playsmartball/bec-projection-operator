@@ -16,6 +16,7 @@ import numpy as np
 
 try:
     from dedalus import public as de
+    from dedalus.core import timesteppers as ts
 except Exception as e:
     sys.stderr.write("Dedalus is required to run this script. Install via pip/conda.\n")
     raise
@@ -48,36 +49,41 @@ def hilbert_phase_slope(times: np.ndarray, series: np.ndarray) -> float:
     return float(abs(m))
 
 
-def run_dedalus(L=2*np.pi, N=128, B0=1.0, rho_eff=20.0, k=1, tmax=400.0, dt=0.01, amp0=1e-6):
-    # Domain and problem
-    zbasis = de.Fourier('z', N, interval=(0.0, L), dealias=3/2)
-    domain = de.Domain([zbasis], grid_dtype=np.float64)
+def run_dedalus(L=2*np.pi, N=128, B0=1.0, rho_eff=20.0, k=1, tmax=400.0, dt_step=0.01, amp0=1e-6):
+    # Coordinates, distributor, basis (Dedalus v3 API)
+    coords = de.CartesianCoordinates('z')
+    dist = de.Distributor(coords, dtype=np.float64)
+    zbasis = de.RealFourier(coords['z'], size=N, bounds=(0.0, L))
 
-    problem = de.IVP(domain, variables=['v', 'b'])
-    problem.parameters['B0'] = B0
-    problem.parameters['alpha'] = B0 / (1.0 + rho_eff)
+    # Fields
+    v = dist.Field(name='v', bases=zbasis)
+    b = dist.Field(name='b', bases=zbasis)
 
-    problem.add_equation("dt(v) - alpha*dz(b) = 0")
-    problem.add_equation("dt(b) - B0*dz(v) = 0")
+    # Problem
+    def d_z(f):
+        return de.Differentiate(f, coords['z'])
 
-    solver = problem.build_solver(de.timesteppers.RK443)
+    alpha = B0 / (1.0 + rho_eff)
+    problem = de.IVP([v, b], namespace=locals())
+    problem.add_equation("dt(v) - alpha*d_z(b) = 0")
+    problem.add_equation("dt(b) - B0*d_z(v) = 0")
+
+    solver = problem.build_solver(ts.RK443)
     solver.stop_sim_time = tmax
 
     # Initial conditions
-    z = domain.grid(0)
+    z = dist.local_grid(zbasis)
     k_phys = 2.0 * np.pi * k / L
-    v = solver.state['v']
-    b = solver.state['b']
     v['g'] = amp0 * np.sin(k_phys * z)
     b['g'] = 0.0
 
-    # Time stepping
+    # Time stepping & diagnostics
     times = []
     s_sin_list = []
     s_cos_list = []
 
-    while solver.ok:
-        solver.step(dt)
+    while solver.proceed:
+        solver.step(dt_step)
         ss, sc = dz_project_series(b['g'], z, k_phys)
         times.append(solver.sim_time)
         s_sin_list.append(ss)
@@ -110,7 +116,7 @@ def main():
     args = p.parse_args()
 
     omega_num, omega_th = run_dedalus(L=args.L, N=args.N, B0=args.B0, rho_eff=args.rho,
-                                      k=args.k, tmax=args.tmax, dt=args.dt, amp0=args.amp0)
+                                      k=args.k, tmax=args.tmax, dt_step=args.dt, amp0=args.amp0)
 
     ratio = omega_th / omega_num if omega_num != 0 else np.nan
     sqrt_factor = np.sqrt(1.0 + args.rho)

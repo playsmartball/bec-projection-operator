@@ -46,3 +46,20 @@ The Orszag–Tang example is not a valid platform for inertia-dependent Alfvén 
 ## Status: CLOSED
 - Technical question answered; failure mode identified; no ambiguity remains.
 - Safe to pivot to Dedalus or a minimal solver for reviewer-grade dispersion validation.
+
+## Dedalus Control-Parity Validation (1D Alfvén Benchmark)
+
+Purpose: Dedalus was introduced specifically to remove the architecture-driven normalization ambiguity identified in BOUT++. The goal is exact reproduction of the inertia-controlled Alfvén dispersion.
+
+Method: The Dedalus formulation is an exact replica of the minimal 1D solver: periodic Fourier basis in z, fields v and b, equations dt(v) = B0/(1+rho_eff)·dz(b) and dt(b) = B0·dz(v), and identical diagnostics via Hilbert-phase slope on the k=1 mode of b.
+
+Result: Dedalus reproduces the analytic dispersion ω = k B0 / sqrt(1+ρ_eff) and matches the minimal solver within <0.5% across cases.
+
+| Model       | ρ_eff | Measured ω   | Analytic ω   | % Error |
+|-------------|-------|--------------|--------------|---------|
+| Minimal 1D  | 0     | 4.912546e-02 | 4.908739e-02 | 0.08%   |
+| Dedalus 1D  | 0     | 4.914755e-02 | 4.908739e-02 | 0.12%   |
+| Minimal 1D  | 20    | 1.068301e-02 | 1.071175e-02 | 0.27%   |
+| Dedalus 1D  | 20    | 1.068703e-02 | 1.071175e-02 | 0.23%   |
+
+ω(0)/ω(20): Minimal = 4.598, Dedalus = 4.599, Theory = √21 = 4.5826
