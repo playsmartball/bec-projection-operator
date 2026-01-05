@@ -49,7 +49,7 @@ def hilbert_phase_slope(times: np.ndarray, series: np.ndarray) -> float:
     return float(abs(m))
 
 
-def run_dedalus(L=2*np.pi, N=128, B0=1.0, rho_eff=20.0, k=1, tmax=400.0, dt_step=0.01, amp0=1e-6):
+def run_dedalus(L=2*np.pi, N=128, B0=1.0, rho_eff=20.0, k=1, tmax=400.0, dt_step=0.01, amp0=1e-6, tau=1.0):
     # Coordinates, distributor, basis (Dedalus v3 API)
     coords = de.CartesianCoordinates('z')
     dist = de.Distributor(coords, dtype=np.float64)
@@ -66,7 +66,7 @@ def run_dedalus(L=2*np.pi, N=128, B0=1.0, rho_eff=20.0, k=1, tmax=400.0, dt_step
     alpha = B0 / (1.0 + rho_eff)
     problem = de.IVP([v, b], namespace=locals())
     problem.add_equation("dt(v) - alpha*d_z(b) = 0")
-    problem.add_equation("dt(b) - B0*d_z(v) = 0")
+    problem.add_equation("dt(b) - tau*B0*d_z(v) = 0")
 
     solver = problem.build_solver(ts.RK443)
     solver.stop_sim_time = tmax
@@ -99,7 +99,7 @@ def run_dedalus(L=2*np.pi, N=128, B0=1.0, rho_eff=20.0, k=1, tmax=400.0, dt_step
     series = s_sin if pw_sin >= pw_cos else s_cos
 
     omega_num = hilbert_phase_slope(times, series)
-    omega_th = k_phys * B0 / np.sqrt(1.0 + rho_eff)
+    omega_th = k_phys * B0 * np.sqrt(tau) / np.sqrt(1.0 + rho_eff)
     return omega_num, omega_th
 
 
@@ -113,10 +113,11 @@ def main():
     p.add_argument("--tmax", type=float, default=400.0, help="Final time")
     p.add_argument("--dt", type=float, default=0.01, help="Time step")
     p.add_argument("--amp0", type=float, default=1e-6, help="Initial velocity amplitude")
+    p.add_argument("--tau", type=float, default=1.0, help="Tension coefficient multiplier (affects induction)")
     args = p.parse_args()
 
     omega_num, omega_th = run_dedalus(L=args.L, N=args.N, B0=args.B0, rho_eff=args.rho,
-                                      k=args.k, tmax=args.tmax, dt_step=args.dt, amp0=args.amp0)
+                                      k=args.k, tmax=args.tmax, dt_step=args.dt, amp0=args.amp0, tau=args.tau)
 
     ratio = omega_th / omega_num if omega_num != 0 else np.nan
     sqrt_factor = np.sqrt(1.0 + args.rho)
