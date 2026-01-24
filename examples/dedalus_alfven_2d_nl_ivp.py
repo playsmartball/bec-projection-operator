@@ -1,0 +1,473 @@
+#!/usr/bin/env python3
+import argparse
+import sys
+import os
+import csv
+import time
+import numpy as np
+import logging
+import math
+try:
+    from examples.utils.modal_projections import hilbert_phase_slope
+except ModuleNotFoundError:
+    sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+    from examples.utils.modal_projections import hilbert_phase_slope
+
+from mpi4py import MPI
+
+try:
+    from dedalus import public as de
+    from dedalus.core.operators import Lift as LiftOp
+    from dedalus.core import timesteppers as ts
+except Exception:
+    sys.stderr.write("Dedalus is required to run this script. Install via pip/conda.\n")
+    raise
+
+
+def run_nl_ivp(Lx=128.0, Nx=128, Lz=128.0, Nz=129, B0=1.0, tau=1.0, eta=0.0,
+               rho_perp=20.0, rho_par=5.0, eps=0.0, m=1, n=1,
+               tmax=512.0, tstep=0.05, amp=1e-6, csv_path=None, nonlinear: int = 1,
+               kappa: float = 0.0, bc: str = 'characteristic', kappa_model: str = 'constant', omega_c: float = 0.0,
+               forcing: str = 'bulk'):
+    coords = de.CartesianCoordinates('x', 'z')
+    dist = de.Distributor(coords, dtype=np.complex128)
+    xbasis = de.Fourier(coords['x'], size=Nx, bounds=(0.0, Lx), dealias=3/2, dtype=dist.dtype)
+    zbasis = de.ChebyshevT(coords['z'], size=Nz, bounds=(0.0, Lz), dealias=3/2)
+
+    vx = dist.Field(name='vx', bases=(xbasis, zbasis))
+    vy = dist.Field(name='vy', bases=(xbasis, zbasis))
+    bx = dist.Field(name='bx', bases=(xbasis, zbasis))
+    by = dist.Field(name='by', bases=(xbasis, zbasis))
+    wx = dist.Field(name='wx', bases=(xbasis, zbasis))
+    wy = dist.Field(name='wy', bases=(xbasis, zbasis))
+
+    tau1x = dist.Field(name='tau1x', bases=(xbasis,))
+    tau2x = dist.Field(name='tau2x', bases=(xbasis,))
+    tau1y = dist.Field(name='tau1y', bases=(xbasis,))
+    tau2y = dist.Field(name='tau2y', bases=(xbasis,))
+    # Tau fields for magnetic boundary conditions (gated by eta)
+    tau1bx = dist.Field(name='tau1bx', bases=(xbasis,))
+    tau2bx = dist.Field(name='tau2bx', bases=(xbasis,))
+    tau1by = dist.Field(name='tau1by', bases=(xbasis,))
+    tau2by = dist.Field(name='tau2by', bases=(xbasis,))
+    tau0bx = dist.Field(name='tau0bx', bases=(xbasis,))
+    tau0by = dist.Field(name='tau0by', bases=(xbasis,))
+
+    # Characteristic-mode boundary tau variables (used only in boundary equations)
+    ctau_lx = dist.Field(name='ctau_lx', bases=(xbasis,))
+    ctau_rx = dist.Field(name='ctau_rx', bases=(xbasis,))
+    ctau_ly = dist.Field(name='ctau_ly', bases=(xbasis,))
+    ctau_ry = dist.Field(name='ctau_ry', bases=(xbasis,))
+    s_bx_l = dist.Field(name='s_bx_l', bases=(xbasis,))
+    s_bx_r = dist.Field(name='s_bx_r', bases=(xbasis,))
+    s_by_l = dist.Field(name='s_by_l', bases=(xbasis,))
+    s_by_r = dist.Field(name='s_by_r', bases=(xbasis,))
+
+    def d_x(f):
+        return de.Differentiate(f, coords['x'])
+    def d_z(f):
+        return de.Differentiate(f, coords['z'])
+    def d_xx(f):
+        return de.Differentiate(de.Differentiate(f, coords['x']), coords['x'])
+    def d_zz(f):
+        return de.Differentiate(de.Differentiate(f, coords['z']), coords['z'])
+
+    lift_basis = zbasis.derivative_basis(1)
+    def lift(A, ndeg):
+        return LiftOp(A, lift_basis, ndeg)
+
+    alpha_perp = B0 / (1.0 + rho_perp)
+    alpha_par = B0 / (1.0 + rho_par)
+
+    # Nonlinear operators (skew-symmetric form for energy conservation in x)
+    def advx(q):
+        return 0.5 * (vx*d_x(q) + d_x(vx*q))
+    # If vz were present, add vz*d_z(q). Here we use reduced model with vz ≡ 0.
+
+    # Constant toggle field for enabling/disabling NL terms
+    nl = dist.Field(name='nl', bases=())
+    nl['g'] = float(1 if nonlinear else 0)
+    magbc = dist.Field(name='magbc', bases=())
+    magbc['g'] = float(1 if eta > 0 else 0)
+
+    char_bc = (bc == 'characteristic')
+    if char_bc:
+        vx_tau_op = 0
+        vy_tau_op = 0
+    else:
+        vx_tau_op = lift(tau1x, -1) + lift(tau2x, -2)
+        vy_tau_op = lift(tau1y, -1) + lift(tau2y, -2)
+    if eta > 0.0:
+        bx_tau_op = magbc * (lift(tau1bx, -1) + lift(tau2bx, -2))
+        by_tau_op = magbc * (lift(tau1by, -1) + lift(tau2by, -2))
+    else:
+        bx_tau_op = 0
+        by_tau_op = 0
+
+    _ns = dict(locals())
+    _ns['de'] = de
+    # Variable list depending on BC mode
+    # Dirichlet (canonical tau-lift): include mag tau fields when eta>0, zero-mode taus when eta==0
+    # Characteristic: remove velocity/magnetic tau lifts; add boundary tau variables to square the system
+    if char_bc:
+        var_list = [vx, vy, bx, by, wx, wy, ctau_lx, ctau_rx, ctau_ly, ctau_ry]
+        if eta > 0.0:
+            var_list += [tau1bx, tau2bx, tau1by, tau2by]
+            if (kappa_model == 'lowpass') and (kappa > 0.0) and (omega_c > 0.0):
+                var_list += [s_bx_l, s_bx_r, s_by_l, s_by_r]
+    else:
+        var_list = [vx, vy, bx, by, wx, wy, tau1x, tau2x, tau1y, tau2y]
+        if eta > 0.0:
+            var_list += [tau1bx, tau2bx, tau1by, tau2by]
+        else:
+            var_list += [tau0bx, tau0by]
+    problem = de.IVP(var_list, namespace=_ns)
+
+    problem.add_equation("dt(vx) - alpha_perp*d_z(bx) - eps*(1+rho_par)*vy + vx_tau_op = - nl*advx(vx)")
+    problem.add_equation("dt(vy) - alpha_par*d_z(by) + eps*(1+rho_perp)*vx + vy_tau_op = - nl*advx(vy)")
+    if eta > 0.0:
+        problem.add_equation("dt(bx) - tau*B0*wx - eta*(d_xx(bx) + d_zz(bx)) + bx_tau_op = nl*( d_x(vx*by))")
+        problem.add_equation("dt(by) - tau*B0*wy - eta*(d_xx(by) + d_zz(by)) + by_tau_op = - nl*( d_x(vx*bx))")
+    else:
+        if char_bc:
+            problem.add_equation("dt(bx) - tau*B0*wx = nl*( d_x(vx*by))")
+            problem.add_equation("dt(by) - tau*B0*wy = - nl*( d_x(vx*bx))")
+        else:
+            problem.add_equation("dt(bx) - tau*B0*wx + tau0bx = nl*( d_x(vx*by))")
+            problem.add_equation("dt(by) - tau*B0*wy + tau0by = - nl*( d_x(vx*bx))")
+    problem.add_equation("wx - d_z(vx) = 0")
+    problem.add_equation("wy - d_z(vy) = 0")
+    # Boundary conditions
+    if char_bc:
+        # Incoming characteristic constraints (authoritative signs):
+        # Left (incoming Z+):  s_perp*vx - s_tau*bx = 0;  s_par*vy - s_tau*by = 0
+        # Right (incoming Z-): s_perp*vx + s_tau*bx = 0;  s_par*vy + s_tau*by = 0
+        s_perp = math.sqrt(1.0 + rho_perp)
+        s_par = math.sqrt(1.0 + rho_par)
+        s_tau = math.sqrt(1.0 / tau)
+        problem.add_equation(f"{s_perp}*vx(z='left') - {s_tau}*bx(z='left') + ctau_lx = 0")
+        problem.add_equation(f"{s_par}*vy(z='left') - {s_tau}*by(z='left') + ctau_ly = 0")
+        problem.add_equation(f"{s_perp}*vx(z='right') + {s_tau}*bx(z='right') + ctau_rx = 0")
+        problem.add_equation(f"{s_par}*vy(z='right') + {s_tau}*by(z='right') + ctau_ry = 0")
+        if eta > 0.0:
+            if (kappa > 0.0) and (kappa_model == 'constant'):
+                problem.add_equation("-d_z(bx)(z='left') + kappa*bx(z='left') = 0")
+                problem.add_equation(" d_z(bx)(z='right') + kappa*bx(z='right') = 0")
+                problem.add_equation("-d_z(by)(z='left') + kappa*by(z='left') = 0")
+                problem.add_equation(" d_z(by)(z='right') + kappa*by(z='right') = 0")
+            elif (kappa > 0.0) and (kappa_model == 'lowpass') and (omega_c > 0.0):
+                problem.add_equation("dt(s_bx_l) - omega_c*kappa*bx(z='left') + omega_c*s_bx_l = 0")
+                problem.add_equation("dt(s_by_l) - omega_c*kappa*by(z='left') + omega_c*s_by_l = 0")
+                problem.add_equation("dt(s_bx_r) - omega_c*kappa*bx(z='right') + omega_c*s_bx_r = 0")
+                problem.add_equation("dt(s_by_r) - omega_c*kappa*by(z='right') + omega_c*s_by_r = 0")
+                problem.add_equation("-d_z(bx)(z='left') + s_bx_l = 0")
+                problem.add_equation(" d_z(bx)(z='right') + s_bx_r = 0")
+                problem.add_equation("-d_z(by)(z='left') + s_by_l = 0")
+                problem.add_equation(" d_z(by)(z='right') + s_by_r = 0")
+            else:
+                problem.add_equation("d_z(bx)(z='left') = 0")
+                problem.add_equation("d_z(bx)(z='right') = 0")
+                problem.add_equation("d_z(by)(z='left') = 0")
+                problem.add_equation("d_z(by)(z='right') = 0")
+    else:
+        # Dirichlet boundary conditions
+        problem.add_equation("vx(z='left') = 0")
+        problem.add_equation("vx(z='right') = 0")
+        problem.add_equation("vy(z='left') = 0")
+        problem.add_equation("vy(z='right') = 0")
+        if eta > 0.0:
+            problem.add_equation("bx(z='left') = 0")
+            problem.add_equation("bx(z='right') = 0")
+            problem.add_equation("by(z='left') = 0")
+            problem.add_equation("by(z='right') = 0")
+
+    if eta == 0.0:
+        problem.add_equation("de.Integrate(bx, coords['z']) = 0")
+        problem.add_equation("de.Integrate(by, coords['z']) = 0")
+
+    # Startup log for dealiasing factors
+    logger = logging.getLogger(__name__)
+    logger.info(f"Dealias factors: x={getattr(xbasis, 'dealias', 'n/a')}, z={getattr(zbasis, 'dealias', 'n/a')}")
+    solver = problem.build_solver(ts.CNAB2)
+
+    x = dist.local_grid(xbasis)
+    z = dist.local_grid(zbasis)
+    sx = np.sin(2.0 * np.pi * m * x / Lx)
+    sz = np.sin(np.pi * n * z / Lz)
+    cz = np.cos(np.pi * n * z / Lz)
+    # Use broadcasting from (Nx,1) and (1,Nz) grids to form 2D patterns
+    pattern = sx * sz
+    pattern_dz = sx * (np.pi * n / Lz) * cz
+    if forcing == 'edge':
+        env = np.cos(np.pi * z / Lz) ** 2
+        denv = -(2.0 * np.pi / Lz) * np.sin(np.pi * z / Lz) * np.cos(np.pi * z / Lz)
+        pattern = pattern * env
+        pattern_dz = pattern_dz * env + sx * sz * denv
+
+    vx['g'] = amp * pattern
+    vy['g'] = 0.0
+    bx['g'] = 0.0
+    by['g'] = 0.0
+    wx['g'] = amp * pattern_dz
+    wy['g'] = 0.0
+
+    # Build projection basis for bx: sin(m x) * cos(n z)
+    phi_bx = dist.Field(name='phi_bx', bases=(xbasis, zbasis))
+    phi_bx['g'] = sx * cz
+    _phi_norm = de.Integrate(de.Integrate(phi_bx*phi_bx, coords['x']), coords['z']).evaluate()['g']
+    _phi_norm_local = float(np.real(_phi_norm.ravel()[0])) if _phi_norm.size > 0 else 0.0
+    phi_norm = float(dist.comm.allreduce(_phi_norm_local, op=MPI.SUM)) + 1e-300
+
+    times = []
+    E_tot = []
+    E_x = []
+    E_y = []
+    proj_bx_series = []
+
+    if csv_path is None:
+        outdir = os.path.join('analysis', 'phase4_runs')
+        os.makedirs(outdir, exist_ok=True)
+        stamp = time.strftime('%Y%m%d_%H%M%S')
+        csv_path = os.path.join(outdir, f'phase4_nl_ivp_nx{Nx}_m{m}_n{n}_eps{eps}_eta{eta}_{stamp}.csv')
+    else:
+        os.makedirs(os.path.dirname(csv_path) or '.', exist_ok=True)
+
+    csv_file = None
+    csv_writer = None
+    if MPI.COMM_WORLD.rank == 0:
+        csv_file = open(csv_path, 'w', newline='')
+        csv_writer = csv.writer(csv_file)
+        csv_writer.writerow([
+            't', 'E_tot', 'E_x', 'E_y', 'E_weak', 'proj_bx', 'P_tau', 'W_tau',
+            'C_vx_bx', 'C_bx_wx', 'C_vy_by', 'C_by_wy',
+            'D_bx', 'D_by', 'P_eta_left', 'P_eta_right', 'P_eta_total',
+            'Tau_vx', 'Tau_vy', 'Tau_bx', 'Tau_by'
+        ])
+
+    solver.stop_sim_time = tmax
+    step = 0
+    W_tau_val = None
+    while solver.proceed:
+        solver.step(tstep)
+        step += 1
+        _bad_local = 0
+        for _f in (vx, vy, bx, by):
+            _arr = _f['g']
+            if _arr.size > 0 and not np.all(np.isfinite(_arr)):
+                _bad_local = 1
+                break
+        if dist.comm.allreduce(_bad_local, op=MPI.SUM):
+            raise RuntimeError("NaN encountered in fields")
+
+        t = solver.sim_time
+        if dist.comm.rank == 0:
+            times.append(t)
+        density_x = 0.5*(1.0 + rho_perp)*vx*de.conj(vx) + 0.5*(1.0/tau)*bx*de.conj(bx)
+        density_y = 0.5*(1.0 + rho_par)*vy*de.conj(vy) + 0.5*(1.0/tau)*by*de.conj(by)
+        _Ex = de.Integrate(de.Integrate(density_x, coords['x']), coords['z']).evaluate()['g']
+        _Ey = de.Integrate(de.Integrate(density_y, coords['x']), coords['z']).evaluate()['g']
+        _Ex_local = float(np.real(_Ex.ravel()[0])) if _Ex.size > 0 else 0.0
+        _Ey_local = float(np.real(_Ey.ravel()[0])) if _Ey.size > 0 else 0.0
+        Ex_val = dist.comm.allreduce(_Ex_local, op=MPI.SUM)
+        Ey_val = dist.comm.allreduce(_Ey_local, op=MPI.SUM)
+        if dist.comm.rank == 0:
+            E_x.append(Ex_val)
+            E_y.append(Ey_val)
+            E_tot.append(E_x[-1] + E_y[-1])
+
+        _amp_bx = de.Integrate(de.Integrate(bx*phi_bx, coords['x']), coords['z']).evaluate()['g']
+        _amp_local = float(np.real(_amp_bx.ravel()[0])) if _amp_bx.size > 0 else 0.0
+        amp_bx_val = dist.comm.allreduce(_amp_local, op=MPI.SUM) / phi_norm
+        if dist.comm.rank == 0:
+            proj_bx_series.append(amp_bx_val)
+
+        _C_vx_bx = de.Integrate(de.Integrate(vx * de.conj(-alpha_perp * d_z(bx)), coords['x']), coords['z']).evaluate()['g']
+        _C_bx_wx = de.Integrate(de.Integrate(bx * de.conj(-tau * B0 * wx), coords['x']), coords['z']).evaluate()['g']
+        _C_vy_by = de.Integrate(de.Integrate(vy * de.conj(-alpha_par * d_z(by)), coords['x']), coords['z']).evaluate()['g']
+        _C_by_wy = de.Integrate(de.Integrate(by * de.conj(-tau * B0 * wy), coords['x']), coords['z']).evaluate()['g']
+
+        C_vx_bx_local = float(np.real(_C_vx_bx.ravel()[0])) if _C_vx_bx.size > 0 else 0.0
+        C_bx_wx_local = float(np.real(_C_bx_wx.ravel()[0])) if _C_bx_wx.size > 0 else 0.0
+        C_vy_by_local = float(np.real(_C_vy_by.ravel()[0])) if _C_vy_by.size > 0 else 0.0
+        C_by_wy_local = float(np.real(_C_by_wy.ravel()[0])) if _C_by_wy.size > 0 else 0.0
+
+        C_vx_bx = dist.comm.allreduce(C_vx_bx_local, op=MPI.SUM)
+        C_bx_wx = dist.comm.allreduce(C_bx_wx_local, op=MPI.SUM)
+        C_vy_by = dist.comm.allreduce(C_vy_by_local, op=MPI.SUM)
+        C_by_wy = dist.comm.allreduce(C_by_wy_local, op=MPI.SUM)
+
+        lap_bx = d_xx(bx) + d_zz(bx)
+        lap_by = d_xx(by) + d_zz(by)
+        if eta == 0.0:
+            D_bx = 0.0
+            D_by = 0.0
+            P_eta_left = 0.0
+            P_eta_right = 0.0
+            P_eta_total = 0.0
+        else:
+            _D_bx = de.Integrate(de.Integrate(bx * de.conj(-eta * lap_bx), coords['x']), coords['z']).evaluate()['g']
+            _D_by = de.Integrate(de.Integrate(by * de.conj(-eta * lap_by), coords['x']), coords['z']).evaluate()['g']
+            D_bx_local = float(np.real(_D_bx.ravel()[0])) if _D_bx.size > 0 else 0.0
+            D_by_local = float(np.real(_D_by.ravel()[0])) if _D_by.size > 0 else 0.0
+            D_bx = dist.comm.allreduce(D_bx_local, op=MPI.SUM)
+            D_by = dist.comm.allreduce(D_by_local, op=MPI.SUM)
+
+            # Resistive boundary power diagnostics (z-left/right)
+            # Integrate over x only to obtain functions of z, then sample boundaries
+            _Bx_q = de.Integrate(bx * de.conj(d_z(bx)) + by * de.conj(d_z(by)), coords['x']).evaluate()['g']
+            # Local contributions at boundaries (z-index 0 and -1); reduce across ranks
+            Peta_left_local = float(np.real(_Bx_q.ravel()[0])) if _Bx_q.size > 0 else 0.0
+            Peta_right_local = float(np.real(_Bx_q.ravel()[-1])) if _Bx_q.size > 0 else 0.0
+            Peta_left_int = dist.comm.allreduce(Peta_left_local, op=MPI.SUM)
+            Peta_right_int = dist.comm.allreduce(Peta_right_local, op=MPI.SUM)
+            P_eta_left = (eta / tau) * Peta_left_int
+            P_eta_right = (eta / tau) * Peta_right_int
+            P_eta_total = (eta / tau) * (Peta_right_int - Peta_left_int)
+
+        tau_vx_op = lift(tau1x, -1) + lift(tau2x, -2)
+        tau_vy_op = lift(tau1y, -1) + lift(tau2y, -2)
+        if (eta > 0.0) and (not char_bc):
+            tau_bx_op = magbc * (lift(tau1bx, -1) + lift(tau2bx, -2))
+            tau_by_op = magbc * (lift(tau1by, -1) + lift(tau2by, -2))
+        else:
+            tau_bx_op = 0
+            tau_by_op = 0
+        if char_bc:
+            Tau_vx_local = 0.0
+            Tau_vy_local = 0.0
+        else:
+            _Tau_vx = de.Integrate(de.Integrate(vx * de.conj(tau_vx_op), coords['x']), coords['z']).evaluate()['g']
+            _Tau_vy = de.Integrate(de.Integrate(vy * de.conj(tau_vy_op), coords['x']), coords['z']).evaluate()['g']
+            Tau_vx_local = float(np.real(_Tau_vx.ravel()[0])) if _Tau_vx.size > 0 else 0.0
+            Tau_vy_local = float(np.real(_Tau_vy.ravel()[0])) if _Tau_vy.size > 0 else 0.0
+        if (eta > 0.0) and (not char_bc):
+            _Tau_bx = de.Integrate(de.Integrate(bx * de.conj(tau_bx_op), coords['x']), coords['z']).evaluate()['g']
+            _Tau_by = de.Integrate(de.Integrate(by * de.conj(tau_by_op), coords['x']), coords['z']).evaluate()['g']
+            Tau_bx_local = float(np.real(_Tau_bx.ravel()[0])) if _Tau_bx.size > 0 else 0.0
+            Tau_by_local = float(np.real(_Tau_by.ravel()[0])) if _Tau_by.size > 0 else 0.0
+        else:
+            Tau_bx_local = 0.0
+            Tau_by_local = 0.0
+        Tau_vx = dist.comm.allreduce(Tau_vx_local, op=MPI.SUM)
+        Tau_vy = dist.comm.allreduce(Tau_vy_local, op=MPI.SUM)
+        Tau_bx = dist.comm.allreduce(Tau_bx_local, op=MPI.SUM)
+        Tau_by = dist.comm.allreduce(Tau_by_local, op=MPI.SUM)
+
+        # Diagnostic-only weak-only energy reconstruction (root only): interior couplings + correct resistive power
+        C_sum = C_vx_bx + C_bx_wx + C_vy_by + C_by_wy
+        D_power = - (1.0 / tau) * (D_bx + D_by)
+        if dist.comm.rank == 0:
+            if 'E_weak_val' not in locals() or E_weak_val is None:
+                E_weak_val = E_x[-1] + E_y[-1]
+            else:
+                E_weak_val = E_weak_val + tstep * (C_sum + D_power)
+
+        # Boundary power and cumulative work (root only)
+        if dist.comm.rank == 0:
+            P_tau = Tau_vx + Tau_vy + Tau_bx + Tau_by
+            if W_tau_val is None:
+                W_tau_val = 0.0
+            else:
+                W_tau_val = W_tau_val + tstep * P_tau
+
+        if dist.comm.rank == 0 and csv_writer is not None:
+            pbx = proj_bx_series[-1] if len(proj_bx_series) > 0 else float('nan')
+            csv_writer.writerow([
+                f"{times[-1]:.8e}", f"{E_tot[-1]:.8e}", f"{E_x[-1]:.8e}", f"{E_y[-1]:.8e}", f"{E_weak_val:.8e}", f"{pbx:.8e}", f"{P_tau:.8e}", f"{W_tau_val:.8e}",
+                f"{C_vx_bx:.8e}", f"{C_bx_wx:.8e}", f"{C_vy_by:.8e}", f"{C_by_wy:.8e}",
+                f"{D_bx:.8e}", f"{D_by:.8e}", f"{P_eta_left:.8e}", f"{P_eta_right:.8e}", f"{P_eta_total:.8e}",
+                f"{Tau_vx:.8e}", f"{Tau_vy:.8e}", f"{Tau_bx:.8e}", f"{Tau_by:.8e}"
+            ])
+            if step % 200 == 0 and csv_file is not None:
+                csv_file.flush()
+                os.fsync(csv_file.fileno())
+
+    times = np.array(times)
+    E_tot = np.array(E_tot)
+    E_x = np.array(E_x)
+    E_y = np.array(E_y)
+
+    E0 = E_tot[0] if len(E_tot) else 1.0
+    drift = float((np.max(E_tot) - np.min(E_tot)) / (abs(E0) + 1e-300)) if len(E_tot) else np.nan
+    omega_num = float('nan')
+    if len(times) > 10 and len(proj_bx_series) == len(times):
+        series = np.array(proj_bx_series)
+        omega_num = hilbert_phase_slope(times, series - np.mean(series))
+    dE_dt_max = float('nan')
+    if len(times) >= 3:
+        dE_dt = np.gradient(E_tot, times)
+        dE_dt_max = float(np.max(np.abs(dE_dt)))
+    gamma_est = float('nan')
+    if len(times) > 10 and eta > 0:
+        i0 = int(0.4 * len(times))
+        t_fit = times[i0:]
+        E_fit = E_tot[i0:]
+        mask = np.isfinite(E_fit) & (E_fit > 0)
+        if np.count_nonzero(mask) > 5:
+            coeffs = np.polyfit(t_fit[mask], np.log(E_fit[mask] + 1e-300), 1)
+            gamma_est = 0.5 * float(coeffs[0])
+
+    if MPI.COMM_WORLD.rank == 0 and csv_file is not None:
+        csv_file.flush()
+        os.fsync(csv_file.fileno())
+        csv_file.close()
+
+    return {
+        'times': times,
+        'E_tot': E_tot,
+        'E_x': E_x,
+        'E_y': E_y,
+        'energy_drift_rel': drift,
+        'csv_path': csv_path,
+        'omega_num': float(omega_num),
+        'dE_dt_max': dE_dt_max,
+        'gamma_est': gamma_est,
+    }
+
+
+def main():
+    logging.basicConfig(level=logging.INFO)
+    p = argparse.ArgumentParser(description="Dedalus 2D slab (NL scaffold) anisotropic IVP with epsilon coupling")
+    p.add_argument("--Lx", type=float, default=128.0)
+    p.add_argument("--Lz", type=float, default=128.0)
+    p.add_argument("--Nx", type=int, default=128)
+    p.add_argument("--Nz", type=int, default=129)
+    p.add_argument("--B0", type=float, default=1.0)
+    p.add_argument("--tau", type=float, default=1.0)
+    p.add_argument("--eta", type=float, default=0.0)
+    p.add_argument("--rho_perp", type=float, default=20.0)
+    p.add_argument("--rho_par", type=float, default=5.0)
+    p.add_argument("--eps", type=float, default=0.0)
+    p.add_argument("--m", type=int, default=1)
+    p.add_argument("--n", type=int, default=1)
+    p.add_argument("--tmax", type=float, default=512.0)
+    p.add_argument("--dt", type=float, default=0.05)
+    p.add_argument("--amp", type=float, default=1e-6)
+    p.add_argument("--csv", type=str, default=None)
+    p.add_argument("--nl", type=int, default=1)
+    p.add_argument("--bc", type=str, choices=['dirichlet', 'characteristic'], default='characteristic')
+    p.add_argument("--kappa", type=float, default=0.0)
+    p.add_argument("--kappa_model", type=str, choices=['constant','lowpass'], default='constant')
+    p.add_argument("--omega_c", type=float, default=0.0)
+    p.add_argument("--forcing", type=str, choices=['bulk','edge'], default='bulk')
+    args = p.parse_args()
+
+    res = run_nl_ivp(Lx=args.Lx, Nx=args.Nx, Lz=args.Lz, Nz=args.Nz, B0=args.B0, tau=args.tau, eta=args.eta,
+                     rho_perp=args.rho_perp, rho_par=args.rho_par, eps=args.eps, m=args.m, n=args.n,
+                     tmax=args.tmax, tstep=args.dt, amp=args.amp, csv_path=args.csv, nonlinear=args.nl,
+                     kappa=args.kappa, bc=args.bc, kappa_model=args.kappa_model, omega_c=args.omega_c,
+                     forcing=args.forcing)
+
+    if MPI.COMM_WORLD.rank == 0:
+        print(f"energy drift (rel) = {res['energy_drift_rel']:.3e}")
+        print(f"csv: {res['csv_path']}")
+        if np.isfinite(res['omega_num']):
+            print(f"omega (Hilbert) = {res['omega_num']:.6e}")
+        if np.isfinite(res.get('dE_dt_max', np.nan)):
+            print(f"max |dE/dt| = {res['dE_dt_max']:.3e}")
+        if np.isfinite(res.get('gamma_est', np.nan)):
+            print(f"gamma (energy-based) = {res['gamma_est']:.6e}")
+
+
+if __name__ == "__main__":
+    main()
