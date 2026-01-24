@@ -1,0 +1,25 @@
+Fiducial linear matter power spectrum P(k) at redshift z = 0.
+
+Cosmology: Planck 2018 ΛCDM (TT,TE,EE+lowE).
+Neutrinos: Minimal massive neutrino model with Σmν = 0.06 eV (N_eff = 3.046).
+
+Tool: CLASS (linear theory only; non_linear = none).
+Parameters: h = 0.6736, ω_b = 0.02237, ω_cdm = 0.1200,
+A_s = 2.100e-9, n_s = 0.9649, τ_reio = 0.0544,
+Ω_k = 0, w0 = −1, wa = 0.
+
+Neutrino sector:
+N_ncdm = 1, m_ncdm = 0.06 eV, T_ncdm = 0.71611,
+N_ur = 2.0328 (giving N_eff = 3.046).
+
+Sampling:
+Linear matter power spectrum output (output = mPk),
+evaluated at z_pk = 0 with P_k_max_h/Mpc = 5.0.
+
+Units:
+k in h/Mpc, P(k) in (Mpc/h)^3.
+
+Purpose:
+This spectrum serves as the fiducial “true” P(k) for Phase-16
+σ₈ projection null tests. Growth equations are fixed; no tuning,
+no redshift dependence, and no Boltzmann modifications are applied.
