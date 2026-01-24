@@ -1,0 +1,37 @@
+Phase 16A — Operator Class (Projection → k-space)
+
+Mathematical Definition
+
+We define a projection/boundary operator acting on the matter power spectrum in k-space:
+    P_obs(k) = W(k) · P(k),
+with W(k) satisfying the following invariants/constraints:
+    1) W(k → 0) = 1
+    2) W′(k) ≤ 0 for k ≥ 0 (monotonic suppression)
+    3) A single characteristic scale kc (no additional tunable structure)
+    4) No redshift or time dependence
+
+Candidate forms (only):
+  - Soft cutoff:   W(k) = 1 / (1 + (k/kc)^n)
+  - Exponential:   W(k) = exp(-(k/kc)^n)
+where n ∈ {1, 2} and kc > 0 is chosen from observational window scales (not fitted).
+
+Physical Interpretation
+
+W(k) represents a conservative projection/boundary operator that suppresses small-scale power without altering large-scale modes. It is inspired by:
+  - The CMB projection operator ℓ → ℓ/(1+ε) which is conservative and non-tunable.
+  - Frequency-selective absorbing boundary behavior in fusion-like continuum systems, where boundary-mediated effects shape observed spectra without injecting energy.
+
+“No growth physics implied” (explicit)
+
+This operator class does not modify growth equations, dynamics, or the Boltzmann hierarchy. It is applied purely as a projection in k-space after growth, and therefore implies no change to physical evolution. No redshift dependence is introduced.
+
+Implementation Notes
+
+- Implemented in scripts/phase16a_operator_class.py as KOperator(form, kc, n)
+- Enforces constraints by construction: W(0)=1, monotone suppression, single scale kc, forms limited to the two above, n ∈ {1,2}.
+- Provides utility methods: W(k), apply(k, Pk), and a numerical monotonicity check.
+
+Success Criteria
+
+- Operator definitions complete (two forms only) — satisfied
+- No cosmological assumptions introduced — satisfied
