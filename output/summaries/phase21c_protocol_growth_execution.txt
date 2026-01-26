@@ -1,0 +1,59 @@
+Phase-21C-Protocol — GROWTH(z) Execution Protocol (Design-Only)
+Status: DESIGN-ONLY — NO EXECUTION — NO NUMERICS — NO FITS — NO MODELS — NO COMMITS
+
+Objective
+- Convert the Phase-21C-Logic admissibility of a redshift-only, k-independent, σ8-preserving growth modulation g(z) into a governable execution gate, without running anything.
+
+Lever Definition and Guardrails (from Phase‑21C Scope)
+- Growth history: D(z) = D_fid(z) · g(z), with g(z) ∈ C¹, strictly k‑independent, bounded, smooth, g(0)=1.
+- Lever isolation: No coupling to GEO, EARLY, PROJ, or PERT(k).
+- σ8 containment: σ8(z=0) invariant by construction.
+- BAO phase integrity: No modification of acoustic ruler or its phase.
+- Low‑k calibration: No changes to large‑scale (calibration) modes.
+- Ladder separability: No injection of new k‑structure, no broadband tilt.
+
+Admissible g(z) Class (conceptual only)
+- Support limited to intermediate redshifts relevant to structure growth and CMB lensing weight; excludes recombination/early transfer‑function regime and the immediate z≈0 σ8 calibrator.
+- Regularity: bounded, smooth (C¹), no rapid oscillations, no sign flips that invert growth monotonicity.
+- No implicit baseline rescaling: honors g(0)=1; any non‑unity departures must be confined away from z=0.
+- No numeric parameterization or functional form is specified or permitted in this phase.
+
+Pre‑Execution Locks (must remain untouched)
+- Fiducial cosmology and distances locked; no CLASS/Boltzmann reruns.
+- Fiducial P(k) at z=0 locked at data/matter_power_linear_z0.txt.
+- Projection kernels (including CMB lensing) locked; no PROJ manipulation.
+- No σ8 envelope edits or new envelope families; no PERT(k) operations.
+- No data contact, tuning, fitting, or inference.
+
+Non‑Negotiable Checks (if execution is ever authorized)
+- σ8 containment: σ8_g(z=0) / σ8_fid = 1 within governance tolerance (as defined in the governance map).
+- BAO phase: unchanged relative to fiducial at all relevant redshifts.
+- Low‑k calibration: P(k) for low‑k remains within governance tolerance of fiducial.
+- Lever isolation: distances, projection kernels, and early‑time transfer functions remain exactly fiducial.
+- Ladder separability: no induced broadband tilt or k‑dependent features; no new characteristic scales.
+- Invariants/monotonicity: g(z) bounded and smooth; no nonphysical crossings.
+
+Execution Skeleton (conceptual; do not implement now)
+- Define a symbolic test‑bed class of g(z) satisfying the admissible properties (placeholders only; no parameters).
+- For logic checks only, form linear P(k,z) via P_fid(k,0) · [D_fid(z) · g(z)]² under locked geometry and kernels.
+- Propagate to an A_L‑like line‑of‑sight weight using locked projection kernels solely to determine direction of effect.
+- Apply all Non‑Negotiable Checks; classify outcome; stop.
+
+Classification Outcomes (if later executed)
+- ADMITTED: All checks pass; record direction‑only impact on A_L; no magnitudes, no fits.
+- DISQUALIFIED: Any guardrail violation (BAO, low‑k, σ8 containment, isolation, separability, invariants).
+- INDETERMINATE: Assessment would require breaking locks; escalate for governance decision.
+
+Hard Stop Conditions (immediate termination)
+- Any attempt to tune/fit or numerically parameterize g(z).
+- Any modification to GEO/EARLY/PROJ/PERT, distances, or kernels.
+- Any σ8 drift at z=0 beyond governance tolerance.
+- Any BAO phase shift or low‑k deviation beyond governance tolerance.
+- Any CLASS or Boltzmann‑code reruns or cosmology changes.
+
+Outputs (if execution is later authorized; not in this phase)
+- Logic‑only pass/fail audit per check and a direction‑only statement for A_L response.
+- Governance summary memo documenting the classification and immediate stop.
+
+Stop Statement (for this document)
+“Protocol locked. No execution performed. No parameters specified. Lever isolation maintained. Awaiting explicit execution authorization.”

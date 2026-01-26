@@ -1,0 +1,24 @@
+Phase-21C-Logic — GROWTH(z) Classification Memo (Governance-Only)
+Status: CLASSIFICATION ONLY — NO EXECUTION — NO NUMERICS — NO MODELS — NO COMMITS
+
+Binary Question
+Does there exist any redshift-only, k-independent, σ8-preserving growth modulation g(z) that could, in principle, affect A_L (CMB lensing amplitude) without violating BAO phase integrity, low‑k calibration, ladder separability, or lever isolation (no GEO/EARLY/PROJ/PERT coupling)?
+
+Lever Definition (from Phase‑21C Scope)
+- D(z) = D_fid(z) · g(z), with g(z) ∈ C1, strictly k‑independent, g(0)=1, bounded and smooth.
+- Guardrails: BAO phase unchanged; low‑k intact; no implicit distance or early‑time changes; σ8 containment; no coupling to GEO/EARLY/PROJ/PERT.
+
+Logic Analysis (No Numerics)
+- A_L is an integral over structure growth along the line of sight. A redshift-only g(z) modifies the amplitude timing of structure formation without reshaping k‑modes or distances.
+- Provided g(0)=1, σ8 at z=0 remains fixed; BAO phase and low‑k constraints are unaffected because g(z) has no k‑dependence and does not alter rulers or projection kernels.
+- Therefore, in principle, a nontrivial g(z) confined to intermediate redshifts can change the lensing‑weighted amplitude while honoring all guardrails, assuming lever isolation is respected.
+
+Classification Verdict
+- ADMITTED (in principle): A redshift‑only, k‑independent, σ8‑preserving g(z) can, in principle, affect A_L without violating governance constraints.
+
+Implications (Governance-Only)
+- Rung‑3 admits a time‑structure degree of freedom at the design level. GEO/EARLY remain deferred; PROJ remains locked in this phase.
+- This does not authorize parameterization, numerical forms, or data contact; it solely records logical admissibility.
+
+Stop Condition
+“Growth lever admissibility decided (ADMITTED). No execution performed. No coupling to other levers. No escalation authorized.”

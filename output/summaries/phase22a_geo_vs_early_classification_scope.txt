@@ -1,0 +1,38 @@
+Phase-22A — GEO vs EARLY Fork (Design-Only, Classification Scope)
+Status: DESIGN-ONLY — NO EXECUTION — NO NUMERICS — NO FITS — NO MODELS — NO COMMITS
+
+Comparator
+- A_L (CMB lensing amplitude), used only as a logic comparator under governance invariants.
+
+Objective
+- Map orthogonality at Rung‑3 by classifying whether GEO or EARLY levers can, in principle, affect A_L while preserving σ8 containment, BAO phase integrity, low‑k calibration, ladder separability, and lever isolation.
+
+Scope and Guardrails
+- Invariants: BAO phase unchanged; low‑k (k<0.05 h/Mpc) unchanged within governance tolerance; σ8(z=0) contained (unity); no new k‑structure or broadband tilt; ladder separability preserved.
+- Isolation: Evaluate levers independently. No co‑tuning, no compensation across levers. A_s locked. PROJ locked. PERT(k) locked. GROWTH(z) not engaged in this fork.
+- Locks: Fiducial cosmology and distances (except where GEO is explicitly under test), fiducial P(k) at z=0 (data/matter_power_linear_z0.txt), no CLASS/Boltzmann reruns.
+- This document specifies classification scope only; no parameterization or numeric forms; no data contact.
+
+Lever Definitions (for classification)
+- GEO (Background/Geometry): Modifies background expansion H(z) and comoving distances. Does not alter early‑time transfer physics or projection formalism; PROJ remains locked.
+- EARLY (Early‑Time Physics): Modifies pre‑recombination content/physics that set the transfer function T(k) and sound horizon r_s. Does not alter late‑time geometry or projection formalism; PROJ remains locked.
+
+Logic Analysis (No Numerics)
+- GEO → A_L depends on line‑of‑sight geometry and growth. Any admissible change to H(z)/distances generically co‑modulates growth D(z). With A_s locked and GROWTH(z) disallowed in this fork, σ8 containment would be violated by induced growth drift; additionally, distance changes risk BAO‑scale re‑normalization beyond tolerance without EARLY compensation (forbidden). Under lever isolation and current invariants, a pure‑GEO path to modify A_L while holding σ8, BAO, and low‑k fixed is not available.
+- EARLY → Altering T(k) to influence lensing amplitude typically shifts r_s or small‑scale transfer (e.g., N_eff, m_ν, ω_b) and hence the BAO scale/low‑k normalization. With A_s locked and no PERT(k)/PROJ/GROWTH(z) compensation, σ8 containment or BAO/low‑k invariants are violated. Under current guardrails, a pure‑EARLY path to modify A_L while preserving all invariants is not available.
+
+Classification Verdicts (Scope-Level)
+- GEO: BLOCKED (under σ8 containment, BAO/low‑k invariants, lever isolation).
+- EARLY: BLOCKED (under BAO/low‑k invariants and σ8 containment, with no compensation allowed).
+
+Implications (Governance‑Only)
+- With invariants locked, A_L remains reachable only via the admitted GROWTH(z) timing lever (Phase‑21C). This preserves ladder separability and avoids PROJ/PERT entanglement.
+- To test GEO or EARLY for A_L, governance would need to authorize a targeted relaxation (e.g., BAO‑scale tolerance, σ8 re‑normalization via A_s), with explicit isolation proofs and new stop conditions.
+
+Out‑of‑Scope / Forbidden
+- Any tuning, fits, or parameter inference.
+- Any CLASS/Boltzmann reruns or background parameter changes beyond conceptual GEO classification.
+- Any PERT(k) reshaping, PROJ manipulation, or GROWTH(z) engagement in this fork.
+
+Stop Statement
+“Scope classified. No execution performed. No parameterization, no compensation, no coupling. Awaiting explicit authorization to either relax invariants for a targeted fork or hold.”

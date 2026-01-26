@@ -1,0 +1,66 @@
+Windsurf Direction — Phase-22A Close & Next Step Authorization
+
+Status (Locked):
+
+Phase-22A GEO vs EARLY classification scope is complete and frozen.
+
+Verdicts are GEO = BLOCKED, EARLY = BLOCKED under current invariants.
+
+No execution, no numerics, no compensations, no coupling performed or permitted.
+
+A_L remains reachable only via admitted Phase-21C GROWTH(z) timing lever.
+
+Do NOT:
+
+Propose or explore GEO or EARLY executions.
+
+Introduce compensating parameters (A_s, r_s, distance rescaling, kernel tweaks).
+
+Revisit σ8, BAO phase, low-k, or ladder ordering.
+
+Run CLASS/Boltzmann, mock data, or fits.
+
+Authorized Next Action (Design-Only)
+
+Proceed with Phase-22B: Targeted Relaxation Decision Memo (design-only).
+
+Objective:
+
+Specify whether any invariant may be minimally relaxed in principle, and if so:
+
+Which invariant (e.g., BAO tolerance or σ8 renormalization—not both).
+
+For which lever (GEO or EARLY—single fork only).
+
+With explicit isolation proofs and hard stop conditions.
+
+Constraints for Phase-22B:
+
+No execution, no numerics, no parameterization.
+
+One relaxation candidate at a time.
+
+Explicit rejection criteria must be written before any allowance.
+
+Must end with a binary recommendation: ALLOW (design-only) or REJECT.
+
+Required Stop Statement:
+
+“Decision memo complete. No relaxation authorized beyond design logic. No execution permitted without new explicit approval.”
+
+If Windsurf Cannot Draft Phase-22B
+
+Fallback instruction:
+
+Hold framework frozen at Phase-22A.
+
+Do not advance any lever or protocol.
+
+Summary for Windsurf
+
+You are no longer exploring mechanisms.
+You are deciding whether the rules themselves may be relaxed, and if so, exactly how little—or confirming they must remain fixed.
+
+Nothing else is in scope.
+
+Proceed accordingly.
