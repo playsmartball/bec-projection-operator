@@ -1,0 +1,43 @@
+Phase-22B — Targeted Relaxation Decision Memo (Design-Only)
+Status: DESIGN-ONLY — NO EXECUTION — NO NUMERICS — NO FITS — NO MODELS — NO COMMITS
+
+Purpose
+- Decide whether any governance invariant may be minimally relaxed in principle to enable a single Rung‑3 fork to contact A_L, with lever isolation and ladder separability preserved.
+- One candidate only; ends with a binary recommendation (ALLOW or REJECT). No execution.
+
+Candidate Relaxation (Single Fork Only)
+- Invariant to consider: BAO phase tolerance (nonzero but bounded) — relax strictly at the design level.
+- Lever: GEO (Background/Geometry) only.
+- All other invariants and locks remain intact: σ8(z=0) containment; low‑k stability; PROJ locked; PERT(k) locked; EARLY locked; GROWTH(z) not engaged in this fork.
+
+Isolation Proof Sketch (Conceptual)
+- GEO modifies comoving distances and H(z); with r_s held fixed (EARLY locked), any distance re‑normalization propagates as a BAO phase shift across tracers.
+- Allowing a bounded, nonzero BAO tolerance could, in principle, permit a small geometry‑induced modulation of the A_L line‑of‑sight weight without engaging GROWTH(z) or PERT(k).
+- However, with A_s locked and σ8 containment required at z=0, GEO‑driven changes tend to co‑modulate growth history and distance measures together. Without EARLY compensation (forbidden) this risks:
+  - Violating low‑z BAO consistency across surveys (phase coherence), and
+  - Creating an implicit coupling to GROWTH(z) through background‑growth degeneracy.
+- Therefore, even a bounded BAO tolerance risks undermining ladder separability and cross‑observable integrity under the current isolation requirements.
+
+Rejection Criteria (Pre‑written, Prior to Any Allowance)
+- Any implied change to r_s or transfer physics (EARLY coupling) to mask geometric shifts.
+- Any σ8(z=0) deviation from unity containment.
+- Any induced broadband tilt or new k‑structure (PERT(k) coupling).
+- Any modification to projection kernels or weights (PROJ coupling).
+- Any requirement for data‑level compensations across datasets to maintain BAO coherency.
+
+Hard Stop Conditions (if allowance were later attempted)
+- Detection (even conceptually) of lever coupling: GEO↔EARLY, GEO↔GROWTH(z), GEO↔PROJ, or GEO↔PERT(k).
+- Evidence that distance re‑normalization forces BAO phase or low‑k beyond governance tolerances.
+- Any move toward tuning/fitting or CLASS/Boltzmann reruns.
+
+Decision (Binary)
+- RECOMMENDATION: REJECT (for now).
+- Rationale: Under current isolation and ladder constraints, a BAO phase tolerance relaxation for GEO cannot be guaranteed to preserve BAO coherence across tracers or avoid implicit coupling to growth without further accommodations (forbidden). Maintaining invariants keeps the ladder clean and preserves the already‑admitted GROWTH(z) path to A_L.
+
+Implications (Governance‑Only)
+- GEO remains BLOCKED for A_L under current invariants.
+- The admitted GROWTH(z) lever (Phase‑21C) remains the sole design‑level path to A_L without background/early coupling.
+- A future reconsideration could explicitly scope a data‑harmonized BAO tolerance with multi‑dataset isolation proofs, but that is outside current governance.
+
+Required Stop Statement
+“Decision memo complete. No relaxation authorized beyond design logic. No execution permitted without new explicit approval.”
