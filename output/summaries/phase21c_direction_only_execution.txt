@@ -1,0 +1,13 @@
+Phase-21C — Direction-Only Execution (Governance-Bound)
+Inputs (locked): data/matter_power_linear_z0.txt; data/kernels/WL_PLANCK2018_fiducial_z.txt
+Lever: single smooth g(z), redshift-only, k-independent, with g(0)=1
+
+Sign of ΔA_L (relative to g(z)=1): positive
+
+Checks:
+- σ8 containment at z=0: PASS
+- BAO phase preservation: PASS
+- Low-k stability: PASS
+- Lever isolation (no GEO/EARLY/PROJ/PERT): PASS
+
+Stop: Execution complete per authorization. No tuning, no iteration, no rescaling. Governance preserved.
