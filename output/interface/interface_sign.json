@@ -1,0 +1,7 @@
+{
+  "expected": "positive",
+  "observed": "positive",
+  "result": "PASS",
+  "sign": "+",
+  "test": "sign_consistency"
+}

@@ -1,0 +1,7 @@
+{
+  "gpu": true,
+  "max_slope": 0.0,
+  "result": "PASS",
+  "test": "k_orthogonality",
+  "threshold": 0.001
+}

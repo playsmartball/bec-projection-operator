@@ -1,0 +1,9 @@
+{
+  "early_absent": true,
+  "geo_absent": true,
+  "growth_present": true,
+  "k_orthogonal": true,
+  "projection_supported": true,
+  "result": "PASS",
+  "test": "ordering_causality"
+}

@@ -1,0 +1,12 @@
+{
+  "aligned": true,
+  "aligned_tol": 0.3,
+  "confined": true,
+  "core_fraction": 0.9817317510955766,
+  "core_fraction_threshold": 0.6,
+  "gpu": true,
+  "kernel_peak_z": 10.0,
+  "result": "PASS",
+  "synthetic_peak_z": 10.0,
+  "test": "kernel_support"
+}
