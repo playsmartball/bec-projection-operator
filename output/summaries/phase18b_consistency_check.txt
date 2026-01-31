@@ -1,0 +1,52 @@
+Phase-18B — Cross-Rung Consistency Check (Logic-Only)
+Status: DESIGN/ANALYSIS ONLY — NO EXECUTION — NO NUMERICS — NO FITS — NO COMMITS
+
+Objective
+- Using Phase-18A classifications and the locked governance map, verify that applying the same smooth, k-local, boundary-integrated density envelope (monotone, W(0)=1, BAO-preserving, no low‑k tilt) to address σ8 introduces no contradictions with settled Rung-1 or Rung-3 tensions and does not violate invariants.
+
+Inputs (Locked)
+- Governance map: output/summaries/phase17_governance_map.txt
+- Phase-18A audit: output/summaries/phase18a_cross_tension_audit.txt
+- Envelope under consideration: smooth roll-off, k-local, monotone nonincreasing; W(0)=1; BAO phase preserved; no low‑k tilt; no growth or projection changes.
+
+Hard Constraints (Carried Forward)
+- No growth modification, no projection mixing, no new dynamics.
+- No parameter tuning, fitting, or inference; no CLASS re-runs.
+- σ8 is not pushed numerically; logic-only reasoning.
+
+Checks (Logic-Only)
+- Check A — Invariants audit: Envelope preserves BAO phase/position and leaves k→0 unchanged.
+- Check B — Rung-1 compatibility: T3–T7 remain addressable within Rung-1; envelope is NEUTRAL and does not back-react on their domains.
+- Check C — Rung-2 compatibility: For T8–T11, envelope is either NEUTRAL or FORBIDDEN per Phase-18A; ensure no use beyond σ8 that would violate BAO or low‑k constraints (notably T9 FORBIDDEN).
+- Check D — Rung-3 isolation: T1, T12–T16 are early/geometry-level; envelope must remain NEUTRAL and not induce effective changes in those domains.
+- Check E — Monotonicity/compliance memory: Phase-17B executions honored monotone, BAO, and low‑k invariants; no sign flips or non-monotone behavior were used.
+
+Phase-18A Summary (for reference; logic-only)
+- REQUIRED: T2 (σ8)
+- FORBIDDEN: T9 (BAO scale consistency)
+- NEUTRAL: T1, T3–T8, T10–T16
+
+Consistency Matrix (Outcome by check)
+- Check A: PASS — BAO preserved; W(0)=1; low‑k invariant.
+- Check B: PASS — Envelope is NEUTRAL for Rung-1 tensions (no growth or low‑k changes).
+- Check C: PASS WITH RESTRICTION — Envelope cannot be used to address BAO scale (T9 FORBIDDEN); usage constrained to σ8.
+- Check D: PASS — Envelope is NEUTRAL for Rung-3 tensions (early/geometry domain unaffected).
+- Check E: PASS — Prior executions adhered to invariants; no contradictory behavior introduced.
+
+Consistency Verdict (Logic-Only)
+- CONSISTENT, with explicit restriction: the σ8-compatible envelope must not be applied to BAO-scale consistency (T9). Using the envelope to address σ8 while preserving BAO/low‑k is governance-consistent and introduces no cross-rung contradictions.
+
+Implications
+- σ8 remains a singleton requirement for this envelope class (no clustering detected in Phase-18A), which keeps Rung-2 conditionally stabilized pending ladder closure.
+- No tensions are forced to regress or reassign rungs due to the envelope’s presence under these constraints.
+
+Non-Authorized Actions
+- No numerical tests, parameter sweeps, plotting, or model proposals.
+- No reinterpretation of rungs or tensions beyond the governance map.
+- No commits.
+
+Stop Condition
+- With this memo recorded, Phase-18B is complete (logic-only). Proceed only with explicit authorization.
+
+Next (Not Authorized Here)
+- Phase-18C — Ladder Closure Test (logic-only): Verify each rung has ≥1 tension, distinct mechanism class, and no contradictions; determine whether σ8 stabilizes Rung‑2 or forces escalation.

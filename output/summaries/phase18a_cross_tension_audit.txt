@@ -1,0 +1,51 @@
+Phase-18A — Cross-Tension Density Response Audit (Classification Only)
+Status: DESIGN ONLY — NO EXECUTION — NO NUMERICS — NO FITS — NO COMMITS
+
+Objective
+- Determine, for each of the canonical 16 tensions, whether a smooth, k-local, boundary-integrated density suppression (the narrow Rung-2 subclass identified in Phase‑17B) is: REQUIRED, FORBIDDEN, or NEUTRAL (allows/ignores) with respect to that tension.
+- No σ8 pushing. σ8 only provides the index envelope class; it is not referenced numerically.
+
+Locks and Constraints (carried forward)
+- Governance map locked: output/summaries/phase17_governance_map.txt
+- Envelope under consideration: smooth roll-off (e.g., W(k)=1/(1+(k/k_b)^n)), monotone nonincreasing, W(0)=1, BAO phase preserved, no low‑k tilt.
+- No growth modification, no projection mixing, no new dynamics.
+- No parameter tuning, fitting, or inference. No CLASS re-runs.
+- Logic-only classification; evidence basis is qualitative consistency with known invariants and rung assignments.
+
+Decision Rubric (per tension Tj)
+- REQUIRED: The tension cannot plausibly be resolved within Rung‑1 or Rung‑3 under governance and logically demands small‑scale density suppression of the envelope class while preserving BAO phase and low‑k invariants.
+- FORBIDDEN: The tension would be contradicted by such suppression and/or by the envelope invariants (e.g., it requires enhanced small‑scale power or BAO phase changes).
+- NEUTRAL: The tension is insensitive to the envelope or could be addressed without it; compatibility is not evidence of requirement.
+Notes: “Allowed” collapses into NEUTRAL unless explicitly mandated by logic to be REQUIRED. Use brief rationale only; do not introduce models.
+
+Output Table Schema
+Columns: Tension | Rung (from governance) | Requires? | Forbids? | Neutral? | Rationale (≤2 lines; logic only)
+
+Canonical Tensions (T1–T16; classification — logic-only)
+- T1. H0 (local distance ladder vs CMB) | Rung-3 | Requires=NO | Forbids=NO | Neutral=YES | Orthogonal to late-time k-local suppression; implies early/geometry-level changes.
+- T2. S8 / σ8 amplitude (WL + clusters vs CMB) | Rung-2 | Requires=YES | Forbids=NO | Neutral=NO | Within governance, needs BAO/low‑k‑preserving high‑k suppression; this smooth envelope is the compatible Rung‑2 class.
+- T3. fσ8 (RSD growth rate) | Rung-1 | Requires=NO | Forbids=NO | Neutral=YES | Calibration/inference category; envelope does not alter growth and leaves low‑k unchanged.
+- T4. Cluster abundance (mass function normalization) | Rung-1 | Requires=NO | Forbids=NO | Neutral=YES | Addressed via mass/selection calibration; envelope not mandated under governance.
+- T5. Weak-lensing shear (DES/KiDS vs Planck) | Rung-1 | Requires=NO | Forbids=NO | Neutral=YES | Projection/inference per governance; σ8-linked but not requiring the envelope here.
+- T6. Peculiar velocities / bulk flows | Rung-1 | Requires=NO | Forbids=NO | Neutral=YES | Dominated by large scales (k→0); W(0)=1 leaves them invariant.
+- T7. Void statistics (counts, profiles) | Rung-1 | Requires=NO | Forbids=NO | Neutral=YES | Observer/selection modeling dominates; envelope not required.
+- T8. Galaxy bias–independent P(k) shape | Rung-2 | Requires=NO | Forbids=NO | Neutral=YES | Smooth high‑k roll‑off is compatible but not logically demanded absent specific shape direction.
+- T9. BAO scale consistency (z ≲ 1) | Rung-2 | Requires=NO | Forbids=YES | Neutral=NO | Envelope preserves BAO phase/position; cannot explain a BAO scale mismatch.
+- T10. kSZ pairwise momentum | Rung-2 | Requires=NO | Forbids=NO | Neutral=YES | Sensitive to velocity/electron momentum; k‑local density suppression not mandated.
+- T11. ISW cross-correlations | Rung-2 | Requires=NO | Forbids=NO | Neutral=YES | Large‑scale potential evolution; low‑k unchanged so envelope is orthogonal.
+- T12. CMB lensing amplitude (A_L) | Rung-3 | Requires=NO | Forbids=NO | Neutral=YES | High‑z integrated lensing; envelope is late‑time, k‑local and not used for Rung‑3.
+- T13. Optical depth τ | Rung-3 | Requires=NO | Forbids=NO | Neutral=YES | Set by reionization history; P(k) envelope irrelevant under governance.
+- T14. Lyman-α forest P(k) | Rung-3 | Requires=NO | Forbids=NO | Neutral=YES | Probes high‑z small‑scale power; Phase‑18A considers only late‑time envelope logic.
+- T15. Matter–radiation equality scale | Rung-3 | Requires=NO | Forbids=NO | Neutral=YES | Early‑time background parameter; envelope preserves low‑k and is late‑time only.
+- T16. Primordial power smoothness (no features) | Rung-3 | Requires=NO | Forbids=NO | Neutral=YES | Concerns initial spectrum; envelope is post‑primordial and smooth.
+
+Method (Logic-Only)
+- For each Tj, apply the rubric using only: rung assignment; envelope invariants (monotone, W(0)=1, BAO‑preserving); and qualitative directionality (suppression vs enhancement, small vs large scales). Record brief rationale; do not cite or compute numbers.
+- No σ8 coupling beyond acknowledging the envelope class under test.
+
+Stop Condition
+- When this document is written with the initialized table, Phase‑18A drafting is complete. Filling the table is allowed only as a logic exercise (no numerics) and requires explicit authorization if beyond this drafting step.
+
+Next Phases (for context; not authorized here)
+- 18B — Consistency Check Across Rungs (logic-only): ensure no conflicts with settled Rung‑1 or Rung‑3.
+- 18C — Ladder Closure Test (logic-only): verify each rung has at least one tension, distinct mechanism, and no contradictions.

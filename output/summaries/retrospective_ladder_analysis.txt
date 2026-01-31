@@ -1,0 +1,53 @@
+Retrospective Ladder Analysis — Phase-R
+Scope: Identify whether perturbations across phases form a coherent ladder/hierarchy and mark rung status.
+
+LADDER (three-tier)
+
+- Rung 1 — Observer-space / Projection-level operators
+  Evidence:
+  • Phase 10–15 scripts (initial release 7093221d9…): projection kernels, ε-remap, conservative tests (phase14a_summary.txt)
+  • 27859ecd…: ε consistency fix in phase13a_projection_operator.py
+  • 66e93359…: FINAL_MATHEMATICAL_CLOSURE.md (ε(ℓ)=ε₀+c/ℓ²; γ<0) — theoretical closure
+  • 4576d30…: Phase-16 σ8 projection-operator framework (operators + null-test scaffolding)
+  • 302c5eca…: Fiducial P(k) provenance locked (Planck2018), no execution
+  • Phase-16 outputs: 
+    - phase16b_sigma8_null_test.txt — all tested W(k) forms classified OVER-SUPPRESSED
+    - phase16c_sigma8_operator.txt — locked operator passes minimal checks
+    - phase16d_cross_checks.txt — OVERALL: FAIL (intermediate-k shape)
+    - phase16e_decision.txt — “σ₈ not explainable by projection”
+  Character:
+  • Geometric/projection, observational, locked forms (soft_cutoff/exponential, n∈{1,2}, single kc), no Boltzmann/growth edits
+  Status:
+  • CMB ε-operator: CLOSED (framework + mathematical closure)
+  • σ₈ rung: CLOSED as negative (projection-only suppression fails null/cross-checks)
+
+- Rung 2 — Boundary-level absorbing operators (κ, κ(ω))
+  Evidence:
+  • 9d4c6c5e… + docs/phase8.md — Phase-8A (constant-κ) and 8B (low-pass κ(ω))
+  • Invariants: W_τ=0, max|τ*|=0, ΔE/E tracks ΔE/E_weak; P_η,total<0; monotone scaling with κ and ω_c
+  Character:
+  • Physical boundary mechanism; spectral low-pass suppression at the wall; tunable (κ₀, ω_c); nonlinear runs (nl=1)
+  Status:
+  • CLOSED (validated with sweeps; invariants held; monotone scaling established)
+
+- Rung 3 — Physical/inertial density in dynamics (unit validations)
+  Evidence (2026-01-04/05 commits):
+  • 9373ba1a…, 16d879ad… — Dedalus 1D Alfvén solver: ω = k B₀ / √(1+ρ_eff) (matches theory)
+  • 70e12bb9… — Anisotropic test (ρ_x, ρ_y)
+  • 8eb5ee45… — BOUT++ inertia-scaling validation (close-out, SBIR-ready)
+  Character:
+  • Physical density/inertia enters PDE mass term; linear validations; tunable ρ_eff
+  Status:
+  • VALIDATED at unit level (independent of cosmology pipeline)
+
+CROSS-RUNG CORRESPONDENCE
+- Monotone suppression: W(k) (projection) and κ(ω) (boundary) are both single-scale, monotone filters that preserve core invariants (large-scale power; no energy injection at boundaries).
+- Density language: P(k) is a fluctuation power (effective density) altered by W(k); κ(ω) mediates energy-density outflow (P_η,total<0). Both act without modifying bulk growth equations.
+
+OPEN VS CLOSED
+- Rung 1 (projection): CLOSED. For σ₈, decisively negative per phase16e_decision.txt.
+- Rung 2 (boundary): CLOSED and validated (Phase-8A/B).
+- Rung 3 (physical/inertia): VALIDATED locally; linkage to cosmological σ₈ remains OPEN (not attempted here).
+
+CONCLUSION
+A coherent perturbation ladder exists: Projection-level → Boundary-level → Physical/inertial level. The ladder is methodologically consistent across domains. For σ₈, the observer-space rung alone is insufficient (negative result recorded); boundary and physical rungs are established but were not invoked for σ₈ by design.

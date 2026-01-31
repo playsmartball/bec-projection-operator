@@ -1,0 +1,34 @@
+Phase-20A — Rung-3 Cross-Tension Clustering Probe (Governance-Only)
+Status: CLASSIFICATION ONLY — NO EXECUTION — NO NUMERICS — NO ENVELOPE EXTENSION — NO RANKING CHANGES
+
+Objective
+Determine whether selected Rung‑3 tensions are logically compatible with any existing lower‑rung envelope family (B1–B3), without violating ladder invariants (BAO preservation, W(0)=1, no low‑k tilt, monotone, k‑local) and governance locks. Outcome is classification only.
+
+Scope Constraints (Hard Locks)
+- No execution, numerics, or parameter fitting
+- No growth or projection modifications
+- No new envelopes; no σ8 extension
+- No re‑ranking of tensions
+
+Method (Design‑Level)
+For each target: assess Envelope Compatibility (Yes/No), Collapse Status (COLLAPSIBLE / NON‑COLLAPSIBLE (STABLE) / BLOCKING), and provide a 2–3 line governance rationale, including contamination guard (invariants and locks).
+
+Targets: [T12, T14, T1]
+
+T12 — CMB lensing amplitude (A_L)
+- Envelope compatibility: No
+- Collapse status: NON‑COLLAPSIBLE (STABLE)
+- Rationale: A_L is an early/geometry‑level aggregate of high‑z structure; the admitted lower‑rung envelope is late‑time, k‑local suppression that must preserve BAO and low‑k. Collapsing T12 would require changes outside these invariants (and often opposite directionality), so it remains Rung‑3.
+
+T14 — Lyman‑α forest P(k)
+- Envelope compatibility: No
+- Collapse status: NON‑COLLAPSIBLE (STABLE)
+- Rationale: Lyman‑α probes high‑z small‑scale power. Under governance, envelopes are late‑time, BAO‑preserving, W(0)=1, with no time/growth freedom. Logical collapse would require high‑z/early‑time structure changes beyond allowed locks; thus remains Rung‑3.
+
+T1 — H0 (local distance ladder vs CMB)
+- Envelope compatibility: No
+- Collapse status: NON‑COLLAPSIBLE (STABLE)
+- Rationale: H0 is a background/geometry tension. k‑local late‑time density envelopes cannot address background expansion and must leave BAO/low‑k intact. No compatible mapping exists; T1 correctly remains Rung‑3.
+
+Stop Condition
+"Rung‑3 clustering probe complete. No envelopes extended. No escalation authorized."

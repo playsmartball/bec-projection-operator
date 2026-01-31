@@ -1,0 +1,45 @@
+Phase-18C — Ladder Closure Test (Logic-Only)
+Status: DESIGN/DECISION ONLY — NO EXECUTION — NO NUMERICS — NO FITS — NO COMMITS
+
+Objective
+- Determine whether the perturbation ladder is complete under governance: each rung has ≥1 tension, a distinct non-overlapping mechanism class, and no internal contradictions. Decide whether σ8 stabilizes Rung‑2 or forces escalation.
+
+Inputs (Locked)
+- Governance map: output/summaries/phase17_governance_map.txt
+- Phase‑18A audit (classification): output/summaries/phase18a_cross_tension_audit.txt
+- Phase‑18B consistency memo: output/summaries/phase18b_consistency_check.txt
+
+Mechanism Classes (as locked by governance)
+- Rung‑1: Projection / Inference / Calibration (observer-space)
+- Rung‑2: Structural but model‑elastic (includes smooth, k‑local, boundary‑integrated density suppression; monotone, W(0)=1, BAO‑preserving, no low‑k tilt)
+- Rung‑3: Forced / Irreducible (early/geometry-level; primordial or background changes)
+
+Closure Criteria (All must hold)
+- C1. Coverage: Every rung has at least one assigned tension.
+- C2. Distinctness: Mechanism classes are non‑overlapping across rungs.
+- C3. Consistency: No contradictions across rungs given invariants (BAO phase preserved; low‑k unchanged; no growth modification in this phase).
+- C4. σ8 Placement: σ8 either (i) clusters with ≥1 other tension in Rung‑2 for the same mechanism class, or (ii) stands alone and thereby triggers an escalation discussion.
+
+Assessment (Logic-Only)
+- From Phase‑18A: REQUIRED = {T2}; FORBIDDEN = {T9}; NEUTRAL = {T1, T3–T8, T10–T16} with respect to the σ8‑compatible envelope.
+- From Phase‑18B: Using the envelope for σ8 is CONSISTENT, with the explicit restriction that BAO scale (T9) is not addressed by this envelope.
+
+Findings (by criterion)
+- C1 (Coverage): PASS —
+  • Rung‑1 has multiple tensions (T3–T7 per governance).
+  • Rung‑2 has at least σ8 (T2) and shape‑level tensions (T8) though not required by the envelope; governance provides occupancy.
+  • Rung‑3 has multiple early/geometry tensions (T1, T12–T16).
+- C2 (Distinctness): PASS — Mechanism classes are disjoint by definition; the σ8 envelope is confined to Rung‑2 and respects BAO/low‑k invariants.
+- C3 (Consistency): PASS — No cross‑rung contradictions introduced; BAO restriction (T9) is honored.
+- C4 (σ8 Placement): RESULT — σ8 is a singleton for this envelope class (no REQUIRED co‑tensions in 18A). This triggers an escalation discussion rather than immediate re‑assignment.
+
+Closure Verdict (Logic‑Only)
+- The ladder is structurally complete under governance and internally consistent with the σ8‑compatible envelope used only for σ8. However, because σ8 does not cluster with another tension in 18A, σ8 remains conditionally Rung‑2 pending either:
+  (i) Evidence that another tension requires the same envelope (stabilizing Rung‑2), or
+  (ii) Escalation review if such clustering fails under further cross‑tension logic (not numerics).
+
+Stop Condition
+- This memo records the closure assessment. No execution or numerical work is authorized. Any escalation discussion is governance‑only and requires explicit instruction.
+
+Next (Not Authorized Here)
+- Optional governance discussion memo specifying the escalation path for σ8 given singleton status, without invoking new physics or numerics.

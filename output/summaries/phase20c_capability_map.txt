@@ -1,0 +1,57 @@
+Phase-20C — Background/Geometry Capability Map (Design-Only)
+Status: GOVERNANCE DESIGN ONLY — NO EXECUTION — NO NUMERICS — NO MODELS — NO COMMITS
+
+Objective
+- Enumerate non-perturbative levers (GEO, EARLY, GROWTH(z), PROJ), specify the invariants each must preserve, and indicate which Rung‑3 tensions each lever could, in principle, address under governance.
+- PERT(k) remains locked to the admitted σ8 envelope (smooth, k‑local, monotone, W(0)=1, BAO‑preserving). No envelope extension is authorized here.
+
+Inputs (Locked)
+- Governance map: output/summaries/phase17_governance_map.txt
+- Phase‑20A (Rung‑3 clustering probe) and Phase‑20B (required freedom types)
+
+Global Ladder Invariants (Apply to all levers)
+- No implicit re‑ranking of tensions; rung separability preserved
+- BAO phase integrity must not be spuriously altered unless BAO is the explicit target under separate authorization
+- Low‑k calibration consistency and absence of artificial features
+- No back‑door modification of the admitted perturbation envelope
+
+Lever Definitions and Guardrails
+
+1) GEO — Background geometry / distances
+- Scope: H(a), distances, curvature, distance calibrations and rulers (without touching primordial shape)
+- Must preserve: perturbation smoothness (no induced features), observational consistency of BAO identification procedures
+- Cannot: reshape late‑time P(k) or mimic PERT(k); cannot change reionization τ directly
+- Candidate tensions: T1 (H0), T15 (equality scale, via distance calibration coupling) — design‑level only
+
+2) EARLY — Early‑time physics (pre‑recombination)
+- Scope: sound horizon setting, relativistic species/effective fluids, recombination‑adjacent parameters (design‑level)
+- Must preserve: ladder separability; no direct late‑time PERT(k) reshaping; BAO phase methodology integrity
+- Cannot: alter projection kernels or late‑time observational weights
+- Candidate tensions: T1 (via early rulers), T14 (Lyman‑α small‑scale power), T15 (equality), T16 (primordial smoothness) — design‑level only
+
+3) GROWTH(z) — Time‑dependent growth history
+- Scope: redshift‑dependent amplitude/evolution (not k‑dependent); background‑consistent growth variations
+- Must preserve: BAO phase; low‑k calibration; consistency with geometry inputs unless jointly authorized
+- Cannot: introduce k‑local envelopes; cannot act as projection in disguise
+- Candidate tensions: T12 (A_L), possibly lensing‑weighted WL tensions where timing dominates — design‑level only
+
+4) PROJ — Line‑of‑sight / kernel projection effects
+- Scope: observational kernels/weights, source distributions, window functions, LOS integrations
+- Must preserve: underlying 3D P(k) physics (no actual reshaping); BAO identification consistency; low‑k calibration
+- Cannot: substitute for growth/geometry; cannot introduce effective PERT(k)
+- Candidate tensions: T12 (A_L) and projection‑dominated shear combinations; not suitable for H0 or early‑time constraints
+
+Capability Matrix (Design‑Level; No Execution)
+- GEO: addresses T1, T15 (in principle); keep BAO methodology consistent; no PERT(k) mimicry
+- EARLY: addresses T1, T14, T15, T16 (in principle); no projection growth stand‑ins; preserve separability
+- GROWTH(z): addresses T12 and growth‑timed observables (in principle); preserve BAO phase and low‑k
+- PROJ: addresses T12 and kernel‑weighted observables (in principle); must not alter underlying 3D P(k)
+- PERT(k): locked; no use for Rung‑3 in this phase
+
+Explicit Exclusions (Hard Locks)
+- No numerical experimentation or parameter ranges
+- No combined‑lever proposals; no coupling between GEO/EARLY/GROWTH/PROJ without explicit future authorization
+- No reinterpretation of σ8 or extension of its envelope
+
+Stop Condition
+- Capability map drafted. No execution performed. Rungs remain unchanged. Further action requires explicit authorization and lever‑specific scopes.

@@ -49,7 +49,7 @@ def hilbert_phase_slope(times: np.ndarray, series: np.ndarray) -> float:
     return float(abs(m))
 
 
-def run_dedalus(L=2*np.pi, N=128, B0=1.0, rho_eff=20.0, k=1, tmax=400.0, dt_step=0.01, amp0=1e-6, tau=1.0):
+def run_dedalus(L=2*np.pi, N=128, B0=1.0, rho_eff=20.0, k=1, tmax=400.0, dt_step=0.01, amp0=1e-6, tau=1.0, eta=0.0):
     # Coordinates, distributor, basis (Dedalus v3 API)
     coords = de.CartesianCoordinates('z')
     dist = de.Distributor(coords, dtype=np.float64)
@@ -62,11 +62,13 @@ def run_dedalus(L=2*np.pi, N=128, B0=1.0, rho_eff=20.0, k=1, tmax=400.0, dt_step
     # Problem
     def d_z(f):
         return de.Differentiate(f, coords['z'])
+    def d_zz(f):
+        return de.Differentiate(de.Differentiate(f, coords['z']), coords['z'])
 
     alpha = B0 / (1.0 + rho_eff)
     problem = de.IVP([v, b], namespace=locals())
     problem.add_equation("dt(v) - alpha*d_z(b) = 0")
-    problem.add_equation("dt(b) - tau*B0*d_z(v) = 0")
+    problem.add_equation("dt(b) - tau*B0*d_z(v) - eta*d_zz(b) = 0")
 
     solver = problem.build_solver(ts.RK443)
     solver.stop_sim_time = tmax
@@ -81,6 +83,8 @@ def run_dedalus(L=2*np.pi, N=128, B0=1.0, rho_eff=20.0, k=1, tmax=400.0, dt_step
     times = []
     s_sin_list = []
     s_cos_list = []
+    energy_list = []
+    gamma_inst_list = []
 
     while solver.proceed:
         solver.step(dt_step)
@@ -88,6 +92,14 @@ def run_dedalus(L=2*np.pi, N=128, B0=1.0, rho_eff=20.0, k=1, tmax=400.0, dt_step
         times.append(solver.sim_time)
         s_sin_list.append(ss)
         s_cos_list.append(sc)
+        # Total energy density (per unit length) for control system
+        e_inst = 0.5 * (np.mean(v['g']*v['g']) + np.mean(b['g']*b['g']))
+        energy_list.append(float(e_inst))
+        # Instantaneous energetic estimate for gamma
+        mb2 = float(np.mean(b['g']*b['g']))
+        denom = 2.0 * e_inst + 1e-300
+        gamma_inst = -eta * (k_phys**2) * mb2 / denom
+        gamma_inst_list.append(gamma_inst)
 
     times = np.asarray(times)
     s_sin = np.asarray(s_sin_list)
@@ -100,7 +112,24 @@ def run_dedalus(L=2*np.pi, N=128, B0=1.0, rho_eff=20.0, k=1, tmax=400.0, dt_step
 
     omega_num = hilbert_phase_slope(times, series)
     omega_th = k_phys * B0 * np.sqrt(tau) / np.sqrt(1.0 + rho_eff)
-    return omega_num, omega_th
+
+    # Damping rate from total energy envelope E(t)
+    E = np.asarray(energy_list)
+    eps = 1e-300
+    lnE = np.log(np.maximum(E, eps))
+    # Skip initial transients: drop first ~5 periods based on measured omega
+    if omega_num > 0:
+        T_est = 2.0 * np.pi / omega_num
+        mask = times > (5.0 * T_est)
+        if np.count_nonzero(mask) < 10:
+            mask = slice(None)
+    else:
+        mask = slice(None)
+    m, _ = np.polyfit(times[mask], lnE[mask], 1)
+    gamma_env = float(0.5 * m)
+    gamma_num = float(np.mean(np.asarray(gamma_inst_list)[mask]))
+    gamma_th = -0.5 * eta * (k_phys**2)
+    return omega_num, omega_th, gamma_num, gamma_th
 
 
 def main():
@@ -114,16 +143,19 @@ def main():
     p.add_argument("--dt", type=float, default=0.01, help="Time step")
     p.add_argument("--amp0", type=float, default=1e-6, help="Initial velocity amplitude")
     p.add_argument("--tau", type=float, default=1.0, help="Tension coefficient multiplier (affects induction)")
+    p.add_argument("--eta", type=float, default=0.0, help="Resistivity (induces damping via eta*dzz(b))")
     args = p.parse_args()
 
-    omega_num, omega_th = run_dedalus(L=args.L, N=args.N, B0=args.B0, rho_eff=args.rho,
-                                      k=args.k, tmax=args.tmax, dt_step=args.dt, amp0=args.amp0, tau=args.tau)
+    omega_num, omega_th, gamma_num, gamma_th = run_dedalus(L=args.L, N=args.N, B0=args.B0, rho_eff=args.rho,
+                                      k=args.k, tmax=args.tmax, dt_step=args.dt, amp0=args.amp0, tau=args.tau, eta=getattr(args, 'eta', 0.0))
 
     ratio = omega_th / omega_num if omega_num != 0 else np.nan
     sqrt_factor = np.sqrt(1.0 + args.rho)
 
     print(f"Numerical omega = {omega_num:.6e}")
     print(f"Theory    omega = {omega_th:.6e}")
+    print(f"Numerical gamma = {gamma_num:.6e}")
+    print(f"Theory    gamma = {gamma_th:.6e}")
     print(f"sqrt(1+rho_eff) = {sqrt_factor:.6f}")
     print(f"Theory/Numerical omega ratio = {ratio:.6f}")
 

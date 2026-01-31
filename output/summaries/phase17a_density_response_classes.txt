@@ -1,0 +1,11 @@
+Phase-17A — Density-Response Typing
+
+- scale-local: Observer-space redistribution
+- high-k attenuation: Boundary-like leakage (spectral, monotone high-k sink)
+- broadband tilt: Observer-space redistribution (preserves low-k normalization)
+- late-time growth (z<1): Growth-rate modification (bulk)
+
+Rung-2 eligibility (boundary/coupling) by structural criteria:
+- Eligible: high-k attenuation (locality at boundary scales; monotone; conservative form)
+- Possibly eligible (context-dependent): scale-local (if band aligns with boundary-controlled scales)
+- Not eligible: broadband tilt (global reweighting without boundary locality), late-time growth (bulk evolution)

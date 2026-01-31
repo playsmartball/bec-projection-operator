@@ -1,0 +1,273 @@
+[MEASURE] Estimating omega0 via short baseline run...
+2026-01-23 10:21:55,596 __main__ 0/1 INFO :: Dealias factors: x=(1.5,), z=(1.5,)
+2026-01-23 10:21:56,004 subsystems 0/1 INFO :: Building subproblem matrices 1/128 (~1%) Elapsed: 0s, Remaining: 6s, Rate: 2.1e+01/s
+2026-01-23 10:21:56,261 subsystems 0/1 INFO :: Building subproblem matrices 13/128 (~10%) Elapsed: 0s, Remaining: 3s, Rate: 4.3e+01/s
+2026-01-23 10:21:56,535 subsystems 0/1 INFO :: Building subproblem matrices 26/128 (~20%) Elapsed: 1s, Remaining: 2s, Rate: 4.5e+01/s
+2026-01-23 10:21:56,814 subsystems 0/1 INFO :: Building subproblem matrices 39/128 (~30%) Elapsed: 1s, Remaining: 2s, Rate: 4.6e+01/s
+2026-01-23 10:21:57,101 subsystems 0/1 INFO :: Building subproblem matrices 52/128 (~41%) Elapsed: 1s, Remaining: 2s, Rate: 4.5e+01/s
+2026-01-23 10:21:57,396 subsystems 0/1 INFO :: Building subproblem matrices 65/128 (~51%) Elapsed: 1s, Remaining: 1s, Rate: 4.5e+01/s
+2026-01-23 10:21:57,676 subsystems 0/1 INFO :: Building subproblem matrices 78/128 (~61%) Elapsed: 2s, Remaining: 1s, Rate: 4.5e+01/s
+2026-01-23 10:21:57,954 subsystems 0/1 INFO :: Building subproblem matrices 91/128 (~71%) Elapsed: 2s, Remaining: 1s, Rate: 4.6e+01/s
+2026-01-23 10:21:58,242 subsystems 0/1 INFO :: Building subproblem matrices 104/128 (~81%) Elapsed: 2s, Remaining: 1s, Rate: 4.6e+01/s
+2026-01-23 10:21:58,551 subsystems 0/1 INFO :: Building subproblem matrices 117/128 (~91%) Elapsed: 3s, Remaining: 0s, Rate: 4.5e+01/s
+2026-01-23 10:21:58,811 subsystems 0/1 INFO :: Building subproblem matrices 128/128 (~100%) Elapsed: 3s, Remaining: 0s, Rate: 4.5e+01/s
+2026-01-23 10:25:23,186 solvers 0/1 INFO :: Simulation stop time reached.
+energy drift (rel) = 5.501e-10
+csv: /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_measure.csv
+omega (Hilbert) = 2.444506e+00
+max |dE/dt| = 3.726e-17
+gamma (energy-based) = -2.094252e-10
+[MEASURE] omega0=2.444506e+00
+[RUN] kappa=5e-4 mult=0.25 omega_c=0.6111265 forcing=bulk
+2026-01-23 10:25:28,766 __main__ 0/1 INFO :: Dealias factors: x=(1.5,), z=(1.5,)
+2026-01-23 10:25:29,118 subsystems 0/1 INFO :: Building subproblem matrices 1/128 (~1%) Elapsed: 0s, Remaining: 5s, Rate: 2.3e+01/s
+2026-01-23 10:25:29,392 subsystems 0/1 INFO :: Building subproblem matrices 13/128 (~10%) Elapsed: 0s, Remaining: 3s, Rate: 4.1e+01/s
+2026-01-23 10:25:29,687 subsystems 0/1 INFO :: Building subproblem matrices 26/128 (~20%) Elapsed: 1s, Remaining: 2s, Rate: 4.2e+01/s
+2026-01-23 10:25:29,976 subsystems 0/1 INFO :: Building subproblem matrices 39/128 (~30%) Elapsed: 1s, Remaining: 2s, Rate: 4.3e+01/s
+2026-01-23 10:25:30,266 subsystems 0/1 INFO :: Building subproblem matrices 52/128 (~41%) Elapsed: 1s, Remaining: 2s, Rate: 4.4e+01/s
+2026-01-23 10:25:30,563 subsystems 0/1 INFO :: Building subproblem matrices 65/128 (~51%) Elapsed: 1s, Remaining: 1s, Rate: 4.4e+01/s
+2026-01-23 10:25:30,854 subsystems 0/1 INFO :: Building subproblem matrices 78/128 (~61%) Elapsed: 2s, Remaining: 1s, Rate: 4.4e+01/s
+2026-01-23 10:25:31,148 subsystems 0/1 INFO :: Building subproblem matrices 91/128 (~71%) Elapsed: 2s, Remaining: 1s, Rate: 4.4e+01/s
+2026-01-23 10:25:31,435 subsystems 0/1 INFO :: Building subproblem matrices 104/128 (~81%) Elapsed: 2s, Remaining: 1s, Rate: 4.4e+01/s
+2026-01-23 10:25:31,764 subsystems 0/1 INFO :: Building subproblem matrices 117/128 (~91%) Elapsed: 3s, Remaining: 0s, Rate: 4.4e+01/s
+2026-01-23 10:25:32,014 subsystems 0/1 INFO :: Building subproblem matrices 128/128 (~100%) Elapsed: 3s, Remaining: 0s, Rate: 4.4e+01/s
+2026-01-23 10:56:58,270 solvers 0/1 INFO :: Simulation stop time reached.
+energy drift (rel) = 1.150e-06
+csv: /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k5e-4_oc0250_bulk.csv
+omega (Hilbert) = 2.445876e-01
+max |dE/dt| = 9.188e-15
+gamma (energy-based) = -4.374100e-08
+[EXTRACT] /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k5e-4_oc0250_bulk.csv
+METRICS_JSON={"csv": "/mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k5e-4_oc0250_bulk.csv", "deltaE_over_E": 1.1486235118862465e-06, "deltaE_over_E_weak": 1.1498395318563195e-06, "W_tau_final": 0.0, "W_tau_over_E0": 0.0, "P_eta_left_final": 7.01902311e-18, "P_eta_right_final": -7.01902296e-18, "P_eta_total_final": -1.40380461e-17, "P_eta_total_slope_lastk": -1.420373102314503e-18, "max_abs_tau": 0.0, "tau_max_field": null, "max_abs_coupling": 4.89617923e-11, "coupling_max_field": "C_bx_wx", "dominance": "coupling", "peta_fft_power_total": 4.081281978893468e-28, "peta_fft_power_above_omega_c": 2.0841856331147556e-29, "peta_fft_fraction_above_omega_c": 0.05106693543580705, "peta_fft_omega_peak": 0.3141592653590139}
+[RUN] kappa=5e-4 mult=0.25 omega_c=0.6111265 forcing=edge
+2026-01-23 10:57:00,809 __main__ 0/1 INFO :: Dealias factors: x=(1.5,), z=(1.5,)
+2026-01-23 10:57:01,267 subsystems 0/1 INFO :: Building subproblem matrices 1/128 (~1%) Elapsed: 0s, Remaining: 6s, Rate: 2.3e+01/s
+2026-01-23 10:57:01,535 subsystems 0/1 INFO :: Building subproblem matrices 13/128 (~10%) Elapsed: 0s, Remaining: 3s, Rate: 4.2e+01/s
+2026-01-23 10:57:01,822 subsystems 0/1 INFO :: Building subproblem matrices 26/128 (~20%) Elapsed: 1s, Remaining: 2s, Rate: 4.3e+01/s
+2026-01-23 10:57:02,107 subsystems 0/1 INFO :: Building subproblem matrices 39/128 (~30%) Elapsed: 1s, Remaining: 2s, Rate: 4.4e+01/s
+2026-01-23 10:57:02,393 subsystems 0/1 INFO :: Building subproblem matrices 52/128 (~41%) Elapsed: 1s, Remaining: 2s, Rate: 4.4e+01/s
+2026-01-23 10:57:02,688 subsystems 0/1 INFO :: Building subproblem matrices 65/128 (~51%) Elapsed: 1s, Remaining: 1s, Rate: 4.4e+01/s
+2026-01-23 10:57:03,016 subsystems 0/1 INFO :: Building subproblem matrices 78/128 (~61%) Elapsed: 2s, Remaining: 1s, Rate: 4.3e+01/s
+2026-01-23 10:57:03,312 subsystems 0/1 INFO :: Building subproblem matrices 91/128 (~71%) Elapsed: 2s, Remaining: 1s, Rate: 4.4e+01/s
+2026-01-23 10:57:03,608 subsystems 0/1 INFO :: Building subproblem matrices 104/128 (~81%) Elapsed: 2s, Remaining: 1s, Rate: 4.4e+01/s
+2026-01-23 10:57:07,516 subsystems 0/1 INFO :: Building subproblem matrices 117/128 (~91%) Elapsed: 6s, Remaining: 1s, Rate: 1.9e+01/s
+2026-01-23 10:57:07,761 subsystems 0/1 INFO :: Building subproblem matrices 128/128 (~100%) Elapsed: 7s, Remaining: 0s, Rate: 2.0e+01/s
+2026-01-23 11:28:33,765 solvers 0/1 INFO :: Simulation stop time reached.
+energy drift (rel) = 1.097e-05
+csv: /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k5e-4_oc0250_edge.csv
+omega (Hilbert) = 2.445886e-01
+max |dE/dt| = 1.051e-14
+gamma (energy-based) = -4.177680e-07
+[EXTRACT] /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k5e-4_oc0250_edge.csv
+METRICS_JSON={"csv": "/mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k5e-4_oc0250_edge.csv", "deltaE_over_E": 1.0969122023705714e-05, "deltaE_over_E_weak": 1.0969778999290268e-05, "W_tau_final": 0.0, "W_tau_over_E0": 0.0, "P_eta_left_final": 6.75667735e-18, "P_eta_right_final": -6.75667737e-18, "P_eta_total_final": -1.35133547e-17, "P_eta_total_slope_lastk": -1.3420813369363362e-18, "max_abs_tau": 0.0, "tau_max_field": null, "max_abs_coupling": 2.89370662e-11, "coupling_max_field": "C_bx_wx", "dominance": "coupling", "peta_fft_power_total": 3.8101765517160716e-28, "peta_fft_power_above_omega_c": 1.967134988955177e-29, "peta_fft_fraction_above_omega_c": 0.05162844719279992, "peta_fft_omega_peak": 0.3141592653590139}
+[RUN] kappa=5e-4 mult=0.5 omega_c=1.222253 forcing=bulk
+2026-01-23 11:28:36,277 __main__ 0/1 INFO :: Dealias factors: x=(1.5,), z=(1.5,)
+2026-01-23 11:28:36,614 subsystems 0/1 INFO :: Building subproblem matrices 1/128 (~1%) Elapsed: 0s, Remaining: 5s, Rate: 2.4e+01/s
+2026-01-23 11:28:36,878 subsystems 0/1 INFO :: Building subproblem matrices 13/128 (~10%) Elapsed: 0s, Remaining: 3s, Rate: 4.3e+01/s
+2026-01-23 11:28:37,163 subsystems 0/1 INFO :: Building subproblem matrices 26/128 (~20%) Elapsed: 1s, Remaining: 2s, Rate: 4.4e+01/s
+2026-01-23 11:28:37,449 subsystems 0/1 INFO :: Building subproblem matrices 39/128 (~30%) Elapsed: 1s, Remaining: 2s, Rate: 4.4e+01/s
+2026-01-23 11:28:37,807 subsystems 0/1 INFO :: Building subproblem matrices 52/128 (~41%) Elapsed: 1s, Remaining: 2s, Rate: 4.2e+01/s
+2026-01-23 11:28:38,097 subsystems 0/1 INFO :: Building subproblem matrices 65/128 (~51%) Elapsed: 2s, Remaining: 1s, Rate: 4.3e+01/s
+2026-01-23 11:28:38,379 subsystems 0/1 INFO :: Building subproblem matrices 78/128 (~61%) Elapsed: 2s, Remaining: 1s, Rate: 4.3e+01/s
+2026-01-23 11:28:38,667 subsystems 0/1 INFO :: Building subproblem matrices 91/128 (~71%) Elapsed: 2s, Remaining: 1s, Rate: 4.3e+01/s
+2026-01-23 11:28:38,955 subsystems 0/1 INFO :: Building subproblem matrices 104/128 (~81%) Elapsed: 2s, Remaining: 1s, Rate: 4.4e+01/s
+2026-01-23 11:28:39,273 subsystems 0/1 INFO :: Building subproblem matrices 117/128 (~91%) Elapsed: 3s, Remaining: 0s, Rate: 4.3e+01/s
+2026-01-23 11:28:39,517 subsystems 0/1 INFO :: Building subproblem matrices 128/128 (~100%) Elapsed: 3s, Remaining: 0s, Rate: 4.3e+01/s
+2026-01-23 12:01:19,148 solvers 0/1 INFO :: Simulation stop time reached.
+energy drift (rel) = 1.226e-06
+csv: /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k5e-4_oc0500_bulk.csv
+omega (Hilbert) = 2.445876e-01
+max |dE/dt| = 9.712e-15
+gamma (energy-based) = -4.668135e-08
+[EXTRACT] /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k5e-4_oc0500_bulk.csv
+METRICS_JSON={"csv": "/mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k5e-4_oc0500_bulk.csv", "deltaE_over_E": 1.2253534225095926e-06, "deltaE_over_E_weak": 1.2258971979041762e-06, "W_tau_final": 0.0, "W_tau_over_E0": 0.0, "P_eta_left_final": 7.32997546e-18, "P_eta_right_final": -7.32997541e-18, "P_eta_total_final": -1.46599509e-17, "P_eta_total_slope_lastk": -1.4479507445119439e-18, "max_abs_tau": 0.0, "tau_max_field": null, "max_abs_coupling": 4.8961037e-11, "coupling_max_field": "C_bx_wx", "dominance": "coupling", "peta_fft_power_total": 4.349893759838495e-28, "peta_fft_power_above_omega_c": 2.2089317420208445e-31, "peta_fft_fraction_above_omega_c": 0.0005078128027896614, "peta_fft_omega_peak": 0.3141592653590139}
+[RUN] kappa=5e-4 mult=0.5 omega_c=1.222253 forcing=edge
+2026-01-23 12:01:21,702 __main__ 0/1 INFO :: Dealias factors: x=(1.5,), z=(1.5,)
+2026-01-23 12:01:22,043 subsystems 0/1 INFO :: Building subproblem matrices 1/128 (~1%) Elapsed: 0s, Remaining: 5s, Rate: 2.4e+01/s
+2026-01-23 12:01:22,306 subsystems 0/1 INFO :: Building subproblem matrices 13/128 (~10%) Elapsed: 0s, Remaining: 3s, Rate: 4.3e+01/s
+2026-01-23 12:01:22,592 subsystems 0/1 INFO :: Building subproblem matrices 26/128 (~20%) Elapsed: 1s, Remaining: 2s, Rate: 4.4e+01/s
+2026-01-23 12:01:22,875 subsystems 0/1 INFO :: Building subproblem matrices 39/128 (~30%) Elapsed: 1s, Remaining: 2s, Rate: 4.5e+01/s
+2026-01-23 12:01:23,161 subsystems 0/1 INFO :: Building subproblem matrices 52/128 (~41%) Elapsed: 1s, Remaining: 2s, Rate: 4.5e+01/s
+2026-01-23 12:01:23,450 subsystems 0/1 INFO :: Building subproblem matrices 65/128 (~51%) Elapsed: 1s, Remaining: 1s, Rate: 4.5e+01/s
+2026-01-23 12:01:23,738 subsystems 0/1 INFO :: Building subproblem matrices 78/128 (~61%) Elapsed: 2s, Remaining: 1s, Rate: 4.5e+01/s
+2026-01-23 12:01:24,026 subsystems 0/1 INFO :: Building subproblem matrices 91/128 (~71%) Elapsed: 2s, Remaining: 1s, Rate: 4.5e+01/s
+2026-01-23 12:01:24,316 subsystems 0/1 INFO :: Building subproblem matrices 104/128 (~81%) Elapsed: 2s, Remaining: 1s, Rate: 4.5e+01/s
+2026-01-23 12:01:24,637 subsystems 0/1 INFO :: Building subproblem matrices 117/128 (~91%) Elapsed: 3s, Remaining: 0s, Rate: 4.4e+01/s
+2026-01-23 12:01:24,882 subsystems 0/1 INFO :: Building subproblem matrices 128/128 (~100%) Elapsed: 3s, Remaining: 0s, Rate: 4.4e+01/s
+2026-01-23 12:33:42,565 solvers 0/1 INFO :: Simulation stop time reached.
+energy drift (rel) = 1.157e-05
+csv: /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k5e-4_oc0500_edge.csv
+omega (Hilbert) = 2.445887e-01
+max |dE/dt| = 1.102e-14
+gamma (energy-based) = -4.410136e-07
+[EXTRACT] /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k5e-4_oc0500_edge.csv
+METRICS_JSON={"csv": "/mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k5e-4_oc0500_edge.csv", "deltaE_over_E": 1.1569940476185872e-05, "deltaE_over_E_weak": 1.1570602380388242e-05, "W_tau_final": 0.0, "W_tau_over_E0": 0.0, "P_eta_left_final": 7.05581265e-18, "P_eta_right_final": -7.05581292e-18, "P_eta_total_final": -1.41116256e-17, "P_eta_total_slope_lastk": -1.3661710887010877e-18, "max_abs_tau": 0.0, "tau_max_field": null, "max_abs_coupling": 2.89363363e-11, "coupling_max_field": "C_bx_wx", "dominance": "coupling", "peta_fft_power_total": 4.058503794175855e-28, "peta_fft_power_above_omega_c": 2.0516136816605647e-31, "peta_fft_fraction_above_omega_c": 0.0005055098592256405, "peta_fft_omega_peak": 0.3141592653590139}
+[RUN] kappa=5e-4 mult=1.0 omega_c=2.444506 forcing=bulk
+2026-01-23 12:33:45,070 __main__ 0/1 INFO :: Dealias factors: x=(1.5,), z=(1.5,)
+2026-01-23 12:33:45,418 subsystems 0/1 INFO :: Building subproblem matrices 1/128 (~1%) Elapsed: 0s, Remaining: 5s, Rate: 2.4e+01/s
+2026-01-23 12:33:45,696 subsystems 0/1 INFO :: Building subproblem matrices 13/128 (~10%) Elapsed: 0s, Remaining: 3s, Rate: 4.1e+01/s
+2026-01-23 12:33:45,970 subsystems 0/1 INFO :: Building subproblem matrices 26/128 (~20%) Elapsed: 1s, Remaining: 2s, Rate: 4.4e+01/s
+2026-01-23 12:33:46,248 subsystems 0/1 INFO :: Building subproblem matrices 39/128 (~30%) Elapsed: 1s, Remaining: 2s, Rate: 4.5e+01/s
+2026-01-23 12:33:46,524 subsystems 0/1 INFO :: Building subproblem matrices 52/128 (~41%) Elapsed: 1s, Remaining: 2s, Rate: 4.5e+01/s
+2026-01-23 12:33:46,805 subsystems 0/1 INFO :: Building subproblem matrices 65/128 (~51%) Elapsed: 1s, Remaining: 1s, Rate: 4.5e+01/s
+2026-01-23 12:33:47,085 subsystems 0/1 INFO :: Building subproblem matrices 78/128 (~61%) Elapsed: 2s, Remaining: 1s, Rate: 4.6e+01/s
+2026-01-23 12:33:47,362 subsystems 0/1 INFO :: Building subproblem matrices 91/128 (~71%) Elapsed: 2s, Remaining: 1s, Rate: 4.6e+01/s
+2026-01-23 12:33:47,640 subsystems 0/1 INFO :: Building subproblem matrices 104/128 (~81%) Elapsed: 2s, Remaining: 1s, Rate: 4.6e+01/s
+2026-01-23 12:33:47,950 subsystems 0/1 INFO :: Building subproblem matrices 117/128 (~91%) Elapsed: 3s, Remaining: 0s, Rate: 4.5e+01/s
+2026-01-23 12:33:48,189 subsystems 0/1 INFO :: Building subproblem matrices 128/128 (~100%) Elapsed: 3s, Remaining: 0s, Rate: 4.5e+01/s
+2026-01-23 13:05:42,955 solvers 0/1 INFO :: Simulation stop time reached.
+energy drift (rel) = 1.268e-06
+csv: /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k5e-4_oc1000_bulk.csv
+omega (Hilbert) = 2.445876e-01
+max |dE/dt| = 9.992e-15
+gamma (energy-based) = -4.829996e-08
+[EXTRACT] /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k5e-4_oc1000_bulk.csv
+METRICS_JSON={"csv": "/mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k5e-4_oc1000_bulk.csv", "deltaE_over_E": 1.2672061011712952e-06, "deltaE_over_E_weak": 1.2680518447261512e-06, "W_tau_final": 0.0, "W_tau_over_E0": 0.0, "P_eta_left_final": 7.48450378e-18, "P_eta_right_final": -7.48450405e-18, "P_eta_total_final": -1.49690078e-17, "P_eta_total_slope_lastk": -1.4604385957075949e-18, "max_abs_tau": 0.0, "tau_max_field": null, "max_abs_coupling": 4.89606256e-11, "coupling_max_field": "C_bx_wx", "dominance": "coupling", "peta_fft_power_total": 4.48632270717769e-28, "peta_fft_power_above_omega_c": 4.844486503374895e-33, "peta_fft_fraction_above_omega_c": 1.0798346038781778e-05, "peta_fft_omega_peak": 0.3141592653590139}
+[RUN] kappa=5e-4 mult=1.0 omega_c=2.444506 forcing=edge
+2026-01-23 13:05:48,984 __main__ 0/1 INFO :: Dealias factors: x=(1.5,), z=(1.5,)
+2026-01-23 13:05:49,334 subsystems 0/1 INFO :: Building subproblem matrices 1/128 (~1%) Elapsed: 0s, Remaining: 5s, Rate: 2.4e+01/s
+2026-01-23 13:05:49,607 subsystems 0/1 INFO :: Building subproblem matrices 13/128 (~10%) Elapsed: 0s, Remaining: 3s, Rate: 4.1e+01/s
+2026-01-23 13:05:49,899 subsystems 0/1 INFO :: Building subproblem matrices 26/128 (~20%) Elapsed: 1s, Remaining: 2s, Rate: 4.3e+01/s
+2026-01-23 13:05:50,191 subsystems 0/1 INFO :: Building subproblem matrices 39/128 (~30%) Elapsed: 1s, Remaining: 2s, Rate: 4.3e+01/s
+2026-01-23 13:05:50,487 subsystems 0/1 INFO :: Building subproblem matrices 52/128 (~41%) Elapsed: 1s, Remaining: 2s, Rate: 4.4e+01/s
+2026-01-23 13:05:50,779 subsystems 0/1 INFO :: Building subproblem matrices 65/128 (~51%) Elapsed: 1s, Remaining: 1s, Rate: 4.4e+01/s
+2026-01-23 13:05:51,113 subsystems 0/1 INFO :: Building subproblem matrices 78/128 (~61%) Elapsed: 2s, Remaining: 1s, Rate: 4.3e+01/s
+2026-01-23 13:05:51,470 subsystems 0/1 INFO :: Building subproblem matrices 91/128 (~71%) Elapsed: 2s, Remaining: 1s, Rate: 4.2e+01/s
+2026-01-23 13:05:51,913 subsystems 0/1 INFO :: Building subproblem matrices 104/128 (~81%) Elapsed: 3s, Remaining: 1s, Rate: 4.0e+01/s
+2026-01-23 13:05:52,257 subsystems 0/1 INFO :: Building subproblem matrices 117/128 (~91%) Elapsed: 3s, Remaining: 0s, Rate: 3.9e+01/s
+2026-01-23 13:05:52,504 subsystems 0/1 INFO :: Building subproblem matrices 128/128 (~100%) Elapsed: 3s, Remaining: 0s, Rate: 4.0e+01/s
+2026-01-23 13:37:42,221 solvers 0/1 INFO :: Simulation stop time reached.
+energy drift (rel) = 1.190e-05
+csv: /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k5e-4_oc1000_edge.csv
+omega (Hilbert) = 2.445887e-01
+max |dE/dt| = 1.130e-14
+gamma (energy-based) = -4.538014e-07
+[EXTRACT] /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k5e-4_oc1000_edge.csv
+METRICS_JSON={"csv": "/mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k5e-4_oc1000_edge.csv", "deltaE_over_E": 1.1902901785692727e-05, "deltaE_over_E_weak": 1.1903430124998506e-05, "W_tau_final": 0.0, "W_tau_over_E0": 0.0, "P_eta_left_final": 7.20389169e-18, "P_eta_right_final": -7.20389167e-18, "P_eta_total_final": -1.44077834e-17, "P_eta_total_slope_lastk": -1.3768175368475353e-18, "max_abs_tau": 0.0, "tau_max_field": null, "max_abs_coupling": 2.89359395e-11, "coupling_max_field": "C_bx_wx", "dominance": "coupling", "peta_fft_power_total": 4.183906337658732e-28, "peta_fft_power_above_omega_c": 4.489997553277095e-33, "peta_fft_fraction_above_omega_c": 1.0731591940439202e-05, "peta_fft_omega_peak": 0.3141592653590139}
+[RUN] kappa=2e-3 mult=0.25 omega_c=0.6111265 forcing=bulk
+2026-01-23 13:37:44,733 __main__ 0/1 INFO :: Dealias factors: x=(1.5,), z=(1.5,)
+2026-01-23 13:37:45,121 subsystems 0/1 INFO :: Building subproblem matrices 1/128 (~1%) Elapsed: 0s, Remaining: 6s, Rate: 2.1e+01/s
+2026-01-23 13:37:45,398 subsystems 0/1 INFO :: Building subproblem matrices 13/128 (~10%) Elapsed: 0s, Remaining: 3s, Rate: 4.0e+01/s
+2026-01-23 13:37:45,690 subsystems 0/1 INFO :: Building subproblem matrices 26/128 (~20%) Elapsed: 1s, Remaining: 2s, Rate: 4.2e+01/s
+2026-01-23 13:37:45,980 subsystems 0/1 INFO :: Building subproblem matrices 39/128 (~30%) Elapsed: 1s, Remaining: 2s, Rate: 4.3e+01/s
+2026-01-23 13:37:46,266 subsystems 0/1 INFO :: Building subproblem matrices 52/128 (~41%) Elapsed: 1s, Remaining: 2s, Rate: 4.4e+01/s
+2026-01-23 13:37:46,555 subsystems 0/1 INFO :: Building subproblem matrices 65/128 (~51%) Elapsed: 1s, Remaining: 1s, Rate: 4.4e+01/s
+2026-01-23 13:37:46,846 subsystems 0/1 INFO :: Building subproblem matrices 78/128 (~61%) Elapsed: 2s, Remaining: 1s, Rate: 4.4e+01/s
+2026-01-23 13:37:47,138 subsystems 0/1 INFO :: Building subproblem matrices 91/128 (~71%) Elapsed: 2s, Remaining: 1s, Rate: 4.4e+01/s
+2026-01-23 13:37:47,434 subsystems 0/1 INFO :: Building subproblem matrices 104/128 (~81%) Elapsed: 2s, Remaining: 1s, Rate: 4.4e+01/s
+2026-01-23 13:37:47,762 subsystems 0/1 INFO :: Building subproblem matrices 117/128 (~91%) Elapsed: 3s, Remaining: 0s, Rate: 4.3e+01/s
+2026-01-23 13:37:48,007 subsystems 0/1 INFO :: Building subproblem matrices 128/128 (~100%) Elapsed: 3s, Remaining: 0s, Rate: 4.4e+01/s
+2026-01-23 14:09:43,963 solvers 0/1 INFO :: Simulation stop time reached.
+energy drift (rel) = 3.210e-06
+csv: /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k2e-3_oc0250_bulk.csv
+omega (Hilbert) = 2.445887e-01
+max |dE/dt| = 2.776e-14
+gamma (energy-based) = -1.220750e-07
+[EXTRACT] /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k2e-3_oc0250_bulk.csv
+METRICS_JSON={"csv": "/mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k2e-3_oc0250_bulk.csv", "deltaE_over_E": 3.211030505937374e-06, "deltaE_over_E_weak": 3.2108033394614006e-06, "W_tau_final": 0.0, "W_tau_over_E0": 0.0, "P_eta_left_final": 2.79847207e-17, "P_eta_right_final": -2.79847206e-17, "P_eta_total_final": -5.59694413e-17, "P_eta_total_slope_lastk": -5.6463312393762295e-18, "max_abs_tau": 0.0, "tau_max_field": null, "max_abs_coupling": 4.89374511e-11, "coupling_max_field": "C_bx_wx", "dominance": "coupling", "peta_fft_power_total": 6.490858561449886e-27, "peta_fft_power_above_omega_c": 3.319566909819671e-28, "peta_fft_fraction_above_omega_c": 0.05114218525011532, "peta_fft_omega_peak": 0.3141592653590139}
+[RUN] kappa=2e-3 mult=0.25 omega_c=0.6111265 forcing=edge
+2026-01-23 14:09:46,469 __main__ 0/1 INFO :: Dealias factors: x=(1.5,), z=(1.5,)
+2026-01-23 14:09:46,839 subsystems 0/1 INFO :: Building subproblem matrices 1/128 (~1%) Elapsed: 0s, Remaining: 5s, Rate: 2.4e+01/s
+2026-01-23 14:09:47,102 subsystems 0/1 INFO :: Building subproblem matrices 13/128 (~10%) Elapsed: 0s, Remaining: 3s, Rate: 4.3e+01/s
+2026-01-23 14:09:47,386 subsystems 0/1 INFO :: Building subproblem matrices 26/128 (~20%) Elapsed: 1s, Remaining: 2s, Rate: 4.4e+01/s
+2026-01-23 14:09:47,672 subsystems 0/1 INFO :: Building subproblem matrices 39/128 (~30%) Elapsed: 1s, Remaining: 2s, Rate: 4.5e+01/s
+2026-01-23 14:09:47,985 subsystems 0/1 INFO :: Building subproblem matrices 52/128 (~41%) Elapsed: 1s, Remaining: 2s, Rate: 4.4e+01/s
+2026-01-23 14:09:48,271 subsystems 0/1 INFO :: Building subproblem matrices 65/128 (~51%) Elapsed: 1s, Remaining: 1s, Rate: 4.4e+01/s
+2026-01-23 14:09:48,561 subsystems 0/1 INFO :: Building subproblem matrices 78/128 (~61%) Elapsed: 2s, Remaining: 1s, Rate: 4.4e+01/s
+2026-01-23 14:09:48,852 subsystems 0/1 INFO :: Building subproblem matrices 91/128 (~71%) Elapsed: 2s, Remaining: 1s, Rate: 4.4e+01/s
+2026-01-23 14:09:49,134 subsystems 0/1 INFO :: Building subproblem matrices 104/128 (~81%) Elapsed: 2s, Remaining: 1s, Rate: 4.4e+01/s
+2026-01-23 14:09:49,460 subsystems 0/1 INFO :: Building subproblem matrices 117/128 (~91%) Elapsed: 3s, Remaining: 0s, Rate: 4.4e+01/s
+2026-01-23 14:09:49,707 subsystems 0/1 INFO :: Building subproblem matrices 128/128 (~100%) Elapsed: 3s, Remaining: 0s, Rate: 4.4e+01/s
+2026-01-23 14:41:52,827 solvers 0/1 INFO :: Simulation stop time reached.
+energy drift (rel) = 2.727e-05
+csv: /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k2e-3_oc0250_edge.csv
+omega (Hilbert) = 2.445927e-01
+max |dE/dt| = 2.878e-14
+gamma (energy-based) = -1.038101e-06
+[EXTRACT] /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k2e-3_oc0250_edge.csv
+METRICS_JSON={"csv": "/mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k2e-3_oc0250_edge.csv", "deltaE_over_E": 2.7271205357035034e-05, "deltaE_over_E_weak": 2.7273261166275114e-05, "W_tau_final": 0.0, "W_tau_over_E0": 0.0, "P_eta_left_final": 2.7276448e-17, "P_eta_right_final": -2.72764483e-17, "P_eta_total_final": -5.45528963e-17, "P_eta_total_slope_lastk": -5.39826043411064e-18, "max_abs_tau": 0.0, "tau_max_field": null, "max_abs_coupling": 2.8913354e-11, "coupling_max_field": "C_bx_wx", "dominance": "coupling", "peta_fft_power_total": 6.209217103060899e-27, "peta_fft_power_above_omega_c": 3.2104442386948667e-28, "peta_fft_fraction_above_omega_c": 0.05170449326231876, "peta_fft_omega_peak": 0.3141592653590139}
+[RUN] kappa=2e-3 mult=0.5 omega_c=1.222253 forcing=bulk
+2026-01-23 14:41:55,413 __main__ 0/1 INFO :: Dealias factors: x=(1.5,), z=(1.5,)
+2026-01-23 14:41:55,781 subsystems 0/1 INFO :: Building subproblem matrices 1/128 (~1%) Elapsed: 0s, Remaining: 6s, Rate: 2.3e+01/s
+2026-01-23 14:41:56,058 subsystems 0/1 INFO :: Building subproblem matrices 13/128 (~10%) Elapsed: 0s, Remaining: 3s, Rate: 4.0e+01/s
+2026-01-23 14:41:56,358 subsystems 0/1 INFO :: Building subproblem matrices 26/128 (~20%) Elapsed: 1s, Remaining: 2s, Rate: 4.2e+01/s
+2026-01-23 14:41:56,663 subsystems 0/1 INFO :: Building subproblem matrices 39/128 (~30%) Elapsed: 1s, Remaining: 2s, Rate: 4.2e+01/s
+2026-01-23 14:41:56,965 subsystems 0/1 INFO :: Building subproblem matrices 52/128 (~41%) Elapsed: 1s, Remaining: 2s, Rate: 4.2e+01/s
+2026-01-23 14:41:57,310 subsystems 0/1 INFO :: Building subproblem matrices 65/128 (~51%) Elapsed: 2s, Remaining: 2s, Rate: 4.1e+01/s
+2026-01-23 14:41:57,617 subsystems 0/1 INFO :: Building subproblem matrices 78/128 (~61%) Elapsed: 2s, Remaining: 1s, Rate: 4.2e+01/s
+2026-01-23 14:41:57,925 subsystems 0/1 INFO :: Building subproblem matrices 91/128 (~71%) Elapsed: 2s, Remaining: 1s, Rate: 4.2e+01/s
+2026-01-23 14:41:58,230 subsystems 0/1 INFO :: Building subproblem matrices 104/128 (~81%) Elapsed: 2s, Remaining: 1s, Rate: 4.2e+01/s
+2026-01-23 14:41:58,567 subsystems 0/1 INFO :: Building subproblem matrices 117/128 (~91%) Elapsed: 3s, Remaining: 0s, Rate: 4.1e+01/s
+2026-01-23 14:41:58,972 subsystems 0/1 INFO :: Building subproblem matrices 128/128 (~100%) Elapsed: 3s, Remaining: 0s, Rate: 4.0e+01/s
+2026-01-23 15:13:58,389 solvers 0/1 INFO :: Simulation stop time reached.
+energy drift (rel) = 3.512e-06
+csv: /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k2e-3_oc0500_bulk.csv
+omega (Hilbert) = 2.445887e-01
+max |dE/dt| = 2.983e-14
+gamma (energy-based) = -1.337457e-07
+[EXTRACT] /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k2e-3_oc0500_bulk.csv
+METRICS_JSON={"csv": "/mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k2e-3_oc0500_bulk.csv", "deltaE_over_E": 3.513299851194891e-06, "deltaE_over_E_weak": 3.5126353537443724e-06, "W_tau_final": 0.0, "W_tau_over_E0": 0.0, "P_eta_left_final": 2.92049284e-17, "P_eta_right_final": -2.92049283e-17, "P_eta_total_final": -5.84098567e-17, "P_eta_total_slope_lastk": -5.751650293865299e-18, "max_abs_tau": 0.0, "tau_max_field": null, "max_abs_coupling": 4.89344493e-11, "coupling_max_field": "C_bx_wx", "dominance": "coupling", "peta_fft_power_total": 6.908360619363867e-27, "peta_fft_power_above_omega_c": 3.5078595272449254e-30, "peta_fft_fraction_above_omega_c": 0.0005077701817436297, "peta_fft_omega_peak": 0.3141592653590139}
+[RUN] kappa=2e-3 mult=0.5 omega_c=1.222253 forcing=edge
+2026-01-23 15:14:01,051 __main__ 0/1 INFO :: Dealias factors: x=(1.5,), z=(1.5,)
+2026-01-23 15:14:01,445 subsystems 0/1 INFO :: Building subproblem matrices 1/128 (~1%) Elapsed: 0s, Remaining: 6s, Rate: 2.1e+01/s
+2026-01-23 15:14:01,824 subsystems 0/1 INFO :: Building subproblem matrices 13/128 (~10%) Elapsed: 0s, Remaining: 4s, Rate: 3.0e+01/s
+2026-01-23 15:14:02,136 subsystems 0/1 INFO :: Building subproblem matrices 26/128 (~20%) Elapsed: 1s, Remaining: 3s, Rate: 3.5e+01/s
+2026-01-23 15:14:02,454 subsystems 0/1 INFO :: Building subproblem matrices 39/128 (~30%) Elapsed: 1s, Remaining: 2s, Rate: 3.7e+01/s
+2026-01-23 15:14:02,773 subsystems 0/1 INFO :: Building subproblem matrices 52/128 (~41%) Elapsed: 1s, Remaining: 2s, Rate: 3.8e+01/s
+2026-01-23 15:14:03,090 subsystems 0/1 INFO :: Building subproblem matrices 65/128 (~51%) Elapsed: 2s, Remaining: 2s, Rate: 3.8e+01/s
+2026-01-23 15:14:03,408 subsystems 0/1 INFO :: Building subproblem matrices 78/128 (~61%) Elapsed: 2s, Remaining: 1s, Rate: 3.9e+01/s
+2026-01-23 15:14:03,733 subsystems 0/1 INFO :: Building subproblem matrices 91/128 (~71%) Elapsed: 2s, Remaining: 1s, Rate: 3.9e+01/s
+2026-01-23 15:14:04,053 subsystems 0/1 INFO :: Building subproblem matrices 104/128 (~81%) Elapsed: 3s, Remaining: 1s, Rate: 3.9e+01/s
+2026-01-23 15:14:04,401 subsystems 0/1 INFO :: Building subproblem matrices 117/128 (~91%) Elapsed: 3s, Remaining: 0s, Rate: 3.9e+01/s
+2026-01-23 15:14:04,667 subsystems 0/1 INFO :: Building subproblem matrices 128/128 (~100%) Elapsed: 3s, Remaining: 0s, Rate: 3.9e+01/s
+2026-01-23 15:46:11,266 solvers 0/1 INFO :: Simulation stop time reached.
+energy drift (rel) = 2.965e-05
+csv: /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k2e-3_oc0500_edge.csv
+omega (Hilbert) = 2.445927e-01
+max |dE/dt| = 3.081e-14
+gamma (energy-based) = -1.130365e-06
+[EXTRACT] /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k2e-3_oc0500_edge.csv
+METRICS_JSON={"csv": "/mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k2e-3_oc0500_edge.csv", "deltaE_over_E": 2.965401785714837e-05, "deltaE_over_E_weak": 2.9657574346349168e-05, "W_tau_final": 0.0, "W_tau_over_E0": 0.0, "P_eta_left_final": 2.8449891e-17, "P_eta_right_final": -2.84498912e-17, "P_eta_total_final": -5.68997822e-17, "P_eta_total_slope_lastk": -5.489828438227241e-18, "max_abs_tau": 0.0, "tau_max_field": null, "max_abs_coupling": 2.89104536e-11, "coupling_max_field": "C_bx_wx", "dominance": "coupling", "peta_fft_power_total": 6.599726146501217e-27, "peta_fft_power_above_omega_c": 3.336978108402003e-30, "peta_fft_fraction_above_omega_c": 0.000505623723519357, "peta_fft_omega_peak": 0.3141592653590139}
+[RUN] kappa=2e-3 mult=1.0 omega_c=2.444506 forcing=bulk
+2026-01-23 15:46:13,999 __main__ 0/1 INFO :: Dealias factors: x=(1.5,), z=(1.5,)
+2026-01-23 15:46:14,386 subsystems 0/1 INFO :: Building subproblem matrices 1/128 (~1%) Elapsed: 0s, Remaining: 6s, Rate: 2.1e+01/s
+2026-01-23 15:46:14,692 subsystems 0/1 INFO :: Building subproblem matrices 13/128 (~10%) Elapsed: 0s, Remaining: 3s, Rate: 3.7e+01/s
+2026-01-23 15:46:15,031 subsystems 0/1 INFO :: Building subproblem matrices 26/128 (~20%) Elapsed: 1s, Remaining: 3s, Rate: 3.8e+01/s
+2026-01-23 15:46:15,346 subsystems 0/1 INFO :: Building subproblem matrices 39/128 (~30%) Elapsed: 1s, Remaining: 2s, Rate: 3.9e+01/s
+2026-01-23 15:46:15,657 subsystems 0/1 INFO :: Building subproblem matrices 52/128 (~41%) Elapsed: 1s, Remaining: 2s, Rate: 3.9e+01/s
+2026-01-23 15:46:15,974 subsystems 0/1 INFO :: Building subproblem matrices 65/128 (~51%) Elapsed: 2s, Remaining: 2s, Rate: 4.0e+01/s
+2026-01-23 15:46:16,281 subsystems 0/1 INFO :: Building subproblem matrices 78/128 (~61%) Elapsed: 2s, Remaining: 1s, Rate: 4.0e+01/s
+2026-01-23 15:46:16,590 subsystems 0/1 INFO :: Building subproblem matrices 91/128 (~71%) Elapsed: 2s, Remaining: 1s, Rate: 4.0e+01/s
+2026-01-23 15:46:16,899 subsystems 0/1 INFO :: Building subproblem matrices 104/128 (~81%) Elapsed: 3s, Remaining: 1s, Rate: 4.1e+01/s
+2026-01-23 15:46:17,265 subsystems 0/1 INFO :: Building subproblem matrices 117/128 (~91%) Elapsed: 3s, Remaining: 0s, Rate: 4.0e+01/s
+2026-01-23 15:46:17,571 subsystems 0/1 INFO :: Building subproblem matrices 128/128 (~100%) Elapsed: 3s, Remaining: 0s, Rate: 4.0e+01/s
+2026-01-23 16:19:00,156 solvers 0/1 INFO :: Simulation stop time reached.
+energy drift (rel) = 3.679e-06
+csv: /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k2e-3_oc1000_bulk.csv
+omega (Hilbert) = 2.445887e-01
+max |dE/dt| = 3.094e-14
+gamma (energy-based) = -1.401639e-07
+[EXTRACT] /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k2e-3_oc1000_bulk.csv
+METRICS_JSON={"csv": "/mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k2e-3_oc1000_bulk.csv", "deltaE_over_E": 3.678385416531374e-06, "deltaE_over_E_weak": 3.6797748670106924e-06, "W_tau_final": 0.0, "W_tau_over_E0": 0.0, "P_eta_left_final": 2.98100526e-17, "P_eta_right_final": -2.98100524e-17, "P_eta_total_final": -5.9620105e-17, "P_eta_total_slope_lastk": -5.798983700827697e-18, "max_abs_tau": 0.0, "tau_max_field": null, "max_abs_coupling": 4.89328155e-11, "coupling_max_field": "C_bx_wx", "dominance": "coupling", "peta_fft_power_total": 7.119788779579596e-27, "peta_fft_power_above_omega_c": 7.685871264308809e-32, "peta_fft_fraction_above_omega_c": 1.0795083256335925e-05, "peta_fft_omega_peak": 0.3141592653590139}
+[RUN] kappa=2e-3 mult=1.0 omega_c=2.444506 forcing=edge
+2026-01-23 16:19:02,818 __main__ 0/1 INFO :: Dealias factors: x=(1.5,), z=(1.5,)
+2026-01-23 16:19:03,198 subsystems 0/1 INFO :: Building subproblem matrices 1/128 (~1%) Elapsed: 0s, Remaining: 6s, Rate: 2.2e+01/s
+2026-01-23 16:19:03,491 subsystems 0/1 INFO :: Building subproblem matrices 13/128 (~10%) Elapsed: 0s, Remaining: 3s, Rate: 3.8e+01/s
+2026-01-23 16:19:03,832 subsystems 0/1 INFO :: Building subproblem matrices 26/128 (~20%) Elapsed: 1s, Remaining: 3s, Rate: 3.8e+01/s
+2026-01-23 16:19:04,150 subsystems 0/1 INFO :: Building subproblem matrices 39/128 (~30%) Elapsed: 1s, Remaining: 2s, Rate: 3.9e+01/s
+2026-01-23 16:19:04,467 subsystems 0/1 INFO :: Building subproblem matrices 52/128 (~41%) Elapsed: 1s, Remaining: 2s, Rate: 4.0e+01/s
+2026-01-23 16:19:04,783 subsystems 0/1 INFO :: Building subproblem matrices 65/128 (~51%) Elapsed: 2s, Remaining: 2s, Rate: 4.0e+01/s
+2026-01-23 16:19:05,098 subsystems 0/1 INFO :: Building subproblem matrices 78/128 (~61%) Elapsed: 2s, Remaining: 1s, Rate: 4.0e+01/s
+2026-01-23 16:19:05,410 subsystems 0/1 INFO :: Building subproblem matrices 91/128 (~71%) Elapsed: 2s, Remaining: 1s, Rate: 4.0e+01/s
+2026-01-23 16:19:05,720 subsystems 0/1 INFO :: Building subproblem matrices 104/128 (~81%) Elapsed: 3s, Remaining: 1s, Rate: 4.0e+01/s
+2026-01-23 16:19:06,069 subsystems 0/1 INFO :: Building subproblem matrices 117/128 (~91%) Elapsed: 3s, Remaining: 0s, Rate: 4.0e+01/s
+2026-01-23 16:19:06,338 subsystems 0/1 INFO :: Building subproblem matrices 128/128 (~100%) Elapsed: 3s, Remaining: 0s, Rate: 4.0e+01/s
+2026-01-23 16:51:29,791 solvers 0/1 INFO :: Simulation stop time reached.
+energy drift (rel) = 3.097e-05
+csv: /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k2e-3_oc1000_edge.csv
+omega (Hilbert) = 2.445927e-01
+max |dE/dt| = 3.189e-14
+gamma (energy-based) = -1.181072e-06
+[EXTRACT] /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k2e-3_oc1000_edge.csv
+METRICS_JSON={"csv": "/mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k2e-3_oc1000_edge.csv", "deltaE_over_E": 3.0974702380917295e-05, "deltaE_over_E_weak": 3.0977179699610185e-05, "W_tau_final": 0.0, "W_tau_over_E0": 0.0, "P_eta_left_final": 2.90295166e-17, "P_eta_right_final": -2.90295166e-17, "P_eta_total_final": -5.80590332e-17, "P_eta_total_slope_lastk": -5.529911485465285e-18, "max_abs_tau": 0.0, "tau_max_field": null, "max_abs_coupling": 2.89088781e-11, "coupling_max_field": "C_bx_wx", "dominance": "coupling", "peta_fft_power_total": 6.796229766525858e-27, "peta_fft_power_above_omega_c": 7.291618222498447e-32, "peta_fft_fraction_above_omega_c": 1.0728916580208301e-05, "peta_fft_omega_peak": 0.3141592653590139}
+[DONE] Phase-8B sweep complete.

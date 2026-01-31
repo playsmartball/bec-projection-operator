@@ -1,0 +1,5 @@
+params	sigma8	Delta_sigma8[%]	BAO_shift	low-k_changed	monotone	in_range	W0_ok	repeat_ok	row_status
+k_b=0.30, n=2	0.691298	-14.77	NO	NO	YES	YES	YES	YES	PASS
+k_b=0.30, n=4	0.725625	-10.54	NO	NO	YES	YES	YES	YES	PASS
+k_b=0.50, n=2	0.753758	-7.07	NO	NO	YES	YES	YES	YES	PASS
+k_b=0.50, n=4	0.788832	-2.74	NO	NO	YES	YES	YES	YES	PASS

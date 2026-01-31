@@ -1,0 +1,51 @@
+Retrospective Perturbation Index — Phase-R
+Scope: main branch; commits matched by semantic keywords (ladder, perturbation, delta/epsilon, kappa, boundary/absorption, projection/operator, density, suppression, null test, Phase-8/10–16)
+
+- Commit: 9d4c6c5e4dd264e446e8803fc1fd9b7f44e06624 (2026-01-24)
+  Phase: 8A/8B (absorbing Robin BCs, frequency-selective κ(ω))
+  Perturbation Types: boundary (κ), spectral (low-pass absorber)
+  Character: nonlinear runs (nl=1); physical boundary mechanism; tunable (κ0, ωc)
+  Null/Invariance: PASS (see docs/phase8.md invariants and acceptance)
+
+- Commit: 220878b1d996042ec61cc3c0b7bf1850fcc88191 (2026-01-24)
+  Phase: README integration (links Phase-8A/8B with projection work)
+  Perturbation Types: interpretive (boundary ↔ projection unification)
+  Character: documentation; no perturbation change introduced; locked narrative
+  Null/Invariance: N/A
+
+- Commit: 4576d30e07516e74cff6ce4692a24a62c0221f5e (2026-01-24)
+  Phase: 16 (σ8 projection-operator framework; operators + null-test scaffolding)
+  Perturbation Types: geometric/projection (k-space operator), spectral (monotone suppression)
+  Character: observational operator (post-growth); locked forms (soft_cutoff/exponential; n∈{1,2}; kc from windows); no tuning
+  Null/Invariance: Framework only in this commit; execution deferred (N/A)
+
+- Commit: 302c5eca7f2da48c76e2eed53572ae1ec9e5d11c (2026-01-24)
+  Phase: 16 (fiducial P(k) provenance; Planck2018 TT,TE,EE+lowE; no generation)
+  Perturbation Types: baseline specification (not a perturbation)
+  Character: observational baseline; locked parameters; no execution
+  Null/Invariance: N/A
+
+- Commit: 27859ecd11cbff98c16e3f85b41b271c1035fbef (2025-12-23)
+  Phase: 13A (projection kernel); "Fix epsilon calculation consistency"
+  Perturbation Types: geometric/projection (ε-based projection-space operator)
+  Character: observational operator; ε locked from Phase-10E
+  Null/Invariance: N/A (code-level consistency fix)
+
+- Commit: 66e93359d7d243724e10947c1ca5560b94d15fa9 (2025-12-21)
+  Phase: 16–29 (Mathematical closure of ε(ℓ) operator; FINAL_MATHEMATICAL_CLOSURE.md)
+  Perturbation Types: geometric/projection operator (ε0 + c/ℓ² with γ<0)
+  Character: locked form; non-tunable; theoretical closure
+  Null/Invariance: CLOSED (derivation + empirical closure per document)
+
+- Commit: 7093221d9ba8e4adb50a299d030b8948fe2a9ba9 (2025-12-20)
+  Phase: 10–15 seeding (projection/operator scripts; conservative tests)
+  Files: phase10e_peak_tomography.py; phase12a_class_attempt.md; phase13a_projection_operator.py; phase14a_conservative_tests.py; phase15a_formal_operator.py; plus summaries
+  Perturbation Types: geometric/projection (ε remap, kernels); spectral (windowing)
+  Character: observational; ε locked from tomography; tests conservative/locked
+  Null/Invariance: MIXED (phase14a_summary.txt: 3/4 passed; TE cross-spectrum failed)
+
+- Related artifacts informing classification (not new perturbations):
+  • output/summaries/phase16b_sigma8_null_test.txt — all tested W(k) forms OVER-SUPPRESSED relative to σ8 (observer inference)
+  • output/summaries/phase16c_sigma8_operator.txt — locked operator result; minimal checks OK
+  • output/summaries/phase16d_cross_checks.txt — OVERALL: FAIL (intermediate-k shape)
+  • output/summaries/phase16e_decision.txt — σ8 not explainable by projection

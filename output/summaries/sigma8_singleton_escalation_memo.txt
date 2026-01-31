@@ -1,0 +1,42 @@
+σ8 Singleton Escalation Memo — Governance-Only (No Numerics)
+Status: DISCUSSION-ONLY — NO EXECUTION — NO FITS — NO COMMITS
+
+Context
+- From Phase‑17B: σ8 is compatible with a narrow Rung‑2 envelope: smooth, k‑local, boundary‑integrated density suppression (monotone; W(0)=1; BAO‑preserving; no low‑k tilt).
+- From Phase‑18A: REQUIRED={T2}; FORBIDDEN={T9}; others NEUTRAL with respect to this envelope.
+- From Phase‑18B: CONSISTENT to apply envelope to σ8 with explicit restriction: do not apply to BAO scale (T9).
+- From Phase‑18C: Ladder is structurally complete and internally consistent; σ8 is a singleton for this envelope class.
+
+Purpose
+- Specify the governance‑compliant escalation path for σ8 as a singleton under the admitted envelope, without introducing numerics, models, or physics changes.
+
+Escalation Logic (Governance Constraints Apply)
+1) Stabilize-if-Cluster Gate
+   - If any additional tension is later shown (logic‑only) to REQUIRE the same envelope, σ8 clusters and Rung‑2 stabilizes; no further escalation needed.
+2) Singleton Persistence Gate
+   - If σ8 remains the only REQUIRED tension for this envelope after cross‑tension logic is exhausted, open an escalation review:
+     • Determine whether σ8 can be retained at Rung‑2 as a policy exception (diagnostic‑only use), or
+     • Initiate a governance discussion whether σ8 must be considered Rung‑3‑forced in the absence of clustering, given neutrality elsewhere.
+3) BAO Restriction (Non‑Negotiable)
+   - The envelope must not be used to address BAO scale (T9). Any attempt to couple σ8 resolution to BAO shift violates governance and halts escalation.
+
+Decision Options (No Execution)
+- Option A: Provisional Rung‑2 Retention
+  • Keep σ8 in Rung‑2 with the envelope as a bounded diagnostic, pending future logic‑only clustering.
+  • Conditions: Envelope invariants strictly enforced; scope limited to σ8‑adjacent diagnostics.
+- Option B: Escalation to Rung‑3 Review (Logic‑Only)
+  • If singleton persists and governance favors non‑proliferation of mechanism classes, convene a Rung‑3 review to test whether σ8 should be treated as “forced/irreducible” absent clustering.
+  • No physics or numerical changes proposed; this is a governance classification step only.
+
+Recommended Immediate Posture (No Numerics)
+- Adopt Option A (Provisional Rung‑2 Retention) to preserve ladder stability while maintaining the BAO restriction and envelope invariants.
+- Record a timed checkpoint to revisit clustering after additional logic‑only audits (e.g., shape‑adjacent observables under governance text, not numerics).
+
+Non‑Authorized Actions
+- No parameter inference, envelope tuning, or growth modifications.
+- No CLASS reruns or data generation.
+- No reinterpretation of tensions beyond governance map.
+- No commits.
+
+Stop Condition
+- This memo documents the governance‑only escalation stance for σ8 as a singleton. Any change of posture requires explicit authorization.

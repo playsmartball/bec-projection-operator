@@ -1,0 +1,10 @@
+Phase 16C — Minimal σ8 Operator (LOCKED)
+operator: exponential, n=2, kc=0.200 h/Mpc
+sigma8_base = 0.811081
+sigma8_obs  = 0.563010
+delta = -30.5852%
+bao_k_base = nan
+bao_k_obs  = nan
+bao_shift_rel = nan
+large_scale_W_mean(k<0.02) >= 0.98 ? True
+OK: Operator passes minimal locked checks.

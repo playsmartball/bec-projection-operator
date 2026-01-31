@@ -1,0 +1,19 @@
+Phase-17A — σ8 Sensitivity Scan (Classification)
+Inputs: data/matter_power_linear_z0.txt (locked), linear theory; no growth evolution.
+Baseline sigma8 = 0.811081
+
+class	alpha	Delta_sigma8[%]	sigma8	k-range	z-dependence	side-effects	flag
+scale-local	2%	-0.64	0.805864	[0.10, 0.30]	none	BAO shift: NO; large-scale affected: NO	INSUFFICIENT
+scale-local	5%	-1.62	0.797975	[0.10, 0.30]	none	BAO shift: NO; large-scale affected: NO	INSUFFICIENT
+scale-local	8%	-2.60	0.790007	[0.10, 0.30]	none	BAO shift: NO; large-scale affected: NO	POTENTIALLY RELEVANT
+high-k attenuation	2%	-0.43	0.807574	k ≥ 0.20 (none below 0.05)	none	BAO shift: NO; large-scale affected: NO	INSUFFICIENT
+high-k attenuation	5%	-1.08	0.802285	k ≥ 0.20 (none below 0.05)	none	BAO shift: NO; large-scale affected: NO	INSUFFICIENT
+high-k attenuation	8%	-1.74	0.796961	k ≥ 0.20 (none below 0.05)	none	BAO shift: NO; large-scale affected: NO	INSUFFICIENT
+broadband tilt	2%	-0.42	0.807674	broad (normalized at low k)	none	BAO shift: NO; large-scale affected: NO	INSUFFICIENT
+broadband tilt	5%	-1.05	0.802535	broad (normalized at low k)	none	BAO shift: NO; large-scale affected: NO	INSUFFICIENT
+broadband tilt	8%	-1.69	0.797363	broad (normalized at low k)	none	BAO shift: NO; large-scale affected: NO	INSUFFICIENT
+late-time growth (z<1)	2%	-1.01	0.802930	all k (uniform)	late-time only	BAO shift: NO; large-scale affected: YES	INSUFFICIENT
+late-time growth (z<1)	5%	-2.53	0.790544	all k (uniform)	late-time only	BAO shift: NO; large-scale affected: YES	POTENTIALLY RELEVANT
+late-time growth (z<1)	8%	-4.08	0.777962	all k (uniform)	late-time only	BAO shift: NO; large-scale affected: YES	POTENTIALLY RELEVANT
+
+Phase-17A completed: σ₈ sensitivity classified without model assumptions or fitting.

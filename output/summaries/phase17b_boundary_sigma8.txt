@@ -1,0 +1,20 @@
+Phase-17B — Boundary-Integrated Density Response Test for σ8
+Status: EXECUTED UNDER GOVERNANCE
+Scope: Classification and bounding only (no models, no fits, no tuning)
+
+Baseline sigma8 = 0.811081
+
+family	params	Delta_sigma8[%]	sigma8	BAO_shift>1%	low-k_changed>1%	monotone	classification
+B1	k_b=0.30, A=0.05	-0.34	0.808285	NO	NO	YES	INSUFFICIENT
+B1	k_b=0.30, A=0.10	-0.69	0.805480	NO	NO	YES	INSUFFICIENT
+B1	k_b=0.50, A=0.05	-0.03	0.810874	NO	NO	YES	INSUFFICIENT
+B1	k_b=0.50, A=0.10	-0.05	0.810667	NO	NO	YES	INSUFFICIENT
+B1	k_b=1.00, A=0.05	-0.00	0.811054	NO	NO	YES	INSUFFICIENT
+B1	k_b=1.00, A=0.10	-0.01	0.811026	NO	NO	YES	INSUFFICIENT
+B2	k_b=0.30, n=2	-14.77	0.691298	NO	NO	YES	STRUCTURALLY POTENT
+B2	k_b=0.30, n=4	-10.54	0.725625	NO	NO	YES	STRUCTURALLY POTENT
+B2	k_b=0.50, n=2	-7.07	0.753758	NO	NO	YES	STRUCTURALLY POTENT
+B2	k_b=0.50, n=4	-2.74	0.788832	NO	NO	YES	MARGINAL
+B3	k_i=[0.2, 0.4, 0.6, 0.8], A_i=0.02	-0.44	0.807533	NO	NO	YES	INSUFFICIENT
+
+Phase-17B completed: boundary-integrated density response bounded without models or tuning.

@@ -1,0 +1,54 @@
+Phase-21C — GROWTH(z) Lever Scope (Design-Only)
+Status: GOVERNANCE DESIGN ONLY — NO EXECUTION — NO NUMERICS — NO MODELS — NO COMMITS
+
+Objective
+- Define the admissible growth-history lever GROWTH(z) under governance to assess Rung‑3 tensions without collapsing ladder separability or extending perturbation envelopes.
+- Preserve σ8 containment (no redefinition), BAO phase integrity, low‑k calibration, and k‑independence.
+
+Locks (Carried Forward)
+- No envelope extension beyond the admitted σ8 class (smooth, k‑local, monotone, W(0)=1, BAO‑preserving).
+- No geometry (GEO) or early‑time (EARLY) changes; no projection (PROJ) modifications.
+- No execution or parameterization; design‑level scoping only.
+
+Lever Definition (Conceptual)
+- Let D_fid(z) denote the fiducial linear growth factor. The lever introduces a smooth, bounded, redshift‑only modifier g(z) such that:
+  • D(z) = D_fid(z) · g(z)
+  • g(z) is C1‑smooth, monotone‑optional (not required), strictly k‑independent (no PERT(k) coupling)
+  • g(0) = 1 (σ8 at z=0 unchanged; no σ8 redefinition)
+  • g(z) remains within a narrow band around unity (design‑only; no numeric bounds specified)
+  • No implicit alteration of BAO phase, sound horizon, or background distances
+
+Guardrails and Invariants
+- BAO phase integrity: unchanged by GROWTH(z) (acts only on amplitude vs redshift, not on rulers)
+- Low‑k calibration: preserved; no tilt or feature introduction at k→0
+- k‑independence: strictly enforced; no coupling to admitted perturbation envelope
+- σ8 containment: D(0)=D_fid(0); any incidental σ8 drift is disallowed
+- Independence from GEO/EARLY/PROJ: growth timing only; no mixed levers
+
+Forbidden Couplings
+- Any dependence g(z, k) or composition g(z) that emulates PERT(k)
+- Any reweighting that effectively shifts BAO scale or introduces low‑k tilt
+- Any mechanism that alters distance measures, recombination physics, or LOS kernels
+
+Design‑Level Windows (Illustrative, non‑parametric)
+- Late‑time window: g(z)≠1 over 0<z<z1, with smooth return to 1 by z=0 (keeps σ8 fixed); purpose: lensing‑weighted sensitivity
+- Intermediate‑time window: g(z)≠1 over z1<z<z2, with g(0)=1; purpose: isolate A_L‑like responses without touching σ8
+- High‑z window (deferred): not authorized here; would approach EARLY domain — excluded in this phase
+
+Observable Response Map (Logic‑Only)
+- T12 (CMB lensing amplitude, A_L): POTENTIALLY SENSITIVE — integrated growth weighting may vary amplitude without k‑dependence, if σ8 is fixed at z=0
+- σ8 (Rung‑2 singleton): OUT‑OF‑SCOPE — must remain fixed by g(0)=1; any change triggers halt
+- Rung‑1 (e.g., fσ8, clusters): OUT‑OF‑SCOPE — lever is not for calibration/inference here
+- T1 (H0), T14 (Lyman‑α), T15/T16 (early geometry/primordial): NEUTRAL under this lever by design; EARLY/GEO needed
+
+Classification Outcomes (for future logic‑only memo; not executed here)
+- ADMITTED: A specification of g(z) exists that respects all guardrails while influencing A_L‑type observables
+- BLOCKED: Any such g(z) would violate σ8 containment, BAO integrity, low‑k calibration, or k‑independence
+
+Non‑Authorized Actions
+- No numerical forms for g(z); no integration or data contact; no parameter sweeps
+- No coupling to GEO/EARLY/PROJ; no reinterpretation of σ8 or envelopes
+- No commits
+
+Stop Condition
+- Scope defined. No execution performed. Ladder separability preserved. Further action requires explicit authorization for a logic‑only classification memo (Phase‑21C‑Logic) or for an execution protocol (not recommended without GEO/PROJ governance discussion).

@@ -1,0 +1,28 @@
+from pathlib import Path
+
+F = Path('/mnt/e/CascadeProjects/bec-projection-operator-git/examples/dedalus_alfven_2d_nl_ivp.py')
+
+def main():
+    s = F.read_text(encoding='utf-8')
+    before = s
+    # Remove accidental inclusion of s_* variables in Dirichlet var_list block
+    block = (
+        "        if eta > 0.0:\n"
+        "            var_list += [tau1bx, tau2bx, tau1by, tau2by]\n"
+        "            if (kappa_model == 'lowpass') and (kappa > 0.0) and (omega_c > 0.0):\n"
+        "                var_list += [s_bx_l, s_bx_r, s_by_l, s_by_r]"
+    )
+    repl = (
+        "        if eta > 0.0:\n"
+        "            var_list += [tau1bx, tau2bx, tau1by, tau2by]"
+    )
+    s = s.replace(block, repl)
+
+    if s != before:
+        F.write_text(s, encoding='utf-8')
+        print('PATCH_OK_FIX_DIR')
+    else:
+        print('NO_CHANGES_FIX_DIR')
+
+if __name__ == '__main__':
+    main()

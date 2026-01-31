@@ -1,0 +1,51 @@
+Phase-19A — Envelope Robustness Execution (σ8 only)
+Status: EXECUTION PROTOCOL — NO EXECUTION IN THIS DOCUMENT — NO TUNING — NO COMMITS
+
+Objective
+- Stress-test the admitted σ8 envelope class for numerical stability and governance robustness.
+- Confirm invariants and ordering behavior; do not attempt explanation or fitting.
+
+Locks and Permissions (carried forward)
+- Fiducial P(k): data/matter_power_linear_z0.txt (locked provenance)
+- Envelope family: B2 only (smooth roll-off), k-local, monotone, W(0)=1, BAO-preserving, no low‑k tilt
+- Locked grid (no tuning): k_b ∈ {0.30, 0.50} h/Mpc; n ∈ {2, 4}
+- No new envelopes, no optimization, no clustering attempts, no reinterpretations
+- σ8 only; no other tensions are evaluated in 19A
+
+Computations (per envelope case, one pass)
+1) Load locked k, P(k).
+2) Define W_B2(k; k_b, n) = 1 / (1 + (k/k_b)^n).
+3) Compute P_obs(k) = W(k)·P(k).
+4) Compute σ8 via top-hat integral over ln k: σ8^2 = ∫ d ln k [k^3 P_obs(k)/(2π^2)] |W8(k; R=8)|^2.
+5) Compute Δσ8[%] = 100·(σ8/σ8_base − 1).
+
+Robustness/Constraint Checks (logic + numerics)
+- Monotonicity: W'(k) ≤ 0 on the grid (within tolerance); step-free smooth decrease.
+- Range and invariants: 0 ≤ W(k) ≤ 1; W(0)=1 (within tolerance).
+- BAO preservation: First BAO peak position shift ≤ 1% (NO flag expected).
+- Low‑k change: Mean |W(k)−1| for k<0.05 h/Mpc ≤ 1% (NO flag expected).
+- Finite/stability: σ8 finite; no NaN/Inf; repeat evaluation consistency.
+- Shape‑sensitivity ordering (no fitting):
+  • For fixed n: |Δσ8(0.30)| ≥ |Δσ8(0.50)| (stronger roll-off at smaller k_b).
+  • For fixed k_b: |Δσ8(n=2)| ≥ |Δσ8(n=4)| (shallower index suppresses more broadly).
+
+Outputs
+- Text summary: output/summaries/phase19a_sigma8_envelope_robustness.txt
+  • Baseline σ8, table of cases with Δσ8[%], flags (BAO, low‑k, monotone, range), ordering checks, PASS/FAIL
+- Machine table: output/summaries/phase19a_sigma8_envelope_robustness_table.txt
+  • Columns: params | sigma8 | Delta_sigma8[%] | BAO_shift | low-k_changed | monotone | in_range | ordering_ok | status
+- Figure: output/figures/phase19a_robustness_b2.png
+  • Δσ8[%] vs k_b for n∈{2,4}; annotate ordering checks; no fits
+
+Hard Stop Conditions
+- Stop immediately if any invariant is violated (BAO shift>1%, low‑k change>1%, non‑monotone W, or W∉[0,1]).
+- Stop after writing outputs; do not proceed to any model discussion, fitting, or broader interpretation.
+- No commits.
+
+Execution Script (to be created only upon authorization)
+- scripts/phase19a_envelope_robustness.py
+  • Implements exactly the computations and checks above using the locked grid.
+  • Writes the specified outputs and exits.
+
+Authorization Phrase (required to execute)
+- "Authorize Phase-19A: Envelope Robustness Execution (σ8 only, no new envelopes, no tuning)."

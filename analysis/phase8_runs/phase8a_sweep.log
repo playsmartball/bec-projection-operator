@@ -1,0 +1,560 @@
+Wed Jan 21 21:03:51 CST 2026
+START PERSISTENT PHASE-8A SWEEP
+SKIP_EXISTING kappa=1e-4 amp=1e-6 eps=0
+SKIP_EXISTING kappa=1e-4 amp=1e-6 eps=0.05
+SKIP_EXISTING kappa=1e-4 amp=1e-4 eps=0
+RUN_START kappa=1e-4 amp=1e-4 eps=0.05
+[1769051032.609621] [DESKTOP-HA4J22M:14381:0]           ib_md.c:847  UCX  DEBUG no devices are found
+[1769051032.609908] [DESKTOP-HA4J22M:14381:0]           ib_md.c:847  UCX  DEBUG no devices are found
+[1769051032.609938] [DESKTOP-HA4J22M:14381:0]           ib_md.c:847  UCX  DEBUG no devices are found
+[1769051032.609955] [DESKTOP-HA4J22M:14381:0]           ib_md.c:847  UCX  DEBUG no devices are found
+[1769051032.610498] [DESKTOP-HA4J22M:14381:0]           mpool.c:136  UCX  DEBUG mpool self_msg_desc: align 64, maxelems 4294967295, elemsize 8200
+[1769051032.610687] [DESKTOP-HA4J22M:14381:0]            self.c:247  UCX  DEBUG created self iface id 0x83e9dbe5333f44d6 send_size 8192
+[1769051032.610698] [DESKTOP-HA4J22M:14381:0]      ucp_worker.c:1433 UCX  DEBUG created interface[0]=0x5ee6de791580 using self/memory on worker 0x5ee6de792ce0
+[1769051032.610713] [DESKTOP-HA4J22M:14381:0]           mpool.c:136  UCX  DEBUG mpool uct_tcp_iface_tx_buf_mp: align 64, maxelems 4294967295, elemsize 8205
+[1769051032.610714] [DESKTOP-HA4J22M:14381:0]           mpool.c:136  UCX  DEBUG mpool uct_tcp_iface_rx_buf_mp: align 64, maxelems 4294967295, elemsize 131090
+[1769051032.610975] [DESKTOP-HA4J22M:14381:0]           async.c:247  UCX  DEBUG added async handler 0x5ee6de790ce0 [id=29 ref 1] ???() to hash
+[1769051032.610996] [DESKTOP-HA4J22M:14381:0]           async.c:521  UCX  DEBUG listening to async event fd 29 events 0x5 mode thread_spinlock
+[1769051032.611000] [DESKTOP-HA4J22M:14381:0]       tcp_iface.c:613  UCX  DEBUG tcp_iface 0x5ee6de7b5cd0: listening for connections (fd=29) on 172.30.253.113:32883 netif eth0
+[1769051032.611331] [DESKTOP-HA4J22M:14381:0]            topo.c:938  UCX  DEBUG /sys/class/net/eth0: PF sysfs path is '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e'
+[1769051032.611339] [DESKTOP-HA4J22M:14381:0]             sys.c:440  UCX  DEBUG failed to open /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width: No such file or directory
+[1769051032.611581] [DESKTOP-HA4J22M:14381:0]             sys.c:1638 UCX  DEBUG eth0: could not read from '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width'
+[1769051032.611583] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG eth0: pci bandwidth undetected, using maximal value
+[1769051032.611612] [DESKTOP-HA4J22M:14381:0]      ucp_worker.c:1433 UCX  DEBUG created interface[1]=0x5ee6de7b5cd0 using tcp/eth0 on worker 0x5ee6de792ce0
+[1769051032.611881] [DESKTOP-HA4J22M:14381:0]           mpool.c:136  UCX  DEBUG mpool uct_tcp_iface_tx_buf_mp: align 64, maxelems 4294967295, elemsize 8205
+[1769051032.611883] [DESKTOP-HA4J22M:14381:0]           mpool.c:136  UCX  DEBUG mpool uct_tcp_iface_rx_buf_mp: align 64, maxelems 4294967295, elemsize 131090
+[1769051032.611939] [DESKTOP-HA4J22M:14381:0]           async.c:247  UCX  DEBUG added async handler 0x5ee6de7b7d00 [id=31 ref 1] ???() to hash
+[1769051032.611947] [DESKTOP-HA4J22M:14381:0]           async.c:521  UCX  DEBUG listening to async event fd 31 events 0x5 mode thread_spinlock
+[1769051032.612206] [DESKTOP-HA4J22M:14381:0]       tcp_iface.c:613  UCX  DEBUG tcp_iface 0x5ee6de7b69e0: listening for connections (fd=31) on 127.0.0.1:48937 netif lo
+[1769051032.612242] [DESKTOP-HA4J22M:14381:0]            sock.c:90   UCX  DEBUG ioctl(req=35142, ifr_name=lo) failed: Operation not supported
+[1769051032.612248] [DESKTOP-HA4J22M:14381:0]         tcp_net.c:61   UCX  DEBUG speed of lo is UNKNOWN, assuming 100 Mbps
+[1769051032.612489] [DESKTOP-HA4J22M:14381:0]            topo.c:935  UCX  DEBUG /sys/class/net/lo: sysfs path undetected
+[1769051032.612492] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG lo: pci bandwidth undetected, using maximal value
+[1769051032.612515] [DESKTOP-HA4J22M:14381:0]      ucp_worker.c:1433 UCX  DEBUG created interface[2]=0x5ee6de7b69e0 using tcp/lo on worker 0x5ee6de792ce0
+[1769051032.612583] [DESKTOP-HA4J22M:14381:0]         mm_sysv.c:97   UCX  DEBUG   mm failed to allocate 33023 bytes with hugetlb
+[1769051032.612765] [DESKTOP-HA4J22M:14381:0]           mpool.c:136  UCX  DEBUG mpool mm_recv_desc: align 64, maxelems 4294967295, elemsize 8368
+[1769051032.612773] [DESKTOP-HA4J22M:14381:0]         mm_sysv.c:97   UCX  DEBUG   mm failed to allocate 4292720 bytes with hugetlb
+[1769051032.612784] [DESKTOP-HA4J22M:14381:0]           mpool.c:281  UCX  DEBUG mpool mm_recv_desc: allocated chunk 0x7652b15e7018 of 4296680 bytes with 512 elements
+[1769051032.613671] [DESKTOP-HA4J22M:14381:0]        mm_iface.c:734  UCX  DEBUG created mm iface 0x5ee6de7b7d60 FIFO id 0x2001f va 0x7652be63e000 size 36864 (128 x 256 elems)
+[1769051032.613897] [DESKTOP-HA4J22M:14381:0]      ucp_worker.c:1433 UCX  DEBUG created interface[3]=0x5ee6de7b7d60 using sysv/memory on worker 0x5ee6de792ce0
+[1769051032.613970] [DESKTOP-HA4J22M:14381:0]        mm_posix.c:607  UCX  DEBUG   allocated posix shared memory at 0x7652be635000 length 36864
+[1769051032.613980] [DESKTOP-HA4J22M:14381:0]           mpool.c:136  UCX  DEBUG mpool mm_recv_desc: align 64, maxelems 4294967295, elemsize 8368
+[1769051032.615079] [DESKTOP-HA4J22M:14381:0]        mm_posix.c:373  UCX  DEBUG   shared memory mmap(addr=(nil), length=6291456, flags= HUGETLB, fd=35) failed: Invalid argument
+[1769051032.615087] [DESKTOP-HA4J22M:14381:0]        mm_posix.c:607  UCX  DEBUG   allocated posix shared memory at 0x7652b11ce000 length 4296704
+[1769051032.615093] [DESKTOP-HA4J22M:14381:0]           mpool.c:281  UCX  DEBUG mpool mm_recv_desc: allocated chunk 0x7652b11ce018 of 4296680 bytes with 512 elements
+[1769051032.615693] [DESKTOP-HA4J22M:14381:0]        mm_iface.c:734  UCX  DEBUG created mm iface 0x5ee6de7b8350 FIFO id 0xd00000084000382d va 0x7652be635000 size 36864 (128 x 256 elems)
+[1769051032.615703] [DESKTOP-HA4J22M:14381:0]      ucp_worker.c:1433 UCX  DEBUG created interface[4]=0x5ee6de7b8350 using posix/memory on worker 0x5ee6de792ce0
+[1769051032.615717] [DESKTOP-HA4J22M:14381:0]      ucp_worker.c:1433 UCX  DEBUG created interface[5]=0x5ee6de7b9590 using cuda_copy/cuda on worker 0x5ee6de792ce0
+[1769051032.629321] [DESKTOP-HA4J22M:14381:0]  cuda_ipc_iface.c:230  UCX  DEBUG nvmlDeviceGetNvLinkRemotePciInfo_v2(device, link, &pci) failed: Not Supported
+[1769051032.629326] [DESKTOP-HA4J22M:14381:0]  cuda_ipc_iface.c:234  UCX  DEBUG could not find remote end info for link 0
+[1769051032.630540] [DESKTOP-HA4J22M:14381:0]  cuda_ipc_iface.c:256  UCX  DEBUG cuda-ipc get zcopy disabled as no nvlinks detected
+[1769051032.630551] [DESKTOP-HA4J22M:14381:0]      ucp_worker.c:1433 UCX  DEBUG created interface[6]=0x5ee6de7b9b30 using cuda_ipc/cuda on worker 0x5ee6de792ce0
+[1769051032.630856] [DESKTOP-HA4J22M:14381:0]           mpool.c:136  UCX  DEBUG mpool uct_scopy_iface_tx_mp: align 64, maxelems 4294967295, elemsize 736
+[1769051032.630871] [DESKTOP-HA4J22M:14381:0]      ucp_worker.c:1433 UCX  DEBUG created interface[7]=0x5ee6de7bac50 using cma/memory on worker 0x5ee6de792ce0
+[1769051032.630875] [DESKTOP-HA4J22M:14381:0]      ucp_worker.c:1150 UCX  DEBUG selected scalable tl bitmap: 0xff 0x0 (8 tls)
+[1769051032.631058] [DESKTOP-HA4J22M:14381:0]           async.c:247  UCX  DEBUG added async handler 0x5ee6de7b9370 [id=28 ref 1] ???() to hash
+[1769051032.631089] [DESKTOP-HA4J22M:14381:0]           async.c:521  UCX  DEBUG listening to async event fd 28 events 0x0 mode thread_spinlock
+[1769051032.631202] [DESKTOP-HA4J22M:14381:0]            topo.c:938  UCX  DEBUG /sys/class/net/eth0: PF sysfs path is '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e'
+[1769051032.632703] [DESKTOP-HA4J22M:14381:0]             sys.c:440  UCX  DEBUG failed to open /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width: No such file or directory
+[1769051032.632706] [DESKTOP-HA4J22M:14381:0]             sys.c:1638 UCX  DEBUG eth0: could not read from '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width'
+[1769051032.632708] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG eth0: pci bandwidth undetected, using maximal value
+[1769051032.633171] [DESKTOP-HA4J22M:14381:0]            topo.c:938  UCX  DEBUG /sys/class/net/eth0: PF sysfs path is '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e'
+[1769051032.633179] [DESKTOP-HA4J22M:14381:0]             sys.c:440  UCX  DEBUG failed to open /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width: No such file or directory
+[1769051032.633375] [DESKTOP-HA4J22M:14381:0]             sys.c:1638 UCX  DEBUG eth0: could not read from '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width'
+[1769051032.633378] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG eth0: pci bandwidth undetected, using maximal value
+[1769051032.633463] [DESKTOP-HA4J22M:14381:0]            topo.c:938  UCX  DEBUG /sys/class/net/eth0: PF sysfs path is '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e'
+[1769051032.633737] [DESKTOP-HA4J22M:14381:0]             sys.c:440  UCX  DEBUG failed to open /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width: No such file or directory
+[1769051032.633740] [DESKTOP-HA4J22M:14381:0]             sys.c:1638 UCX  DEBUG eth0: could not read from '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width'
+[1769051032.633957] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG eth0: pci bandwidth undetected, using maximal value
+[1769051032.634018] [DESKTOP-HA4J22M:14381:0]            topo.c:938  UCX  DEBUG /sys/class/net/eth0: PF sysfs path is '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e'
+[1769051032.634024] [DESKTOP-HA4J22M:14381:0]             sys.c:440  UCX  DEBUG failed to open /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width: No such file or directory
+[1769051032.634311] [DESKTOP-HA4J22M:14381:0]             sys.c:1638 UCX  DEBUG eth0: could not read from '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width'
+[1769051032.634313] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG eth0: pci bandwidth undetected, using maximal value
+[1769051032.634426] [DESKTOP-HA4J22M:14381:0]            topo.c:938  UCX  DEBUG /sys/class/net/eth0: PF sysfs path is '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e'
+[1769051032.634604] [DESKTOP-HA4J22M:14381:0]             sys.c:440  UCX  DEBUG failed to open /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width: No such file or directory
+[1769051032.634606] [DESKTOP-HA4J22M:14381:0]             sys.c:1638 UCX  DEBUG eth0: could not read from '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width'
+[1769051032.634802] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG eth0: pci bandwidth undetected, using maximal value
+[1769051032.634865] [DESKTOP-HA4J22M:14381:0]            topo.c:938  UCX  DEBUG /sys/class/net/eth0: PF sysfs path is '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e'
+[1769051032.634870] [DESKTOP-HA4J22M:14381:0]             sys.c:440  UCX  DEBUG failed to open /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width: No such file or directory
+[1769051032.635110] [DESKTOP-HA4J22M:14381:0]             sys.c:1638 UCX  DEBUG eth0: could not read from '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width'
+[1769051032.635112] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG eth0: pci bandwidth undetected, using maximal value
+[1769051032.635340] [DESKTOP-HA4J22M:14381:0]            topo.c:938  UCX  DEBUG /sys/class/net/eth0: PF sysfs path is '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e'
+[1769051032.635364] [DESKTOP-HA4J22M:14381:0]             sys.c:440  UCX  DEBUG failed to open /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width: No such file or directory
+[1769051032.635366] [DESKTOP-HA4J22M:14381:0]             sys.c:1638 UCX  DEBUG eth0: could not read from '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width'
+[1769051032.635599] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG eth0: pci bandwidth undetected, using maximal value
+[1769051032.635664] [DESKTOP-HA4J22M:14381:0]            topo.c:938  UCX  DEBUG /sys/class/net/eth0: PF sysfs path is '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e'
+[1769051032.635911] [DESKTOP-HA4J22M:14381:0]             sys.c:440  UCX  DEBUG failed to open /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width: No such file or directory
+[1769051032.635914] [DESKTOP-HA4J22M:14381:0]             sys.c:1638 UCX  DEBUG eth0: could not read from '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width'
+[1769051032.635915] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG eth0: pci bandwidth undetected, using maximal value
+[1769051032.636226] [DESKTOP-HA4J22M:14381:0]            topo.c:938  UCX  DEBUG /sys/class/net/eth0: PF sysfs path is '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e'
+[1769051032.636232] [DESKTOP-HA4J22M:14381:0]             sys.c:440  UCX  DEBUG failed to open /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width: No such file or directory
+[1769051032.636464] [DESKTOP-HA4J22M:14381:0]             sys.c:1638 UCX  DEBUG eth0: could not read from '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width'
+[1769051032.636466] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG eth0: pci bandwidth undetected, using maximal value
+[1769051032.636547] [DESKTOP-HA4J22M:14381:0]            topo.c:938  UCX  DEBUG /sys/class/net/eth0: PF sysfs path is '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e'
+[1769051032.636812] [DESKTOP-HA4J22M:14381:0]             sys.c:440  UCX  DEBUG failed to open /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width: No such file or directory
+[1769051032.636815] [DESKTOP-HA4J22M:14381:0]             sys.c:1638 UCX  DEBUG eth0: could not read from '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width'
+[1769051032.637011] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG eth0: pci bandwidth undetected, using maximal value
+[1769051032.637074] [DESKTOP-HA4J22M:14381:0]            topo.c:938  UCX  DEBUG /sys/class/net/eth0: PF sysfs path is '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e'
+[1769051032.637080] [DESKTOP-HA4J22M:14381:0]             sys.c:440  UCX  DEBUG failed to open /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width: No such file or directory
+[1769051032.637315] [DESKTOP-HA4J22M:14381:0]             sys.c:1638 UCX  DEBUG eth0: could not read from '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width'
+[1769051032.637317] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG eth0: pci bandwidth undetected, using maximal value
+[1769051032.637380] [DESKTOP-HA4J22M:14381:0]            topo.c:938  UCX  DEBUG /sys/class/net/eth0: PF sysfs path is '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e'
+[1769051032.637565] [DESKTOP-HA4J22M:14381:0]             sys.c:440  UCX  DEBUG failed to open /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width: No such file or directory
+[1769051032.637567] [DESKTOP-HA4J22M:14381:0]             sys.c:1638 UCX  DEBUG eth0: could not read from '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width'
+[1769051032.637786] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG eth0: pci bandwidth undetected, using maximal value
+[1769051032.637856] [DESKTOP-HA4J22M:14381:0]            topo.c:938  UCX  DEBUG /sys/class/net/eth0: PF sysfs path is '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e'
+[1769051032.637863] [DESKTOP-HA4J22M:14381:0]             sys.c:440  UCX  DEBUG failed to open /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width: No such file or directory
+[1769051032.638072] [DESKTOP-HA4J22M:14381:0]             sys.c:1638 UCX  DEBUG eth0: could not read from '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width'
+[1769051032.638074] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG eth0: pci bandwidth undetected, using maximal value
+[1769051032.638439] [DESKTOP-HA4J22M:14381:0]           async.c:247  UCX  DEBUG added async handler 0x5ee6de77ccc0 [id=30 ref 1] ???() to hash
+[1769051032.638479] [DESKTOP-HA4J22M:14381:0]           async.c:521  UCX  DEBUG listening to async event fd 30 events 0x0 mode thread_spinlock
+[1769051032.638510] [DESKTOP-HA4J22M:14381:0]            sock.c:90   UCX  DEBUG ioctl(req=35142, ifr_name=lo) failed: Operation not supported
+[1769051032.638516] [DESKTOP-HA4J22M:14381:0]         tcp_net.c:61   UCX  DEBUG speed of lo is UNKNOWN, assuming 100 Mbps
+[1769051032.638823] [DESKTOP-HA4J22M:14381:0]            topo.c:935  UCX  DEBUG /sys/class/net/lo: sysfs path undetected
+[1769051032.638826] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG lo: pci bandwidth undetected, using maximal value
+[1769051032.638907] [DESKTOP-HA4J22M:14381:0]            sock.c:90   UCX  DEBUG ioctl(req=35142, ifr_name=lo) failed: Operation not supported
+[1769051032.638912] [DESKTOP-HA4J22M:14381:0]         tcp_net.c:61   UCX  DEBUG speed of lo is UNKNOWN, assuming 100 Mbps
+[1769051032.639153] [DESKTOP-HA4J22M:14381:0]            topo.c:935  UCX  DEBUG /sys/class/net/lo: sysfs path undetected
+[1769051032.639155] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG lo: pci bandwidth undetected, using maximal value
+[1769051032.639177] [DESKTOP-HA4J22M:14381:0]            sock.c:90   UCX  DEBUG ioctl(req=35142, ifr_name=lo) failed: Operation not supported
+[1769051032.639180] [DESKTOP-HA4J22M:14381:0]         tcp_net.c:61   UCX  DEBUG speed of lo is UNKNOWN, assuming 100 Mbps
+[1769051032.639460] [DESKTOP-HA4J22M:14381:0]            topo.c:935  UCX  DEBUG /sys/class/net/lo: sysfs path undetected
+[1769051032.639462] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG lo: pci bandwidth undetected, using maximal value
+[1769051032.639486] [DESKTOP-HA4J22M:14381:0]            sock.c:90   UCX  DEBUG ioctl(req=35142, ifr_name=lo) failed: Operation not supported
+[1769051032.639489] [DESKTOP-HA4J22M:14381:0]         tcp_net.c:61   UCX  DEBUG speed of lo is UNKNOWN, assuming 100 Mbps
+[1769051032.639755] [DESKTOP-HA4J22M:14381:0]            topo.c:935  UCX  DEBUG /sys/class/net/lo: sysfs path undetected
+[1769051032.639757] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG lo: pci bandwidth undetected, using maximal value
+[1769051032.639795] [DESKTOP-HA4J22M:14381:0]            sock.c:90   UCX  DEBUG ioctl(req=35142, ifr_name=lo) failed: Operation not supported
+[1769051032.639799] [DESKTOP-HA4J22M:14381:0]         tcp_net.c:61   UCX  DEBUG speed of lo is UNKNOWN, assuming 100 Mbps
+[1769051032.640149] [DESKTOP-HA4J22M:14381:0]            topo.c:935  UCX  DEBUG /sys/class/net/lo: sysfs path undetected
+[1769051032.640152] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG lo: pci bandwidth undetected, using maximal value
+[1769051032.640212] [DESKTOP-HA4J22M:14381:0]            sock.c:90   UCX  DEBUG ioctl(req=35142, ifr_name=lo) failed: Operation not supported
+[1769051032.640216] [DESKTOP-HA4J22M:14381:0]         tcp_net.c:61   UCX  DEBUG speed of lo is UNKNOWN, assuming 100 Mbps
+[1769051032.640557] [DESKTOP-HA4J22M:14381:0]            topo.c:935  UCX  DEBUG /sys/class/net/lo: sysfs path undetected
+[1769051032.640560] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG lo: pci bandwidth undetected, using maximal value
+[1769051032.640602] [DESKTOP-HA4J22M:14381:0]            sock.c:90   UCX  DEBUG ioctl(req=35142, ifr_name=lo) failed: Operation not supported
+[1769051032.640606] [DESKTOP-HA4J22M:14381:0]         tcp_net.c:61   UCX  DEBUG speed of lo is UNKNOWN, assuming 100 Mbps
+[1769051032.640997] [DESKTOP-HA4J22M:14381:0]            topo.c:935  UCX  DEBUG /sys/class/net/lo: sysfs path undetected
+[1769051032.641000] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG lo: pci bandwidth undetected, using maximal value
+[1769051032.641039] [DESKTOP-HA4J22M:14381:0]            sock.c:90   UCX  DEBUG ioctl(req=35142, ifr_name=lo) failed: Operation not supported
+[1769051032.641042] [DESKTOP-HA4J22M:14381:0]         tcp_net.c:61   UCX  DEBUG speed of lo is UNKNOWN, assuming 100 Mbps
+[1769051032.641531] [DESKTOP-HA4J22M:14381:0]            topo.c:935  UCX  DEBUG /sys/class/net/lo: sysfs path undetected
+[1769051032.641533] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG lo: pci bandwidth undetected, using maximal value
+[1769051032.641556] [DESKTOP-HA4J22M:14381:0]            sock.c:90   UCX  DEBUG ioctl(req=35142, ifr_name=lo) failed: Operation not supported
+[1769051032.641559] [DESKTOP-HA4J22M:14381:0]         tcp_net.c:61   UCX  DEBUG speed of lo is UNKNOWN, assuming 100 Mbps
+[1769051032.641899] [DESKTOP-HA4J22M:14381:0]            topo.c:935  UCX  DEBUG /sys/class/net/lo: sysfs path undetected
+[1769051032.641901] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG lo: pci bandwidth undetected, using maximal value
+[1769051032.641923] [DESKTOP-HA4J22M:14381:0]            sock.c:90   UCX  DEBUG ioctl(req=35142, ifr_name=lo) failed: Operation not supported
+[1769051032.641927] [DESKTOP-HA4J22M:14381:0]         tcp_net.c:61   UCX  DEBUG speed of lo is UNKNOWN, assuming 100 Mbps
+[1769051032.642303] [DESKTOP-HA4J22M:14381:0]            topo.c:935  UCX  DEBUG /sys/class/net/lo: sysfs path undetected
+[1769051032.642307] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG lo: pci bandwidth undetected, using maximal value
+[1769051032.642354] [DESKTOP-HA4J22M:14381:0]            sock.c:90   UCX  DEBUG ioctl(req=35142, ifr_name=lo) failed: Operation not supported
+[1769051032.642358] [DESKTOP-HA4J22M:14381:0]         tcp_net.c:61   UCX  DEBUG speed of lo is UNKNOWN, assuming 100 Mbps
+[1769051032.642802] [DESKTOP-HA4J22M:14381:0]            topo.c:935  UCX  DEBUG /sys/class/net/lo: sysfs path undetected
+[1769051032.642804] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG lo: pci bandwidth undetected, using maximal value
+[1769051032.642837] [DESKTOP-HA4J22M:14381:0]            sock.c:90   UCX  DEBUG ioctl(req=35142, ifr_name=lo) failed: Operation not supported
+[1769051032.642841] [DESKTOP-HA4J22M:14381:0]         tcp_net.c:61   UCX  DEBUG speed of lo is UNKNOWN, assuming 100 Mbps
+[1769051032.643130] [DESKTOP-HA4J22M:14381:0]            topo.c:935  UCX  DEBUG /sys/class/net/lo: sysfs path undetected
+[1769051032.643132] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG lo: pci bandwidth undetected, using maximal value
+[1769051032.643155] [DESKTOP-HA4J22M:14381:0]            sock.c:90   UCX  DEBUG ioctl(req=35142, ifr_name=lo) failed: Operation not supported
+[1769051032.643159] [DESKTOP-HA4J22M:14381:0]         tcp_net.c:61   UCX  DEBUG speed of lo is UNKNOWN, assuming 100 Mbps
+[1769051032.643478] [DESKTOP-HA4J22M:14381:0]            topo.c:935  UCX  DEBUG /sys/class/net/lo: sysfs path undetected
+[1769051032.643532] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG lo: pci bandwidth undetected, using maximal value
+[1769051032.643575] [DESKTOP-HA4J22M:14381:0]           async.c:247  UCX  DEBUG added async handler 0x5ee6de791330 [id=32 ref 1] ???() to hash
+[1769051032.643862] [DESKTOP-HA4J22M:14381:0]           async.c:521  UCX  DEBUG listening to async event fd 32 events 0x0 mode thread_spinlock
+[1769051032.643872] [DESKTOP-HA4J22M:14381:0]           async.c:247  UCX  DEBUG added async handler 0x5ee6de7baa40 [id=34 ref 1] ???() to hash
+[1769051032.643876] [DESKTOP-HA4J22M:14381:0]           async.c:521  UCX  DEBUG listening to async event fd 34 events 0x0 mode thread_spinlock
+[1769051032.643883] [DESKTOP-HA4J22M:14381:0]           async.c:247  UCX  DEBUG added async handler 0x5ee6de7bab10 [id=36 ref 1] ???() to hash
+[1769051032.644065] [DESKTOP-HA4J22M:14381:0]           async.c:521  UCX  DEBUG listening to async event fd 36 events 0x0 mode thread_spinlock
+[1769051032.644073] [DESKTOP-HA4J22M:14381:0]           async.c:247  UCX  DEBUG added async handler 0x5ee6de7bab50 [id=37 ref 1] ???() to hash
+[1769051032.644078] [DESKTOP-HA4J22M:14381:0]           async.c:521  UCX  DEBUG listening to async event fd 37 events 0x0 mode thread_spinlock
+[1769051032.644196] [DESKTOP-HA4J22M:14381:0]       rdmacm_cm.c:950  UCX  DIAG  rdma_create_event_channel failed: No such device
+[1769051032.644476] [DESKTOP-HA4J22M:14381:0]      ucp_worker.c:1587 UCX  DIAG  failed to open CM on component rdmacm with status Input/output error
+[1769051032.644489] [DESKTOP-HA4J22M:14381:0]      tcp_sockcm.c:225  UCX  DEBUG created tcp_sockcm 0x5ee6de7bb1e0
+[1769051032.644650] [DESKTOP-HA4J22M:14381:0]          ucp_ep.c:407  UCX  DEBUG created ep 0x7652be39a000 to <no debug data> mem_type_ep:cuda
+[1769051032.645052] [DESKTOP-HA4J22M:14381:0]      proto_rndv.c:513  UCX  DEBUG         no active message lane for tag/rndv
+[1769051032.645062] [DESKTOP-HA4J22M:14381:0]      proto_rndv.c:513  UCX  DEBUG             no active message lane for rndv/ats
+[1769051032.645064] [DESKTOP-HA4J22M:14381:0]      proto_rndv.c:513  UCX  DEBUG             no active message lane for rndv/rtr
+[1769051032.645069] [DESKTOP-HA4J22M:14381:0]      proto_rndv.c:513  UCX  DEBUG                 no active message lane for rndv/rtr
+[1769051032.645301] [DESKTOP-HA4J22M:14381:0]      proto_rndv.c:513  UCX  DEBUG                 no active message lane for rndv/rtr/mtype
+[1769051032.645310] [DESKTOP-HA4J22M:14381:0]      proto_rndv.c:513  UCX  DEBUG                     no active message lane for rndv/rtr
+[1769051032.645312] [DESKTOP-HA4J22M:14381:0]      proto_rndv.c:513  UCX  DEBUG                     no active message lane for rndv/rtr/mtype
+[1769051032.645326] [DESKTOP-HA4J22M:14381:0]      proto_rndv.c:513  UCX  DEBUG             no active message lane for rndv/rtr/mtype
+[1769051032.645609] [DESKTOP-HA4J22M:14381:0]      proto_rndv.c:513  UCX  DEBUG                 no active message lane for rndv/rtr
+[1769051032.645612] [DESKTOP-HA4J22M:14381:0]      proto_rndv.c:513  UCX  DEBUG                 no active message lane for rndv/rtr/mtype
+[1769051032.645622] [DESKTOP-HA4J22M:14381:0]      proto_rndv.c:513  UCX  DEBUG         no active message lane for rndv/rtr
+[1769051032.645624] [DESKTOP-HA4J22M:14381:0]      proto_rndv.c:513  UCX  DEBUG         no active message lane for rndv/rtr/mtype
+[1769051032.645847] [DESKTOP-HA4J22M:14381:0]          wireup.c:1267 UCX  DEBUG   ep 0x7652be39a000: am_lane <none> wireup_msg_lane <none> cm_lane <none> keepalive_lane <none> reachable_mds 0x10
+[1769051032.645851] [DESKTOP-HA4J22M:14381:0]          wireup.c:1290 UCX  DEBUG   ep 0x7652be39a000: lane[0]:  5:cuda_copy/cuda.0 md[4]        -> addr[0].md[4]/cuda_cpy/sysdev[255] seg 4294967295 rma_bw#0
+[1769051032.645852] [DESKTOP-HA4J22M:14381:0]          wireup.c:1293 UCX  DEBUG   ep 0x7652be39a000: err mode 0, flags 0x1
+[1769051032.646210] [DESKTOP-HA4J22M:14381:0]          ucp_ep.c:407  UCX  DEBUG created ep 0x7652be39a040 to <no debug data> mem_type_ep:cuda-managed
+[1769051032.646224] [DESKTOP-HA4J22M:14381:0]          wireup.c:1267 UCX  DEBUG   ep 0x7652be39a040: am_lane <none> wireup_msg_lane <none> cm_lane <none> keepalive_lane <none> reachable_mds 0x10
+[1769051032.646227] [DESKTOP-HA4J22M:14381:0]          wireup.c:1290 UCX  DEBUG   ep 0x7652be39a040: lane[0]:  5:cuda_copy/cuda.0 md[4]        -> addr[0].md[4]/cuda_cpy/sysdev[255] seg 4294967295 rma_bw#0
+[1769051032.646436] [DESKTOP-HA4J22M:14381:0]          wireup.c:1293 UCX  DEBUG   ep 0x7652be39a040: err mode 0, flags 0x1
+[1769051032.646441] [DESKTOP-HA4J22M:14381:0]           mpool.c:136  UCX  DEBUG mpool ucp_requests: align 64, maxelems 4294967295, elemsize 432
+[1769051032.646443] [DESKTOP-HA4J22M:14381:0]           mpool.c:136  UCX  DEBUG mpool ucp_rkeys: align 64, maxelems 4294967295, elemsize 104
+[1769051032.646444] [DESKTOP-HA4J22M:14381:0]           mpool.c:136  UCX  DEBUG mpool ucp_reg_bufs: align 64, maxelems 4294967295, elemsize 8216
+[1769051032.646829] [DESKTOP-HA4J22M:14381:0]           mpool.c:136  UCX  DEBUG mpool ucp_am_bufs: align 64, maxelems 4294967295, elemsize 153
+[1769051032.646831] [DESKTOP-HA4J22M:14381:0]           mpool.c:136  UCX  DEBUG mpool ucp_am_bufs: align 64, maxelems 4294967295, elemsize 1113
+[1769051032.646832] [DESKTOP-HA4J22M:14381:0]           mpool.c:136  UCX  DEBUG mpool ucp_am_bufs: align 64, maxelems 4294967295, elemsize 65625
+[1769051032.647111] [DESKTOP-HA4J22M:14381:0]       mpool_set.c:129  UCX  DEBUG mpool_set:ucp_am_bufs, sizes map 0x80000440, largest size 65536, mpools num 3
+[1769051032.647415] [DESKTOP-HA4J22M:14381:0]      ucp_worker.c:2912 UCX  DEBUG destroy worker 0x5ee6de792ce0
+[1769051032.647419] [DESKTOP-HA4J22M:14381:0]      ucp_worker.c:2898 UCX  DEBUG worker 0x5ee6de792ce0: destroy all endpoints
+[1769051032.647420] [DESKTOP-HA4J22M:14381:0]      ucp_worker.c:2898 UCX  DEBUG worker 0x5ee6de792ce0: destroy internal endpoints
+[1769051032.647679] [DESKTOP-HA4J22M:14381:0]          ucp_ep.c:1282 UCX  DEBUG ep 0x7652be39a000: purge uct_ep[0]=0x5ee6de7bd160
+[1769051032.647682] [DESKTOP-HA4J22M:14381:0]          ucp_ep.c:1289 UCX  DEBUG ep 0x7652be39a000: destroy
+[1769051032.647683] [DESKTOP-HA4J22M:14381:0]          ucp_ep.c:1607 UCX  DEBUG ep 0x7652be39a000: cleanup lanes
+[1769051032.647684] [DESKTOP-HA4J22M:14381:0]          ucp_ep.c:1618 UCX  DEBUG ep 0x7652be39a000: pending & destroy uct_ep[0]=0x5ee6de7bd160
+[1769051032.647971] [DESKTOP-HA4J22M:14381:0]          ucp_ep.c:1282 UCX  DEBUG ep 0x7652be39a040: purge uct_ep[0]=0x5ee6de7bd460
+[1769051032.647973] [DESKTOP-HA4J22M:14381:0]          ucp_ep.c:1289 UCX  DEBUG ep 0x7652be39a040: destroy
+[1769051032.647974] [DESKTOP-HA4J22M:14381:0]          ucp_ep.c:1607 UCX  DEBUG ep 0x7652be39a040: cleanup lanes
+[1769051032.647975] [DESKTOP-HA4J22M:14381:0]          ucp_ep.c:1618 UCX  DEBUG ep 0x7652be39a040: pending & destroy uct_ep[0]=0x5ee6de7bd460
+[1769051032.648265] [DESKTOP-HA4J22M:14381:0]      ucp_worker.c:244  UCX  DEBUG worker 0x5ee6de792ce0: remove active message handlers
+[1769051032.648371] [DESKTOP-HA4J22M:14381:0]            topo.c:938  UCX  DEBUG /sys/class/net/eth0: PF sysfs path is '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e'
+[1769051032.648380] [DESKTOP-HA4J22M:14381:0]             sys.c:440  UCX  DEBUG failed to open /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width: No such file or directory
+[1769051032.648818] [DESKTOP-HA4J22M:14381:0]             sys.c:1638 UCX  DEBUG eth0: could not read from '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width'
+[1769051032.648820] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG eth0: pci bandwidth undetected, using maximal value
+[1769051032.648971] [DESKTOP-HA4J22M:14381:0]            topo.c:938  UCX  DEBUG /sys/class/net/eth0: PF sysfs path is '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e'
+[1769051032.649184] [DESKTOP-HA4J22M:14381:0]             sys.c:440  UCX  DEBUG failed to open /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width: No such file or directory
+[1769051032.649187] [DESKTOP-HA4J22M:14381:0]             sys.c:1638 UCX  DEBUG eth0: could not read from '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width'
+[1769051032.649539] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG eth0: pci bandwidth undetected, using maximal value
+[1769051032.649678] [DESKTOP-HA4J22M:14381:0]            topo.c:938  UCX  DEBUG /sys/class/net/eth0: PF sysfs path is '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e'
+[1769051032.649684] [DESKTOP-HA4J22M:14381:0]             sys.c:440  UCX  DEBUG failed to open /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width: No such file or directory
+[1769051032.649975] [DESKTOP-HA4J22M:14381:0]             sys.c:1638 UCX  DEBUG eth0: could not read from '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width'
+[1769051032.649977] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG eth0: pci bandwidth undetected, using maximal value
+[1769051032.650410] [DESKTOP-HA4J22M:14381:0]            topo.c:938  UCX  DEBUG /sys/class/net/eth0: PF sysfs path is '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e'
+[1769051032.650426] [DESKTOP-HA4J22M:14381:0]             sys.c:440  UCX  DEBUG failed to open /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width: No such file or directory
+[1769051032.650428] [DESKTOP-HA4J22M:14381:0]             sys.c:1638 UCX  DEBUG eth0: could not read from '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width'
+[1769051032.650693] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG eth0: pci bandwidth undetected, using maximal value
+[1769051032.650760] [DESKTOP-HA4J22M:14381:0]            topo.c:938  UCX  DEBUG /sys/class/net/eth0: PF sysfs path is '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e'
+[1769051032.651073] [DESKTOP-HA4J22M:14381:0]             sys.c:440  UCX  DEBUG failed to open /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width: No such file or directory
+[1769051032.651076] [DESKTOP-HA4J22M:14381:0]             sys.c:1638 UCX  DEBUG eth0: could not read from '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width'
+[1769051032.651094] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG eth0: pci bandwidth undetected, using maximal value
+[1769051032.651518] [DESKTOP-HA4J22M:14381:0]            topo.c:938  UCX  DEBUG /sys/class/net/eth0: PF sysfs path is '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e'
+[1769051032.651524] [DESKTOP-HA4J22M:14381:0]             sys.c:440  UCX  DEBUG failed to open /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width: No such file or directory
+[1769051032.651808] [DESKTOP-HA4J22M:14381:0]             sys.c:1638 UCX  DEBUG eth0: could not read from '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width'
+[1769051032.651810] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG eth0: pci bandwidth undetected, using maximal value
+[1769051032.651871] [DESKTOP-HA4J22M:14381:0]            topo.c:938  UCX  DEBUG /sys/class/net/eth0: PF sysfs path is '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e'
+[1769051032.652250] [DESKTOP-HA4J22M:14381:0]             sys.c:440  UCX  DEBUG failed to open /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width: No such file or directory
+[1769051032.652252] [DESKTOP-HA4J22M:14381:0]             sys.c:1638 UCX  DEBUG eth0: could not read from '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width'
+[1769051032.652461] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG eth0: pci bandwidth undetected, using maximal value
+[1769051032.652532] [DESKTOP-HA4J22M:14381:0]            topo.c:938  UCX  DEBUG /sys/class/net/eth0: PF sysfs path is '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e'
+[1769051032.652537] [DESKTOP-HA4J22M:14381:0]             sys.c:440  UCX  DEBUG failed to open /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width: No such file or directory
+[1769051032.652852] [DESKTOP-HA4J22M:14381:0]             sys.c:1638 UCX  DEBUG eth0: could not read from '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width'
+[1769051032.652854] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG eth0: pci bandwidth undetected, using maximal value
+[1769051032.652913] [DESKTOP-HA4J22M:14381:0]            topo.c:938  UCX  DEBUG /sys/class/net/eth0: PF sysfs path is '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e'
+[1769051032.653197] [DESKTOP-HA4J22M:14381:0]             sys.c:440  UCX  DEBUG failed to open /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width: No such file or directory
+[1769051032.653199] [DESKTOP-HA4J22M:14381:0]             sys.c:1638 UCX  DEBUG eth0: could not read from '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width'
+[1769051032.653440] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG eth0: pci bandwidth undetected, using maximal value
+[1769051032.653504] [DESKTOP-HA4J22M:14381:0]            topo.c:938  UCX  DEBUG /sys/class/net/eth0: PF sysfs path is '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e'
+[1769051032.653509] [DESKTOP-HA4J22M:14381:0]             sys.c:440  UCX  DEBUG failed to open /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width: No such file or directory
+[1769051032.653707] [DESKTOP-HA4J22M:14381:0]             sys.c:1638 UCX  DEBUG eth0: could not read from '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width'
+[1769051032.653709] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG eth0: pci bandwidth undetected, using maximal value
+[1769051032.653984] [DESKTOP-HA4J22M:14381:0]            topo.c:938  UCX  DEBUG /sys/class/net/eth0: PF sysfs path is '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e'
+[1769051032.654006] [DESKTOP-HA4J22M:14381:0]             sys.c:440  UCX  DEBUG failed to open /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width: No such file or directory
+[1769051032.654009] [DESKTOP-HA4J22M:14381:0]             sys.c:1638 UCX  DEBUG eth0: could not read from '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width'
+[1769051032.654288] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG eth0: pci bandwidth undetected, using maximal value
+[1769051032.654354] [DESKTOP-HA4J22M:14381:0]            topo.c:938  UCX  DEBUG /sys/class/net/eth0: PF sysfs path is '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e'
+[1769051032.654578] [DESKTOP-HA4J22M:14381:0]             sys.c:440  UCX  DEBUG failed to open /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width: No such file or directory
+[1769051032.654581] [DESKTOP-HA4J22M:14381:0]             sys.c:1638 UCX  DEBUG eth0: could not read from '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width'
+[1769051032.654582] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG eth0: pci bandwidth undetected, using maximal value
+[1769051032.654951] [DESKTOP-HA4J22M:14381:0]            topo.c:938  UCX  DEBUG /sys/class/net/eth0: PF sysfs path is '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e'
+[1769051032.654957] [DESKTOP-HA4J22M:14381:0]             sys.c:440  UCX  DEBUG failed to open /sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width: No such file or directory
+[1769051032.655200] [DESKTOP-HA4J22M:14381:0]             sys.c:1638 UCX  DEBUG eth0: could not read from '/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/VMBUS:00/4d055ce4-d35a-4f7b-aad6-5283fe1f180e/current_link_width'
+[1769051032.655203] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG eth0: pci bandwidth undetected, using maximal value
+[1769051032.655261] [DESKTOP-HA4J22M:14381:0]            sock.c:90   UCX  DEBUG ioctl(req=35142, ifr_name=lo) failed: Operation not supported
+[1769051032.655390] [DESKTOP-HA4J22M:14381:0]         tcp_net.c:61   UCX  DEBUG speed of lo is UNKNOWN, assuming 100 Mbps
+[1769051032.655443] [DESKTOP-HA4J22M:14381:0]            topo.c:935  UCX  DEBUG /sys/class/net/lo: sysfs path undetected
+[1769051032.655445] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG lo: pci bandwidth undetected, using maximal value
+[1769051032.655474] [DESKTOP-HA4J22M:14381:0]            sock.c:90   UCX  DEBUG ioctl(req=35142, ifr_name=lo) failed: Operation not supported
+[1769051032.655661] [DESKTOP-HA4J22M:14381:0]         tcp_net.c:61   UCX  DEBUG speed of lo is UNKNOWN, assuming 100 Mbps
+[1769051032.655733] [DESKTOP-HA4J22M:14381:0]            topo.c:935  UCX  DEBUG /sys/class/net/lo: sysfs path undetected
+[1769051032.655736] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG lo: pci bandwidth undetected, using maximal value
+[1769051032.655768] [DESKTOP-HA4J22M:14381:0]            sock.c:90   UCX  DEBUG ioctl(req=35142, ifr_name=lo) failed: Operation not supported
+[1769051032.655980] [DESKTOP-HA4J22M:14381:0]         tcp_net.c:61   UCX  DEBUG speed of lo is UNKNOWN, assuming 100 Mbps
+[1769051032.656039] [DESKTOP-HA4J22M:14381:0]            topo.c:935  UCX  DEBUG /sys/class/net/lo: sysfs path undetected
+[1769051032.656042] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG lo: pci bandwidth undetected, using maximal value
+[1769051032.656071] [DESKTOP-HA4J22M:14381:0]            sock.c:90   UCX  DEBUG ioctl(req=35142, ifr_name=lo) failed: Operation not supported
+[1769051032.656230] [DESKTOP-HA4J22M:14381:0]         tcp_net.c:61   UCX  DEBUG speed of lo is UNKNOWN, assuming 100 Mbps
+[1769051032.656280] [DESKTOP-HA4J22M:14381:0]            topo.c:935  UCX  DEBUG /sys/class/net/lo: sysfs path undetected
+[1769051032.656282] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG lo: pci bandwidth undetected, using maximal value
+[1769051032.656312] [DESKTOP-HA4J22M:14381:0]            sock.c:90   UCX  DEBUG ioctl(req=35142, ifr_name=lo) failed: Operation not supported
+[1769051032.656435] [DESKTOP-HA4J22M:14381:0]         tcp_net.c:61   UCX  DEBUG speed of lo is UNKNOWN, assuming 100 Mbps
+[1769051032.656479] [DESKTOP-HA4J22M:14381:0]            topo.c:935  UCX  DEBUG /sys/class/net/lo: sysfs path undetected
+[1769051032.656481] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG lo: pci bandwidth undetected, using maximal value
+[1769051032.656511] [DESKTOP-HA4J22M:14381:0]            sock.c:90   UCX  DEBUG ioctl(req=35142, ifr_name=lo) failed: Operation not supported
+[1769051032.656663] [DESKTOP-HA4J22M:14381:0]         tcp_net.c:61   UCX  DEBUG speed of lo is UNKNOWN, assuming 100 Mbps
+[1769051032.656726] [DESKTOP-HA4J22M:14381:0]            topo.c:935  UCX  DEBUG /sys/class/net/lo: sysfs path undetected
+[1769051032.656729] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG lo: pci bandwidth undetected, using maximal value
+[1769051032.656759] [DESKTOP-HA4J22M:14381:0]            sock.c:90   UCX  DEBUG ioctl(req=35142, ifr_name=lo) failed: Operation not supported
+[1769051032.656891] [DESKTOP-HA4J22M:14381:0]         tcp_net.c:61   UCX  DEBUG speed of lo is UNKNOWN, assuming 100 Mbps
+[1769051032.656938] [DESKTOP-HA4J22M:14381:0]            topo.c:935  UCX  DEBUG /sys/class/net/lo: sysfs path undetected
+[1769051032.656940] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG lo: pci bandwidth undetected, using maximal value
+[1769051032.656969] [DESKTOP-HA4J22M:14381:0]            sock.c:90   UCX  DEBUG ioctl(req=35142, ifr_name=lo) failed: Operation not supported
+[1769051032.657108] [DESKTOP-HA4J22M:14381:0]         tcp_net.c:61   UCX  DEBUG speed of lo is UNKNOWN, assuming 100 Mbps
+[1769051032.657154] [DESKTOP-HA4J22M:14381:0]            topo.c:935  UCX  DEBUG /sys/class/net/lo: sysfs path undetected
+[1769051032.657156] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG lo: pci bandwidth undetected, using maximal value
+[1769051032.657183] [DESKTOP-HA4J22M:14381:0]            sock.c:90   UCX  DEBUG ioctl(req=35142, ifr_name=lo) failed: Operation not supported
+[1769051032.657322] [DESKTOP-HA4J22M:14381:0]         tcp_net.c:61   UCX  DEBUG speed of lo is UNKNOWN, assuming 100 Mbps
+[1769051032.657384] [DESKTOP-HA4J22M:14381:0]            topo.c:935  UCX  DEBUG /sys/class/net/lo: sysfs path undetected
+[1769051032.657387] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG lo: pci bandwidth undetected, using maximal value
+[1769051032.657418] [DESKTOP-HA4J22M:14381:0]            sock.c:90   UCX  DEBUG ioctl(req=35142, ifr_name=lo) failed: Operation not supported
+[1769051032.657580] [DESKTOP-HA4J22M:14381:0]         tcp_net.c:61   UCX  DEBUG speed of lo is UNKNOWN, assuming 100 Mbps
+[1769051032.657625] [DESKTOP-HA4J22M:14381:0]            topo.c:935  UCX  DEBUG /sys/class/net/lo: sysfs path undetected
+[1769051032.657627] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG lo: pci bandwidth undetected, using maximal value
+[1769051032.657655] [DESKTOP-HA4J22M:14381:0]            sock.c:90   UCX  DEBUG ioctl(req=35142, ifr_name=lo) failed: Operation not supported
+[1769051032.657792] [DESKTOP-HA4J22M:14381:0]         tcp_net.c:61   UCX  DEBUG speed of lo is UNKNOWN, assuming 100 Mbps
+[1769051032.657837] [DESKTOP-HA4J22M:14381:0]            topo.c:935  UCX  DEBUG /sys/class/net/lo: sysfs path undetected
+[1769051032.657839] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG lo: pci bandwidth undetected, using maximal value
+[1769051032.657865] [DESKTOP-HA4J22M:14381:0]            sock.c:90   UCX  DEBUG ioctl(req=35142, ifr_name=lo) failed: Operation not supported
+[1769051032.658006] [DESKTOP-HA4J22M:14381:0]         tcp_net.c:61   UCX  DEBUG speed of lo is UNKNOWN, assuming 100 Mbps
+[1769051032.658089] [DESKTOP-HA4J22M:14381:0]            topo.c:935  UCX  DEBUG /sys/class/net/lo: sysfs path undetected
+[1769051032.658092] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG lo: pci bandwidth undetected, using maximal value
+[1769051032.658123] [DESKTOP-HA4J22M:14381:0]            sock.c:90   UCX  DEBUG ioctl(req=35142, ifr_name=lo) failed: Operation not supported
+[1769051032.658349] [DESKTOP-HA4J22M:14381:0]         tcp_net.c:61   UCX  DEBUG speed of lo is UNKNOWN, assuming 100 Mbps
+[1769051032.658396] [DESKTOP-HA4J22M:14381:0]            topo.c:935  UCX  DEBUG /sys/class/net/lo: sysfs path undetected
+[1769051032.658398] [DESKTOP-HA4J22M:14381:0]            topo.c:888  UCX  DEBUG lo: pci bandwidth undetected, using maximal value
+[1769051032.658438] [DESKTOP-HA4J22M:14381:0]           mpool.c:194  UCX  DEBUG mpool ucp_reg_bufs destroyed
+[1769051032.658605] [DESKTOP-HA4J22M:14381:0]           mpool.c:194  UCX  DEBUG mpool ucp_am_bufs destroyed
+[1769051032.658608] [DESKTOP-HA4J22M:14381:0]           mpool.c:194  UCX  DEBUG mpool ucp_am_bufs destroyed
+[1769051032.658609] [DESKTOP-HA4J22M:14381:0]           mpool.c:194  UCX  DEBUG mpool ucp_am_bufs destroyed
+[1769051032.658611] [DESKTOP-HA4J22M:14381:0]           mpool.c:194  UCX  DEBUG mpool ucp_rkeys destroyed
+[1769051032.658612] [DESKTOP-HA4J22M:14381:0]           mpool.c:194  UCX  DEBUG mpool ucp_requests destroyed
+[1769051032.658769] [DESKTOP-HA4J22M:14381:0]           mpool.c:194  UCX  DEBUG mpool self_msg_desc destroyed
+[1769051032.658774] [DESKTOP-HA4J22M:14381:0]           async.c:172  UCX  DEBUG removed async handler 0x5ee6de7b9370 [id=28 ref 1] ???() from hash
+[1769051032.658776] [DESKTOP-HA4J22M:14381:0]           async.c:575  UCX  DEBUG removing async handler 0x5ee6de7b9370 [id=28 ref 1] ???()
+[1769051032.658783] [DESKTOP-HA4J22M:14381:0]           async.c:187  UCX  DEBUG release async handler 0x5ee6de7b9370 [id=28 ref 0] ???()
+[1769051032.658917] [DESKTOP-HA4J22M:14381:0]       tcp_iface.c:874  UCX  DEBUG tcp_iface 0x5ee6de7b5cd0: destroying
+[1769051032.658920] [DESKTOP-HA4J22M:14381:0]           async.c:172  UCX  DEBUG removed async handler 0x5ee6de790ce0 [id=29 ref 1] ???() from hash
+[1769051032.658922] [DESKTOP-HA4J22M:14381:0]           async.c:575  UCX  DEBUG removing async handler 0x5ee6de790ce0 [id=29 ref 1] ???()
+[1769051032.658927] [DESKTOP-HA4J22M:14381:0]           async.c:187  UCX  DEBUG release async handler 0x5ee6de790ce0 [id=29 ref 0] ???()
+[1769051032.659040] [DESKTOP-HA4J22M:14381:0]           mpool.c:194  UCX  DEBUG mpool uct_tcp_iface_rx_buf_mp destroyed
+[1769051032.659042] [DESKTOP-HA4J22M:14381:0]           mpool.c:194  UCX  DEBUG mpool uct_tcp_iface_tx_buf_mp destroyed
+[1769051032.659057] [DESKTOP-HA4J22M:14381:0]           async.c:172  UCX  DEBUG removed async handler 0x5ee6de77ccc0 [id=30 ref 1] ???() from hash
+[1769051032.659059] [DESKTOP-HA4J22M:14381:0]           async.c:575  UCX  DEBUG removing async handler 0x5ee6de77ccc0 [id=30 ref 1] ???()
+[1769051032.659198] [DESKTOP-HA4J22M:14381:0]           async.c:187  UCX  DEBUG release async handler 0x5ee6de77ccc0 [id=30 ref 0] ???()
+[1769051032.659202] [DESKTOP-HA4J22M:14381:0]       tcp_iface.c:874  UCX  DEBUG tcp_iface 0x5ee6de7b69e0: destroying
+[1769051032.659204] [DESKTOP-HA4J22M:14381:0]           async.c:172  UCX  DEBUG removed async handler 0x5ee6de7b7d00 [id=31 ref 1] ???() from hash
+[1769051032.659323] [DESKTOP-HA4J22M:14381:0]           async.c:575  UCX  DEBUG removing async handler 0x5ee6de7b7d00 [id=31 ref 1] ???()
+[1769051032.659329] [DESKTOP-HA4J22M:14381:0]           async.c:187  UCX  DEBUG release async handler 0x5ee6de7b7d00 [id=31 ref 0] ???()
+[1769051032.659331] [DESKTOP-HA4J22M:14381:0]           mpool.c:194  UCX  DEBUG mpool uct_tcp_iface_rx_buf_mp destroyed
+[1769051032.659333] [DESKTOP-HA4J22M:14381:0]           mpool.c:194  UCX  DEBUG mpool uct_tcp_iface_tx_buf_mp destroyed
+[1769051032.660598] [DESKTOP-HA4J22M:14381:0]           async.c:172  UCX  DEBUG removed async handler 0x5ee6de791330 [id=32 ref 1] ???() from hash
+[1769051032.660601] [DESKTOP-HA4J22M:14381:0]           async.c:575  UCX  DEBUG removing async handler 0x5ee6de791330 [id=32 ref 1] ???()
+[1769051032.660606] [DESKTOP-HA4J22M:14381:0]           async.c:187  UCX  DEBUG release async handler 0x5ee6de791330 [id=32 ref 0] ???()
+[1769051032.661140] [DESKTOP-HA4J22M:14381:0]           mpool.c:194  UCX  DEBUG mpool mm_recv_desc destroyed
+[1769051032.661416] [DESKTOP-HA4J22M:14381:0]           async.c:172  UCX  DEBUG removed async handler 0x5ee6de7baa40 [id=34 ref 1] ???() from hash
+[1769051032.661419] [DESKTOP-HA4J22M:14381:0]           async.c:575  UCX  DEBUG removing async handler 0x5ee6de7baa40 [id=34 ref 1] ???()
+[1769051032.661424] [DESKTOP-HA4J22M:14381:0]           async.c:187  UCX  DEBUG release async handler 0x5ee6de7baa40 [id=34 ref 0] ???()
+[1769051032.662233] [DESKTOP-HA4J22M:14381:0]           mpool.c:194  UCX  DEBUG mpool mm_recv_desc destroyed
+[1769051032.662401] [DESKTOP-HA4J22M:14381:0]           async.c:172  UCX  DEBUG removed async handler 0x5ee6de7bab10 [id=36 ref 1] ???() from hash
+[1769051032.662404] [DESKTOP-HA4J22M:14381:0]           async.c:575  UCX  DEBUG removing async handler 0x5ee6de7bab10 [id=36 ref 1] ???()
+[1769051032.662408] [DESKTOP-HA4J22M:14381:0]           async.c:187  UCX  DEBUG release async handler 0x5ee6de7bab10 [id=36 ref 0] ???()
+[1769051032.662416] [DESKTOP-HA4J22M:14381:0]           async.c:172  UCX  DEBUG removed async handler 0x5ee6de7bab50 [id=37 ref 1] ???() from hash
+[1769051032.662547] [DESKTOP-HA4J22M:14381:0]           async.c:575  UCX  DEBUG removing async handler 0x5ee6de7bab50 [id=37 ref 1] ???()
+[1769051032.662552] [DESKTOP-HA4J22M:14381:0]           async.c:187  UCX  DEBUG release async handler 0x5ee6de7bab50 [id=37 ref 0] ???()
+[1769051032.662560] [DESKTOP-HA4J22M:14381:0]           mpool.c:194  UCX  DEBUG mpool uct_scopy_iface_tx_mp destroyed
+[1769051032.662654] [DESKTOP-HA4J22M:14381:0]           async.c:172  UCX  DEBUG removed async handler 0x5ee6de72f870 [id=21 ref 1] ???() from hash
+[1769051032.662784] [DESKTOP-HA4J22M:14381:0]           async.c:575  UCX  DEBUG removing async handler 0x5ee6de72f870 [id=21 ref 1] ???()
+[1769051032.662856] [DESKTOP-HA4J22M:14381:0]           async.c:187  UCX  DEBUG release async handler 0x5ee6de72f870 [id=21 ref 0] ???()
+[1769051032.662865] [DESKTOP-HA4J22M:14381:0]         pgtable.c:618  UCX  DEBUG purge empty page table
+[1762026-01-21 21:03:53,263 __main__ 0/1 INFO :: Dealias factors: x=(1.5,), z=(1.5,)
+2026-01-21 21:03:53,624 subsystems 0/1 INFO :: Building subproblem matrices 1/128 (~1%) Elapsed: 0s, Remaining: 5s, Rate: 2.4e+01/s
+2026-01-21 21:03:53,883 subsystems 0/1 INFO :: Building subproblem matrices 13/128 (~10%) Elapsed: 0s, Remaining: 3s, Rate: 4.3e+01/s
+2026-01-21 21:03:54,187 subsystems 0/1 INFO :: Building subproblem matrices 26/128 (~20%) Elapsed: 1s, Remaining: 2s, Rate: 4.3e+01/s
+2026-01-21 21:03:54,452 subsystems 0/1 INFO :: Building subproblem matrices 39/128 (~30%) Elapsed: 1s, Remaining: 2s, Rate: 4.5e+01/s
+2026-01-21 21:03:54,813 subsystems 0/1 INFO :: Building subproblem matrices 52/128 (~41%) Elapsed: 1s, Remaining: 2s, Rate: 4.2e+01/s
+2026-01-21 21:03:55,097 subsystems 0/1 INFO :: Building subproblem matrices 65/128 (~51%) Elapsed: 2s, Remaining: 1s, Rate: 4.3e+01/s
+2026-01-21 21:03:55,375 subsystems 0/1 INFO :: Building subproblem matrices 78/128 (~61%) Elapsed: 2s, Remaining: 1s, Rate: 4.4e+01/s
+2026-01-21 21:03:55,656 subsystems 0/1 INFO :: Building subproblem matrices 91/128 (~71%) Elapsed: 2s, Remaining: 1s, Rate: 4.4e+01/s
+2026-01-21 21:03:55,927 subsystems 0/1 INFO :: Building subproblem matrices 104/128 (~81%) Elapsed: 2s, Remaining: 1s, Rate: 4.4e+01/s
+2026-01-21 21:03:56,200 subsystems 0/1 INFO :: Building subproblem matrices 117/128 (~91%) Elapsed: 3s, Remaining: 0s, Rate: 4.5e+01/s
+2026-01-21 21:03:56,429 subsystems 0/1 INFO :: Building subproblem matrices 128/128 (~100%) Elapsed: 3s, Remaining: 0s, Rate: 4.5e+01/s
+2026-01-21 21:35:20,701 solvers 0/1 INFO :: Simulation stop time reached.
+energy drift (rel) = 1.042e-07
+csv: /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/charbc_nl_eta1e-3_t20_robin_kappa1e-4_amp1e-4_eps0.05.csv
+omega (Hilbert) = 5.730011e-01
+max |dE/dt| = 6.385e-12
+gamma (energy-based) = -2.790223e-09
+9051032.662911] [DESKTOP-HA4J22M:14381:0]           mpool.c:194  UCX  DEBUG mpool rcache_mp destroyed
+EXTRACT kappa=1e-4 amp=1e-4 eps=0.05
+METRICS_JSON={"csv": "/mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/charbc_nl_eta1e-3_t20_robin_kappa1e-4_amp1e-4_eps0.05.csv", "deltaE_over_E": 1.0463169638862351e-07, "deltaE_over_E_weak": 1.0420466436104035e-07, "W_tau_final": 0.0, "W_tau_over_E0": 0.0, "P_eta_left_final": 3.63774918e-16, "P_eta_right_final": -3.63776762e-16, "P_eta_total_final": -7.2755168e-16, "P_eta_total_slope_lastk": 9.721910950859657e-16, "max_abs_tau": 0.0, "tau_max_field": null, "max_abs_coupling": 1.99758014e-07, "coupling_max_field": "C_by_wy", "dominance": "coupling"}
+RUN_DONE kappa=1e-4 amp=1e-4 eps=0.05
+RUN_START kappa=5e-4 amp=1e-6 eps=0
+2026-01-21 21:35:23,086 __main__ 0/1 INFO :: Dealias factors: x=(1.5,), z=(1.5,)
+2026-01-21 21:35:23,419 subsystems 0/1 INFO :: Building subproblem matrices 1/128 (~1%) Elapsed: 0s, Remaining: 5s, Rate: 2.5e+01/s
+2026-01-21 21:35:23,655 subsystems 0/1 INFO :: Building subproblem matrices 13/128 (~10%) Elapsed: 0s, Remaining: 2s, Rate: 4.7e+01/s
+2026-01-21 21:35:23,918 subsystems 0/1 INFO :: Building subproblem matrices 26/128 (~20%) Elapsed: 1s, Remaining: 2s, Rate: 4.8e+01/s
+2026-01-21 21:35:24,177 subsystems 0/1 INFO :: Building subproblem matrices 39/128 (~30%) Elapsed: 1s, Remaining: 2s, Rate: 4.9e+01/s
+2026-01-21 21:35:24,431 subsystems 0/1 INFO :: Building subproblem matrices 52/128 (~41%) Elapsed: 1s, Remaining: 2s, Rate: 4.9e+01/s
+2026-01-21 21:35:24,689 subsystems 0/1 INFO :: Building subproblem matrices 65/128 (~51%) Elapsed: 1s, Remaining: 1s, Rate: 5.0e+01/s
+2026-01-21 21:35:24,951 subsystems 0/1 INFO :: Building subproblem matrices 78/128 (~61%) Elapsed: 2s, Remaining: 1s, Rate: 5.0e+01/s
+2026-01-21 21:35:25,213 subsystems 0/1 INFO :: Building subproblem matrices 91/128 (~71%) Elapsed: 2s, Remaining: 1s, Rate: 5.0e+01/s
+2026-01-21 21:35:25,478 subsystems 0/1 INFO :: Building subproblem matrices 104/128 (~81%) Elapsed: 2s, Remaining: 0s, Rate: 5.0e+01/s
+2026-01-21 21:35:25,741 subsystems 0/1 INFO :: Building subproblem matrices 117/128 (~91%) Elapsed: 2s, Remaining: 0s, Rate: 5.0e+01/s
+2026-01-21 21:35:25,963 subsystems 0/1 INFO :: Building subproblem matrices 128/128 (~100%) Elapsed: 3s, Remaining: 0s, Rate: 5.0e+01/s
+2026-01-21 22:05:22,482 solvers 0/1 INFO :: Simulation stop time reached.
+energy drift (rel) = 1.313e-06
+csv: /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/charbc_nl_eta1e-3_t20_robin_kappa5e-4_amp1e-6_eps0.csv
+omega (Hilbert) = 2.445876e-01
+max |dE/dt| = 1.028e-14
+gamma (energy-based) = -5.001752e-08
+EXTRACT kappa=5e-4 amp=1e-6 eps=0
+METRICS_JSON={"csv": "/mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/charbc_nl_eta1e-3_t20_robin_kappa5e-4_amp1e-6_eps0.csv", "deltaE_over_E": 1.3137090773765953e-06, "deltaE_over_E_weak": 1.3130187913087838e-06, "W_tau_final": 0.0, "W_tau_over_E0": 0.0, "P_eta_left_final": 7.63893173e-18, "P_eta_right_final": -7.63893064e-18, "P_eta_total_final": -1.52778624e-17, "P_eta_total_slope_lastk": -1.4768650369462392e-18, "max_abs_tau": 0.0, "tau_max_field": null, "max_abs_coupling": 4.89601907e-11, "coupling_max_field": "C_bx_wx", "dominance": "coupling"}
+RUN_DONE kappa=5e-4 amp=1e-6 eps=0
+RUN_START kappa=5e-4 amp=1e-6 eps=0.05
+2026-01-21 22:05:24,917 __main__ 0/1 INFO :: Dealias factors: x=(1.5,), z=(1.5,)
+2026-01-21 22:05:25,269 subsystems 0/1 INFO :: Building subproblem matrices 1/128 (~1%) Elapsed: 0s, Remaining: 5s, Rate: 2.3e+01/s
+2026-01-21 22:05:25,532 subsystems 0/1 INFO :: Building subproblem matrices 13/128 (~10%) Elapsed: 0s, Remaining: 3s, Rate: 4.2e+01/s
+2026-01-21 22:05:25,811 subsystems 0/1 INFO :: Building subproblem matrices 26/128 (~20%) Elapsed: 1s, Remaining: 2s, Rate: 4.4e+01/s
+2026-01-21 22:05:26,083 subsystems 0/1 INFO :: Building subproblem matrices 39/128 (~30%) Elapsed: 1s, Remaining: 2s, Rate: 4.6e+01/s
+2026-01-21 22:05:26,353 subsystems 0/1 INFO :: Building subproblem matrices 52/128 (~41%) Elapsed: 1s, Remaining: 2s, Rate: 4.6e+01/s
+2026-01-21 22:05:26,633 subsystems 0/1 INFO :: Building subproblem matrices 65/128 (~51%) Elapsed: 1s, Remaining: 1s, Rate: 4.6e+01/s
+2026-01-21 22:05:26,921 subsystems 0/1 INFO :: Building subproblem matrices 78/128 (~61%) Elapsed: 2s, Remaining: 1s, Rate: 4.6e+01/s
+2026-01-21 22:05:27,195 subsystems 0/1 INFO :: Building subproblem matrices 91/128 (~71%) Elapsed: 2s, Remaining: 1s, Rate: 4.6e+01/s
+2026-01-21 22:05:27,471 subsystems 0/1 INFO :: Building subproblem matrices 104/128 (~81%) Elapsed: 2s, Remaining: 1s, Rate: 4.6e+01/s
+2026-01-21 22:05:27,746 subsystems 0/1 INFO :: Building subproblem matrices 117/128 (~91%) Elapsed: 3s, Remaining: 0s, Rate: 4.6e+01/s
+2026-01-21 22:05:27,983 subsystems 0/1 INFO :: Building subproblem matrices 128/128 (~100%) Elapsed: 3s, Remaining: 0s, Rate: 4.6e+01/s
+2026-01-21 22:36:32,660 solvers 0/1 INFO :: Simulation stop time reached.
+energy drift (rel) = 2.432e-07
+csv: /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/charbc_nl_eta1e-3_t20_robin_kappa5e-4_amp1e-6_eps0.05.csv
+omega (Hilbert) = 5.730016e-01
+max |dE/dt| = 1.871e-15
+gamma (energy-based) = -7.555426e-09
+EXTRACT kappa=5e-4 amp=1e-6 eps=0.05
+METRICS_JSON={"csv": "/mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/charbc_nl_eta1e-3_t20_robin_kappa5e-4_amp1e-6_eps0.05.csv", "deltaE_over_E": 2.4414062496242594e-07, "deltaE_over_E_weak": 2.432116203941878e-07, "W_tau_final": 0.0, "W_tau_over_E0": 0.0, "P_eta_left_final": 1.83199795e-19, "P_eta_right_final": -1.83200029e-19, "P_eta_total_final": -3.66399824e-19, "P_eta_total_slope_lastk": 4.903131379252937e-19, "max_abs_tau": 0.0, "tau_max_field": null, "max_abs_coupling": 1.99755464e-11, "coupling_max_field": "C_by_wy", "dominance": "coupling"}
+RUN_DONE kappa=5e-4 amp=1e-6 eps=0.05
+RUN_START kappa=5e-4 amp=1e-4 eps=0
+2026-01-21 22:36:35,054 __main__ 0/1 INFO :: Dealias factors: x=(1.5,), z=(1.5,)
+2026-01-21 22:36:35,389 subsystems 0/1 INFO :: Building subproblem matrices 1/128 (~1%) Elapsed: 0s, Remaining: 5s, Rate: 2.5e+01/s
+2026-01-21 22:36:35,630 subsystems 0/1 INFO :: Building subproblem matrices 13/128 (~10%) Elapsed: 0s, Remaining: 2s, Rate: 4.6e+01/s
+2026-01-21 22:36:35,885 subsystems 0/1 INFO :: Building subproblem matrices 26/128 (~20%) Elapsed: 1s, Remaining: 2s, Rate: 4.9e+01/s
+2026-01-21 22:36:36,139 subsystems 0/1 INFO :: Building subproblem matrices 39/128 (~30%) Elapsed: 1s, Remaining: 2s, Rate: 4.9e+01/s
+2026-01-21 22:36:36,395 subsystems 0/1 INFO :: Building subproblem matrices 52/128 (~41%) Elapsed: 1s, Remaining: 2s, Rate: 5.0e+01/s
+2026-01-21 22:36:36,654 subsystems 0/1 INFO :: Building subproblem matrices 65/128 (~51%) Elapsed: 1s, Remaining: 1s, Rate: 5.0e+01/s
+2026-01-21 22:36:36,914 subsystems 0/1 INFO :: Building subproblem matrices 78/128 (~61%) Elapsed: 2s, Remaining: 1s, Rate: 5.0e+01/s
+2026-01-21 22:36:37,175 subsystems 0/1 INFO :: Building subproblem matrices 91/128 (~71%) Elapsed: 2s, Remaining: 1s, Rate: 5.0e+01/s
+2026-01-21 22:36:37,436 subsystems 0/1 INFO :: Building subproblem matrices 104/128 (~81%) Elapsed: 2s, Remaining: 0s, Rate: 5.0e+01/s
+2026-01-21 22:36:37,696 subsystems 0/1 INFO :: Building subproblem matrices 117/128 (~91%) Elapsed: 2s, Remaining: 0s, Rate: 5.0e+01/s
+2026-01-21 22:36:37,918 subsystems 0/1 INFO :: Building subproblem matrices 128/128 (~100%) Elapsed: 3s, Remaining: 0s, Rate: 5.0e+01/s
+2026-01-21 23:06:34,602 solvers 0/1 INFO :: Simulation stop time reached.
+energy drift (rel) = 1.313e-06
+csv: /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/charbc_nl_eta1e-3_t20_robin_kappa5e-4_amp1e-4_eps0.csv
+omega (Hilbert) = 2.445876e-01
+max |dE/dt| = 1.028e-10
+gamma (energy-based) = -5.001712e-08
+EXTRACT kappa=5e-4 amp=1e-4 eps=0
+METRICS_JSON={"csv": "/mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/charbc_nl_eta1e-3_t20_robin_kappa5e-4_amp1e-4_eps0.csv", "deltaE_over_E": 1.3137090774255858e-06, "deltaE_over_E_weak": 1.31301875452288e-06, "W_tau_final": 0.0, "W_tau_over_E0": 0.0, "P_eta_left_final": 7.63893096e-14, "P_eta_right_final": -7.63893152e-14, "P_eta_total_final": -1.52778625e-13, "P_eta_total_slope_lastk": -1.4768651201825178e-14, "max_abs_tau": 0.0, "tau_max_field": null, "max_abs_coupling": 4.89601907e-07, "coupling_max_field": "C_bx_wx", "dominance": "coupling"}
+RUN_DONE kappa=5e-4 amp=1e-4 eps=0
+RUN_START kappa=5e-4 amp=1e-4 eps=0.05
+2026-01-21 23:06:37,084 __main__ 0/1 INFO :: Dealias factors: x=(1.5,), z=(1.5,)
+2026-01-21 23:06:37,422 subsystems 0/1 INFO :: Building subproblem matrices 1/128 (~1%) Elapsed: 0s, Remaining: 5s, Rate: 2.5e+01/s
+2026-01-21 23:06:37,668 subsystems 0/1 INFO :: Building subproblem matrices 13/128 (~10%) Elapsed: 0s, Remaining: 3s, Rate: 4.5e+01/s
+2026-01-21 23:06:37,937 subsystems 0/1 INFO :: Building subproblem matrices 26/128 (~20%) Elapsed: 1s, Remaining: 2s, Rate: 4.7e+01/s
+2026-01-21 23:06:38,195 subsystems 0/1 INFO :: Building subproblem matrices 39/128 (~30%) Elapsed: 1s, Remaining: 2s, Rate: 4.8e+01/s
+2026-01-21 23:06:38,461 subsystems 0/1 INFO :: Building subproblem matrices 52/128 (~41%) Elapsed: 1s, Remaining: 2s, Rate: 4.8e+01/s
+2026-01-21 23:06:38,726 subsystems 0/1 INFO :: Building subproblem matrices 65/128 (~51%) Elapsed: 1s, Remaining: 1s, Rate: 4.8e+01/s
+2026-01-21 23:06:38,992 subsystems 0/1 INFO :: Building subproblem matrices 78/128 (~61%) Elapsed: 2s, Remaining: 1s, Rate: 4.8e+01/s
+2026-01-21 23:06:39,253 subsystems 0/1 INFO :: Building subproblem matrices 91/128 (~71%) Elapsed: 2s, Remaining: 1s, Rate: 4.9e+01/s
+2026-01-21 23:06:39,518 subsystems 0/1 INFO :: Building subproblem matrices 104/128 (~81%) Elapsed: 2s, Remaining: 0s, Rate: 4.9e+01/s
+2026-01-21 23:06:39,784 subsystems 0/1 INFO :: Building subproblem matrices 117/128 (~91%) Elapsed: 2s, Remaining: 0s, Rate: 4.9e+01/s
+2026-01-21 23:06:40,035 subsystems 0/1 INFO :: Building subproblem matrices 128/128 (~100%) Elapsed: 3s, Remaining: 0s, Rate: 4.8e+01/s
+2026-01-21 23:38:07,736 solvers 0/1 INFO :: Simulation stop time reached.
+energy drift (rel) = 2.432e-07
+csv: /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/charbc_nl_eta1e-3_t20_robin_kappa5e-4_amp1e-4_eps0.05.csv
+omega (Hilbert) = 5.730016e-01
+max |dE/dt| = 1.871e-11
+gamma (energy-based) = -7.555417e-09
+EXTRACT kappa=5e-4 amp=1e-4 eps=0.05
+METRICS_JSON={"csv": "/mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/charbc_nl_eta1e-3_t20_robin_kappa5e-4_amp1e-4_eps0.05.csv", "deltaE_over_E": 2.4414062503283476e-07, "deltaE_over_E_weak": 2.432116513368973e-07, "W_tau_final": 0.0, "W_tau_over_E0": 0.0, "P_eta_left_final": 1.83199678e-15, "P_eta_right_final": -1.83200128e-15, "P_eta_total_final": -3.66399807e-15, "P_eta_total_slope_lastk": 4.903131370014849e-15, "max_abs_tau": 0.0, "tau_max_field": null, "max_abs_coupling": 1.99755464e-07, "coupling_max_field": "C_by_wy", "dominance": "coupling"}
+RUN_DONE kappa=5e-4 amp=1e-4 eps=0.05
+RUN_START kappa=2e-3 amp=1e-6 eps=0
+2026-01-21 23:38:10,097 __main__ 0/1 INFO :: Dealias factors: x=(1.5,), z=(1.5,)
+2026-01-21 23:38:10,423 subsystems 0/1 INFO :: Building subproblem matrices 1/128 (~1%) Elapsed: 0s, Remaining: 5s, Rate: 2.5e+01/s
+2026-01-21 23:38:10,659 subsystems 0/1 INFO :: Building subproblem matrices 13/128 (~10%) Elapsed: 0s, Remaining: 2s, Rate: 4.7e+01/s
+2026-01-21 23:38:10,915 subsystems 0/1 INFO :: Building subproblem matrices 26/128 (~20%) Elapsed: 1s, Remaining: 2s, Rate: 4.9e+01/s
+2026-01-21 23:38:11,171 subsystems 0/1 INFO :: Building subproblem matrices 39/128 (~30%) Elapsed: 1s, Remaining: 2s, Rate: 4.9e+01/s
+2026-01-21 23:38:11,428 subsystems 0/1 INFO :: Building subproblem matrices 52/128 (~41%) Elapsed: 1s, Remaining: 2s, Rate: 5.0e+01/s
+2026-01-21 23:38:11,685 subsystems 0/1 INFO :: Building subproblem matrices 65/128 (~51%) Elapsed: 1s, Remaining: 1s, Rate: 5.0e+01/s
+2026-01-21 23:38:11,942 subsystems 0/1 INFO :: Building subproblem matrices 78/128 (~61%) Elapsed: 2s, Remaining: 1s, Rate: 5.0e+01/s
+2026-01-21 23:38:12,190 subsystems 0/1 INFO :: Building subproblem matrices 91/128 (~71%) Elapsed: 2s, Remaining: 1s, Rate: 5.0e+01/s
+2026-01-21 23:38:12,446 subsystems 0/1 INFO :: Building subproblem matrices 104/128 (~81%) Elapsed: 2s, Remaining: 0s, Rate: 5.0e+01/s
+2026-01-21 23:38:12,706 subsystems 0/1 INFO :: Building subproblem matrices 117/128 (~91%) Elapsed: 2s, Remaining: 0s, Rate: 5.0e+01/s
+2026-01-21 23:38:12,928 subsystems 0/1 INFO :: Building subproblem matrices 128/128 (~100%) Elapsed: 3s, Remaining: 0s, Rate: 5.0e+01/s
+2026-01-22 00:08:26,657 solvers 0/1 INFO :: Simulation stop time reached.
+energy drift (rel) = 3.858e-06
+csv: /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/charbc_nl_eta1e-3_t20_robin_kappa2e-3_amp1e-6_eps0.csv
+omega (Hilbert) = 2.445887e-01
+max |dE/dt| = 3.210e-14
+gamma (energy-based) = -1.469696e-07
+EXTRACT kappa=2e-3 amp=1e-6 eps=0
+METRICS_JSON={"csv": "/mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/charbc_nl_eta1e-3_t20_robin_kappa2e-3_amp1e-6_eps0.csv", "deltaE_over_E": 3.857421874960246e-06, "deltaE_over_E_weak": 3.8579451223969755e-06, "W_tau_final": 0.0, "W_tau_over_E0": 0.0, "P_eta_left_final": 3.04139484e-17, "P_eta_right_final": -3.04139488e-17, "P_eta_total_final": -6.08278972e-17, "P_eta_total_slope_lastk": -5.861905446969848e-18, "max_abs_tau": 0.0, "tau_max_field": null, "max_abs_coupling": 4.89310894e-11, "coupling_max_field": "C_bx_wx", "dominance": "coupling"}
+RUN_DONE kappa=2e-3 amp=1e-6 eps=0
+RUN_START kappa=2e-3 amp=1e-6 eps=0.05
+2026-01-22 00:08:32,098 __main__ 0/1 INFO :: Dealias factors: x=(1.5,), z=(1.5,)
+2026-01-22 00:08:32,453 subsystems 0/1 INFO :: Building subproblem matrices 1/128 (~1%) Elapsed: 0s, Remaining: 5s, Rate: 2.3e+01/s
+2026-01-22 00:08:32,719 subsystems 0/1 INFO :: Building subproblem matrices 13/128 (~10%) Elapsed: 0s, Remaining: 3s, Rate: 4.2e+01/s
+2026-01-22 00:08:33,004 subsystems 0/1 INFO :: Building subproblem matrices 26/128 (~20%) Elapsed: 1s, Remaining: 2s, Rate: 4.4e+01/s
+2026-01-22 00:08:33,273 subsystems 0/1 INFO :: Building subproblem matrices 39/128 (~30%) Elapsed: 1s, Remaining: 2s, Rate: 4.5e+01/s
+2026-01-22 00:08:33,540 subsystems 0/1 INFO :: Building subproblem matrices 52/128 (~41%) Elapsed: 1s, Remaining: 2s, Rate: 4.6e+01/s
+2026-01-22 00:08:33,802 subsystems 0/1 INFO :: Building subproblem matrices 65/128 (~51%) Elapsed: 1s, Remaining: 1s, Rate: 4.7e+01/s
+2026-01-22 00:08:34,070 subsystems 0/1 INFO :: Building subproblem matrices 78/128 (~61%) Elapsed: 2s, Remaining: 1s, Rate: 4.7e+01/s
+2026-01-22 00:08:34,337 subsystems 0/1 INFO :: Building subproblem matrices 91/128 (~71%) Elapsed: 2s, Remaining: 1s, Rate: 4.7e+01/s
+2026-01-22 00:08:34,603 subsystems 0/1 INFO :: Building subproblem matrices 104/128 (~81%) Elapsed: 2s, Remaining: 1s, Rate: 4.7e+01/s
+2026-01-22 00:08:34,869 subsystems 0/1 INFO :: Building subproblem matrices 117/128 (~91%) Elapsed: 2s, Remaining: 0s, Rate: 4.8e+01/s
+2026-01-22 00:08:35,095 subsystems 0/1 INFO :: Building subproblem matrices 128/128 (~100%) Elapsed: 3s, Remaining: 0s, Rate: 4.8e+01/s
+2026-01-22 00:40:03,043 solvers 0/1 INFO :: Simulation stop time reached.
+energy drift (rel) = 7.619e-07
+csv: /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/charbc_nl_eta1e-3_t20_robin_kappa2e-3_amp1e-6_eps0.05.csv
+omega (Hilbert) = 5.730036e-01
+max |dE/dt| = 6.471e-15
+gamma (energy-based) = -2.535048e-08
+EXTRACT kappa=2e-3 amp=1e-6 eps=0.05
+METRICS_JSON={"csv": "/mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/charbc_nl_eta1e-3_t20_robin_kappa2e-3_amp1e-6_eps0.05.csv", "deltaE_over_E": 7.626488094591892e-07, "deltaE_over_E_weak": 7.619162092454707e-07, "W_tau_final": 0.0, "W_tau_over_E0": 0.0, "P_eta_left_final": 7.25958006e-19, "P_eta_right_final": -7.25958781e-19, "P_eta_total_final": -1.45191679e-18, "P_eta_total_slope_lastk": 1.9536054582810584e-18, "max_abs_tau": 0.0, "tau_max_field": null, "max_abs_coupling": 1.99745914e-11, "coupling_max_field": "C_by_wy", "dominance": "coupling"}
+RUN_DONE kappa=2e-3 amp=1e-6 eps=0.05
+RUN_START kappa=2e-3 amp=1e-4 eps=0
+2026-01-22 00:40:05,426 __main__ 0/1 INFO :: Dealias factors: x=(1.5,), z=(1.5,)
+2026-01-22 00:40:05,768 subsystems 0/1 INFO :: Building subproblem matrices 1/128 (~1%) Elapsed: 0s, Remaining: 5s, Rate: 2.5e+01/s
+2026-01-22 00:40:06,007 subsystems 0/1 INFO :: Building subproblem matrices 13/128 (~10%) Elapsed: 0s, Remaining: 2s, Rate: 4.6e+01/s
+2026-01-22 00:40:06,266 subsystems 0/1 INFO :: Building subproblem matrices 26/128 (~20%) Elapsed: 1s, Remaining: 2s, Rate: 4.8e+01/s
+2026-01-22 00:40:06,519 subsystems 0/1 INFO :: Building subproblem matrices 39/128 (~30%) Elapsed: 1s, Remaining: 2s, Rate: 4.9e+01/s
+2026-01-22 00:40:06,771 subsystems 0/1 INFO :: Building subproblem matrices 52/128 (~41%) Elapsed: 1s, Remaining: 2s, Rate: 5.0e+01/s
+2026-01-22 00:40:07,028 subsystems 0/1 INFO :: Building subproblem matrices 65/128 (~51%) Elapsed: 1s, Remaining: 1s, Rate: 5.0e+01/s
+2026-01-22 00:40:07,286 subsystems 0/1 INFO :: Building subproblem matrices 78/128 (~61%) Elapsed: 2s, Remaining: 1s, Rate: 5.0e+01/s
+2026-01-22 00:40:07,537 subsystems 0/1 INFO :: Building subproblem matrices 91/128 (~71%) Elapsed: 2s, Remaining: 1s, Rate: 5.0e+01/s
+2026-01-22 00:40:07,789 subsystems 0/1 INFO :: Building subproblem matrices 104/128 (~81%) Elapsed: 2s, Remaining: 0s, Rate: 5.0e+01/s
+2026-01-22 00:40:08,046 subsystems 0/1 INFO :: Building subproblem matrices 117/128 (~91%) Elapsed: 2s, Remaining: 0s, Rate: 5.0e+01/s
+2026-01-22 00:40:08,267 subsystems 0/1 INFO :: Building subproblem matrices 128/128 (~100%) Elapsed: 3s, Remaining: 0s, Rate: 5.0e+01/s
+2026-01-22 01:10:13,888 solvers 0/1 INFO :: Simulation stop time reached.
+energy drift (rel) = 3.858e-06
+csv: /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/charbc_nl_eta1e-3_t20_robin_kappa2e-3_amp1e-4_eps0.csv
+omega (Hilbert) = 2.445887e-01
+max |dE/dt| = 3.210e-10
+gamma (energy-based) = -1.469692e-07
+EXTRACT kappa=2e-3 amp=1e-4 eps=0
+METRICS_JSON={"csv": "/mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/charbc_nl_eta1e-3_t20_robin_kappa2e-3_amp1e-4_eps0.csv", "deltaE_over_E": 3.8574218749641844e-06, "deltaE_over_E_weak": 3.857944916044462e-06, "W_tau_final": 0.0, "W_tau_over_E0": 0.0, "P_eta_left_final": 3.04139483e-13, "P_eta_right_final": -3.04139482e-13, "P_eta_total_final": -6.08278966e-13, "P_eta_total_slope_lastk": -5.861905386561183e-14, "max_abs_tau": 0.0, "tau_max_field": null, "max_abs_coupling": 4.89310894e-07, "coupling_max_field": "C_bx_wx", "dominance": "coupling"}
+RUN_DONE kappa=2e-3 amp=1e-4 eps=0
+RUN_START kappa=2e-3 amp=1e-4 eps=0.05
+2026-01-22 01:10:16,271 __main__ 0/1 INFO :: Dealias factors: x=(1.5,), z=(1.5,)
+2026-01-22 01:10:16,600 subsystems 0/1 INFO :: Building subproblem matrices 1/128 (~1%) Elapsed: 0s, Remaining: 5s, Rate: 2.5e+01/s
+2026-01-22 01:10:16,844 subsystems 0/1 INFO :: Building subproblem matrices 13/128 (~10%) Elapsed: 0s, Remaining: 3s, Rate: 4.6e+01/s
+2026-01-22 01:10:17,107 subsystems 0/1 INFO :: Building subproblem matrices 26/128 (~20%) Elapsed: 1s, Remaining: 2s, Rate: 4.8e+01/s
+2026-01-22 01:10:17,372 subsystems 0/1 INFO :: Building subproblem matrices 39/128 (~30%) Elapsed: 1s, Remaining: 2s, Rate: 4.8e+01/s
+2026-01-22 01:10:17,760 subsystems 0/1 INFO :: Building subproblem matrices 52/128 (~41%) Elapsed: 1s, Remaining: 2s, Rate: 4.3e+01/s
+2026-01-22 01:10:18,019 subsystems 0/1 INFO :: Building subproblem matrices 65/128 (~51%) Elapsed: 1s, Remaining: 1s, Rate: 4.5e+01/s
+2026-01-22 01:10:18,279 subsystems 0/1 INFO :: Building subproblem matrices 78/128 (~61%) Elapsed: 2s, Remaining: 1s, Rate: 4.5e+01/s
+2026-01-22 01:10:18,539 subsystems 0/1 INFO :: Building subproblem matrices 91/128 (~71%) Elapsed: 2s, Remaining: 1s, Rate: 4.6e+01/s
+2026-01-22 01:10:18,801 subsystems 0/1 INFO :: Building subproblem matrices 104/128 (~81%) Elapsed: 2s, Remaining: 1s, Rate: 4.6e+01/s
+2026-01-22 01:10:19,061 subsystems 0/1 INFO :: Building subproblem matrices 117/128 (~91%) Elapsed: 3s, Remaining: 0s, Rate: 4.7e+01/s
+2026-01-22 01:10:19,283 subsystems 0/1 INFO :: Building subproblem matrices 128/128 (~100%) Elapsed: 3s, Remaining: 0s, Rate: 4.7e+01/s
+2026-01-22 01:41:12,905 solvers 0/1 INFO :: Simulation stop time reached.
+energy drift (rel) = 7.619e-07
+csv: /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/charbc_nl_eta1e-3_t20_robin_kappa2e-3_amp1e-4_eps0.05.csv
+omega (Hilbert) = 5.730036e-01
+max |dE/dt| = 6.471e-11
+gamma (energy-based) = -2.535047e-08
+EXTRACT kappa=2e-3 amp=1e-4 eps=0.05
+METRICS_JSON={"csv": "/mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/charbc_nl_eta1e-3_t20_robin_kappa2e-3_amp1e-4_eps0.05.csv", "deltaE_over_E": 7.626488095015329e-07, "deltaE_over_E_weak": 7.619161503696598e-07, "W_tau_final": 0.0, "W_tau_over_E0": 0.0, "P_eta_left_final": 7.25958799e-15, "P_eta_right_final": -7.2595818e-15, "P_eta_total_final": -1.45191698e-14, "P_eta_total_slope_lastk": 1.9536054573598162e-14, "max_abs_tau": 0.0, "tau_max_field": null, "max_abs_coupling": 1.99745914e-07, "coupling_max_field": "C_by_wy", "dominance": "coupling"}
+RUN_DONE kappa=2e-3 amp=1e-4 eps=0.05
+ALL_DONE
+Thu Jan 22 01:41:13 CST 2026

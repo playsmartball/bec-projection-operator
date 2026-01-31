@@ -1,0 +1,18 @@
+2026-01-23 13:05:48,984 __main__ 0/1 INFO :: Dealias factors: x=(1.5,), z=(1.5,)
+2026-01-23 13:05:49,334 subsystems 0/1 INFO :: Building subproblem matrices 1/128 (~1%) Elapsed: 0s, Remaining: 5s, Rate: 2.4e+01/s
+2026-01-23 13:05:49,607 subsystems 0/1 INFO :: Building subproblem matrices 13/128 (~10%) Elapsed: 0s, Remaining: 3s, Rate: 4.1e+01/s
+2026-01-23 13:05:49,899 subsystems 0/1 INFO :: Building subproblem matrices 26/128 (~20%) Elapsed: 1s, Remaining: 2s, Rate: 4.3e+01/s
+2026-01-23 13:05:50,191 subsystems 0/1 INFO :: Building subproblem matrices 39/128 (~30%) Elapsed: 1s, Remaining: 2s, Rate: 4.3e+01/s
+2026-01-23 13:05:50,487 subsystems 0/1 INFO :: Building subproblem matrices 52/128 (~41%) Elapsed: 1s, Remaining: 2s, Rate: 4.4e+01/s
+2026-01-23 13:05:50,779 subsystems 0/1 INFO :: Building subproblem matrices 65/128 (~51%) Elapsed: 1s, Remaining: 1s, Rate: 4.4e+01/s
+2026-01-23 13:05:51,113 subsystems 0/1 INFO :: Building subproblem matrices 78/128 (~61%) Elapsed: 2s, Remaining: 1s, Rate: 4.3e+01/s
+2026-01-23 13:05:51,470 subsystems 0/1 INFO :: Building subproblem matrices 91/128 (~71%) Elapsed: 2s, Remaining: 1s, Rate: 4.2e+01/s
+2026-01-23 13:05:51,913 subsystems 0/1 INFO :: Building subproblem matrices 104/128 (~81%) Elapsed: 3s, Remaining: 1s, Rate: 4.0e+01/s
+2026-01-23 13:05:52,257 subsystems 0/1 INFO :: Building subproblem matrices 117/128 (~91%) Elapsed: 3s, Remaining: 0s, Rate: 3.9e+01/s
+2026-01-23 13:05:52,504 subsystems 0/1 INFO :: Building subproblem matrices 128/128 (~100%) Elapsed: 3s, Remaining: 0s, Rate: 4.0e+01/s
+2026-01-23 13:37:42,221 solvers 0/1 INFO :: Simulation stop time reached.
+energy drift (rel) = 1.190e-05
+csv: /mnt/e/CascadeProjects/bec-projection-operator-git/analysis/phase8_runs/p8b_k5e-4_oc1000_edge.csv
+omega (Hilbert) = 2.445887e-01
+max |dE/dt| = 1.130e-14
+gamma (energy-based) = -4.538014e-07

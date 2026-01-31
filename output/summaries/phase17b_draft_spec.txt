@@ -1,0 +1,74 @@
+Phase-17B — Boundary-Integrated Density Response (Draft Only)
+Status: DESIGN ONLY — DO NOT EXECUTE
+Scope: Classification and bounding only. No numerics, no simulations, no σ8 interaction.
+
+I. Objective (Precise)
+- Determine whether boundary-like density sinks, when integrated across scales, could in principle produce σ8-level suppression without invoking bulk growth modification, projection operators, or new dynamics.
+- Structural question only: tests if Rung-2 (boundary-coupled density effects) remains viable in principle.
+
+II. Locks and Permissions (Governance)
+- Governance map locked; envelope↔rung access matrix enforced.
+- σ8 is a diagnostic only. No tuning, no fitting, no inference.
+- No new models, no CLASS re-runs, no fiducial changes, no commits.
+
+III. Envelope Category Separation (Explicit)
+- Density-response (boundary-like) — IN SCOPE for 17B:
+  • Purely k-local multiplicative W(k)
+  • Monotone, single-scale or band-limited
+  • Zero effect as k→0
+- Growth-rate envelopes (bulk D(z), fσ8) — OUT OF SCOPE for 17B
+- Projection/observer redistribution envelopes — OUT OF SCOPE for 17B
+
+IV. Envelope Families (B1–B3; Locked, A Priori)
+- B1 Hard high-k sink (boundary leakage):
+  • W(k) = 1 for k≤k_b; W(k) = 1−A for k>k_b
+  • Grid: k_b ∈ {0.3, 0.5, 1.0} h/Mpc; A ∈ {0.05, 0.10}
+  • Monotone by construction; zero effect at low k
+- B2 Smooth roll-off (diffuse absorption):
+  • W(k) = 1 / (1 + (k/k_b)^n)
+  • Grid: k_b ∈ {0.3, 0.5} h/Mpc; n ∈ {2, 4}
+  • Monotone; W(0)=1; constraint: no BAO phase shift, no low-k tilt
+- B3 Multi-shell integration (many weak interactions):
+  • W(k) = Π_i [1 − A_i Θ(k−k_i)], with k_i ∈ {0.2, 0.4, 0.6, 0.8} h/Mpc and A_i = 0.02 (fixed)
+  • Stepwise monotone; mapping/classification only
+
+V. Rung Access (Enforced)
+- B1: ✅ Rung-1; ⚠️ Rung-2 (σ8 only; BAO invariant); ❌ Rung-3
+- B2: ✅ Rung-1; ⚠️ Rung-2 (σ8 + shape); ❌ Rung-3
+- B3: ⚠️ Rung-1 (diagnostic); ⚠️ Rung-2 (classification); ❌ Rung-3
+
+VI. What Phase-17B Can Falsify (Beyond 17A)
+- 17A established σ8 sensitivity bounds for generic envelopes but did not adjudicate boundary-integrated viability.
+- 17B can falsify boundary-integrated explanations by showing ANY of the following under the locked B1–B3 grids:
+  1) Boundary-like W(k) yield |Δσ8| < 2% across all cases (insufficient suppression) while respecting invariants.
+  2) Any envelope achieving ≥2% suppression necessarily violates invariants (e.g., BAO phase shift >1%, low-k change >1%, non-monotone W).
+  3) σ8 responses are envelope‑dependent with sign flips or non‑monotone behavior (structural inconsistency).
+- Any of the above falsifies Rung‑2 viability in principle and triggers 17C consideration.
+
+VII. Constraint Flags (Checked, Not Computed Here)
+- BAO phase shift >1% (YES/NO)
+- Low‑k change >1% for k<0.05 h/Mpc (YES/NO)
+- Suppression monotone (YES/NO)
+
+VIII. Classification (Descriptive Only)
+- INSUFFICIENT: |Δσ8| < 2%
+- MARGINAL: 2% ≤ |Δσ8| < 5%
+- STRUCTURALLY POTENT: |Δσ8| ≥ 5% with all constraints satisfied
+- DISQUALIFIED: any constraint violation (non‑monotone; BAO >1%; low‑k >1%)
+
+IX. Escalation Criteria to Phase‑17C (Hard Failure Gates)
+- Trigger 17C if ANY of the following hold (logic only; no execution here):
+  • |Δσ8| ≥ 5% with all constraints satisfied for any B1–B2 case
+  • Two or more envelopes converge on the same σ8 suppression band while preserving invariants
+  • σ8 suppression persists across B1 & B2 (family‑independent)
+- Immediate HALT and 17C gate if:
+  • BAO or τ would be altered by any admissible envelope
+  • Ambiguity: non‑monotone suppression or sign flips across the locked grid
+
+X. Outputs (Design-Only Placeholders; Not Generated)
+- Text: output/summaries/phase17b_boundary_sigma8.txt (execution template)
+- Text: output/summaries/phase17b_boundary_classification.txt (schema)
+- Figure: output/figures/phase17b_sigma8_vs_kb.png (spec only; no plotting)
+
+XI. Stop Condition (Mandatory)
+Phase-17B drafted. No execution performed.

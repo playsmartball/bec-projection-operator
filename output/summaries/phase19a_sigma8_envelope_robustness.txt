@@ -1,0 +1,19 @@
+Phase-19A — Envelope Robustness Execution (σ8 only)
+Status: EXECUTED UNDER GOVERNANCE
+Scope: B2 smooth roll-off only; no tuning; σ8 diagnostic and constraint checks.
+
+Baseline sigma8 = 0.811081
+
+k_b	n	Delta_sigma8[%]	sigma8	BAO_shift>1%	low-k>1%	monotone	in_range	W0_ok	repeat_ok	row_status
+0.30	2	-14.77	0.691298	NO	NO	YES	YES	YES	YES	PASS
+0.30	4	-10.54	0.725625	NO	NO	YES	YES	YES	YES	PASS
+0.50	2	-7.07	0.753758	NO	NO	YES	YES	YES	YES	PASS
+0.50	4	-2.74	0.788832	NO	NO	YES	YES	YES	YES	PASS
+
+Ordering checks (no fits):
+- For fixed n: |Δσ8(0.30)| ≥ |Δσ8(0.50)|
+- For fixed k_b: |Δσ8(n=2)| ≥ |Δσ8(n=4)|
+Ordering verdict: PASS
+All rows constraints: PASS
+
+Phase-19A completed: robustness checked; no models, no tuning, no broader interpretation.

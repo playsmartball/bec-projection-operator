@@ -1,0 +1,37 @@
+Retrospective: Density as the Common Thread — Phase-R
+Scope: Evaluate whether perturbation tests across phases reduce to density redistribution/suppression, and how σ8 fits.
+
+EVIDENCE BY DOMAIN
+
+- Projection-level (cosmology; Phases 10–15, 16)
+  • Operators act multiplicatively on spectra: P_obs(k) = W(k)·P(k) (Phase-16) and ℓ→ℓ/(1+ε) (Phase-12/13), i.e., scale-dependent redistribution of spectral density without altering dynamics.
+  • Locked forms (ε from tomography; W(k) monotone single-scale) enforce non-tuning.
+  • Result: Methods consistently treat “what the observer sees” as density reweighting. Phase-14A conservative tests mostly pass.
+
+- Boundary absorption (MHD; Phase-8A/8B)
+  • κ and κ(ω) implement controlled outflow of energy density at walls: P_η,total < 0; invariants W_τ=0, max|τ*|=0 hold.
+  • Monotone scaling with κ and ω_c, no spurious power or injection. This is an explicit density sink localized at boundaries.
+
+- Physical/inertial density (unit validations; 2026-01-04/05)
+  • Dedalus 1D: ω = k B0 / √(1+ρ_eff) confirmed; BOUT++ close-out recorded. Density enters the PDE mass term and controls dynamics.
+  • These are physical (bulk) density effects rather than observational operators.
+
+STRUCTURAL CHECKS (CLAIMS TO EVALUATE)
+
+1) “All successful effects manifest as density redistribution or suppression.”
+   • Supported across: ε-operator (projection redistribution), W(k) (spectral suppression), κ/κ(ω) (boundary density loss), and ρ_eff validations (physical mass). Each successful phase manipulates density or its spectral distribution.
+
+2) “Projection effects can be re-expressed as effective density operators.”
+   • Yes. By construction P_obs(k)=W(k)·P(k). The ε horizontal remap conserves power while reallocating it across multipoles (an effective redistribution of spectral density).
+
+3) “Boundary absorption mimics bulk density loss.”
+   • Yes. Phase-8 shows strictly negative boundary power with preserved invariants; this is controlled removal of energy density without altering bulk sources.
+
+4) “σ8 failure cleanly isolates non-density explanations.”
+   • Phase-16 results: phase16b (OVER-SUPPRESSED across forms), phase16d (OVERALL: FAIL), phase16e decision: “σ₈ not explainable by projection.”
+   • Within the locked constraints (no growth or Boltzmann changes; single-scale W), density-only projection redistribution does not reconcile σ8. This is a negative result about observer-space density operators, not a positive claim about alternatives.
+
+CONCLUSION
+- Density provides a coherent descriptive thread unifying prior successes: projection redistribution, boundary absorption, and physical inertia all operate through density or its spectral allocation.
+- For σ8, the locked projection-density route is falsified in Phase-16; observer-space density operators of the permitted class are insufficient. The density thread remains valid as a unifier, but σ8 sits outside its projection-only scope under current constraints.
+- No new mechanisms are proposed here. This is a structural synthesis consistent with committed artifacts.

@@ -1,0 +1,71 @@
+Phase-20B — Required Freedom Types (Logic-Only)
+Status: GOVERNANCE-ONLY CLASSIFICATION — NO EXECUTION — NO NUMERICS — NO MODELS — NO COMMITS
+
+Objective
+- For each Rung-3 tension, classify which freedom types are REQUIRED, FORBIDDEN, or NEUTRAL to address it, assuming perturbations remain within the admitted envelope (smooth, k-local, monotone, W(0)=1, BAO-preserving).
+
+Freedom Taxonomy (fixed)
+- GEO — Background geometry / distances (H(a), curvature, rulers)
+- EARLY — Early-time physics (pre-recombination, sound-horizon setting)
+- GROWTH(z) — Time-dependent growth history
+- PROJ — Line-of-sight / kernel projection effects
+- THERM — Baryon thermal / astrophysical state
+- PERT(k) — Density perturbation reshaping (already constrained; late-time, k-local, monotone, W(0)=1, BAO-preserving)
+
+Rules
+- If a tension cannot move under PERT(k) with invariants preserved, set PERT(k)=FORBIDDEN.
+- At least one non-PERT freedom must be REQUIRED for a bona fide Rung-3 classification.
+- Logic-only classification with brief governance rationale.
+
+Classification Results (Rung-3 tensions)
+
+T1 — H0 (local distance ladder vs CMB)
+- REQUIRED: GEO, EARLY
+- FORBIDDEN: PERT(k)
+- NEUTRAL: GROWTH(z), PROJ, THERM
+- Rationale: H0 is set by background distances and early rulers; late-time k-local reshaping with W(0)=1 cannot change the ruler or expansion history.
+- Outcome: BLOCKING for perturbation-only approaches.
+
+T12 — CMB lensing amplitude (A_L)
+- REQUIRED: PROJ, GROWTH(z)
+- FORBIDDEN: PERT(k) (k-local, redshift-agnostic)
+- NEUTRAL: GEO (unless coupled), EARLY
+- Rationale: Lensing is an integrated spacetime observable; requires kernel reweighting or growth timing, not late-time k-local suppression.
+- Outcome: STABLE (non-collapsible to density envelopes).
+
+T14 — Lyman-α forest P(k)
+- REQUIRED: EARLY, THERM
+- FORBIDDEN: PERT(k) (late-time only)
+- NEUTRAL: GEO, PROJ, GROWTH(z)
+- Rationale: High-z small-scale power depends on early growth and baryon thermal state; the σ8-compatible envelopes act too late.
+- Outcome: STABLE (early-time/astrophysical domain).
+
+T13 — Optical depth τ
+- REQUIRED: EARLY
+- FORBIDDEN: PERT(k)
+- NEUTRAL: GEO, GROWTH(z), PROJ, THERM
+- Rationale: τ is set by reionization history and ionization physics; late-time k-local density reshaping does not control τ.
+- Outcome: STABLE (non-collapsible).
+
+T15 — Matter–radiation equality scale; T16 — Primordial power smoothness
+- REQUIRED: EARLY, GEO
+- FORBIDDEN: PERT(k)
+- NEUTRAL: PROJ, GROWTH(z), THERM
+- Rationale: Anchored to pre-recombination physics and distance calibration; incompatible with late-time k-local perturbation levers.
+- Outcome: BLOCKING for perturbation-only methods.
+
+Phase-20B Verdict (Logic-Only)
+- No Rung-3 tension is collapsible into the admitted perturbation envelope.
+- PERT(k) is FORBIDDEN as a primary lever for all Rung-3 cases.
+- Rung-3 requires non-density freedoms: background geometry, early-time physics, growth timing, or projection kernels.
+
+Step-Back Synthesis — Minimal Background/Geometry Needed (No Authorization implied)
+- Geometry Module (GEO): vary distance measures/expansion history independently of PERT(k).
+- Early-Time Module (EARLY): sound-horizon setting and pre-recombination conditions.
+- Growth Timing (GROWTH(z)): redshift-dependent growth (not just k-dependent reshaping).
+- Projection Kernels (PROJ): line-of-sight weighting distinct from late-time density normalization.
+- Explicitly not sufficient: late-time, k-local, monotone PERT(k) with BAO/low-k preserved.
+
+Stop Condition
+- Phase-20B classification completed without execution.
+- "No envelopes extended. No escalation authorized."

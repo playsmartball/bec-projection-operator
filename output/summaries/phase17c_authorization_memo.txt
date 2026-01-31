@@ -1,0 +1,40 @@
+Phase-17C — Authorization Memo (Governance-Only)
+
+Decision: AUTHORIZED under existing governance map (output/summaries/phase17_governance_map.txt).
+Scope: Authorization discussion only. No new computations, models, fits, or code execution.
+
+Basis for authorization (from Phase-17B outputs):
+- Baseline σ8 (fiducial, z=0): 0.811081
+- Envelope B2 (smooth roll-off, k-local, monotone) achieved ≥5% σ8 suppression with all constraint flags satisfied:
+  - k_b=0.30, n=2 → Δσ8 = -14.77% (STRUCTURALLY POTENT)
+  - k_b=0.30, n=4 → Δσ8 = -10.54% (STRUCTURALLY POTENT)
+  - k_b=0.50, n=2 → Δσ8 = -7.07% (STRUCTURALLY POTENT)
+  - k_b=0.50, n=4 → Δσ8 = -2.74% (MARGINAL)
+- Constraint flags across all reported B2 cases: BAO shift = NO; low‑k change = NO; monotone = YES.
+- Envelope B1 (hard sink) and B3 (multi-shell) yield ≤1% changes and are classified INSUFFICIENT, preserving the conservative gate that potency is not generic without smooth boundary roll‑off.
+- Escalation gate satisfied: “≥5% suppression with invariants preserved” (no BAO shift, no low‑k change, monotone).
+
+Constraints carried forward (unchanged):
+- No tuning, no fitting, no parameter extraction.
+- No modification to fiducial cosmology or CLASS provenance.
+- No bulk growth modification, no projection-operator mixing, no new dynamics.
+- No commits as part of 17C. Governance remains locked.
+
+Authorized 17C activities (discussion-only artifacts):
+- Record the gate evaluation and decision trail.
+- Enumerate permissible next-step contours consistent with Rung‑2 access (without executing):
+  - Optional robustness note: cross-family check acknowledged (B1/B3 insufficient), but not required for gate since B2 satisfies ≥5% with constraints.
+- Document stop conditions and non-authorized actions.
+
+Non-authorized in 17C:
+- Any data generation, envelope execution, re-gridding, parameter sweeps, or plot updates.
+- Any model introduction or reinterpretation beyond governance text.
+- Any repository commits.
+
+Stop condition for 17C:
+- When this memo is produced and archived, Phase‑17C is complete. Further action requires explicit user authorization.
+
+Recommended next gate (not executed):
+- If proceeding beyond 17C under Rung‑2, maintain monotone, k‑local envelopes with W(0)=1 and BAO‑preserving checks; consider a minimal confirmatory pass confined to governance-locked grids without tuning to validate stability of the ≥5% finding.
+
+Status: This memo constitutes the entirety of Phase‑17C deliverable under governance.

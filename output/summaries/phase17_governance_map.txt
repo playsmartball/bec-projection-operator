@@ -1,0 +1,88 @@
+Phase-17 Governance Map (Control Document)
+Status: Locked reference. No execution, no tuning, no commits.
+
+I. Rung Definitions (Locked)
+- Rung-1 — Projection / Inference / Calibration
+  Tensions explainable by projection, selection, foregrounds, late-time inference/calibration. No violation of background cosmology or growth consistency required.
+- Rung-2 — Structural but Model-Elastic
+  Survive simple projection explanations; may indicate scale-/environment-dependent physics; absorbable by elastic extensions without breaking ΛCDM backbone.
+- Rung-3 — Forced / Irreducible
+  Independent of projection/calibration; persist across probes/epochs; require altering fundamental assumptions if confirmed.
+
+II. Canonical 16 Tensions (Locked Reference Set)
+Low-z / Late-time
+T1. H0 (local distance ladder vs CMB)
+T2. S8 / σ8 amplitude (WL + clusters vs CMB)
+T3. fσ8 (RSD growth rate)
+T4. Cluster abundance (mass function normalization)
+T5. Weak-lensing shear (DES/KiDS vs Planck)
+T6. Peculiar velocities / bulk flows
+T7. Void statistics (counts, profiles)
+T8. Galaxy bias–independent P(k) shape
+
+Intermediate
+T9. BAO scale consistency (z ≲ 1)
+T10. kSZ pairwise momentum
+T11. ISW cross-correlations
+
+High-z / Early
+T12. CMB lensing amplitude (A_L)
+T13. Optical depth τ
+T14. Lyman-α forest P(k)
+T15. Matter–radiation equality scale
+T16. Primordial power smoothness (no features)
+
+III. Mapping Onto Rungs
+- Rung-1: T3, T4, T5, T6, T7
+- Rung-2: T2, T8, T9, T10, T11
+- Rung-3: T1, T12, T13, T14, T15, T16
+
+IV. Phase-17 Envelope Definitions (Locked)
+- 17A — Density-Response Sensitivity (σ8-adjacent)
+  Probe: response of observables to density amplitude. Allowed: classification (monotonicity, sign, covariance direction). Forbidden: fits, models, parameter extraction.
+- 17B — Cross-Epoch Consistency (Growth vs Geometry)
+  Probe: internal consistency across redshift/epoch. Allowed: ladder consistency checks. Forbidden: new physics or resolutions.
+- 17C — Structural Impossibility / Forcing
+  Probe: identify when explanations are logically exhausted. Allowed: exclusion/no-go. Forbidden: proposing mechanisms.
+
+V. Envelope ↔ Rung Access Matrix (Hard Constraint)
+- 17A: Rung-1 ⚠️ (exclude only) | Rung-2 ✅ | Rung-3 ⚠️ (signal only)
+- 17B: Rung-1 ❌ | Rung-2 ⚠️ (consistency) | Rung-3 ✅
+- 17C: Rung-1 ❌ | Rung-2 ❌ | Rung-3 ✅
+
+VI. Boundary Envelope Families (B1–B3) and Rung Access
+- B1 — Hard High-k Sink: ✅ Rung-1, ⚠️ Rung-2 (σ8 only; BAO invariant), ❌ Rung-3. Forbidden: T1, T12–T16.
+- B2 — Smooth Roll-Off: ✅ Rung-1, ⚠️ Rung-2 (σ8 + shape), ❌ Rung-3. Constraints: no BAO phase shift; no low-k tilt.
+- B3 — Multi-Shell Integration: ⚠️ Rung-1 (diagnostic only), ⚠️ Rung-2 (classification only), ❌ Rung-3. Mapping-only; no explanatory use.
+
+VII. Escalation Criteria
+- 17A → 17B if any:
+  • |Δσ8| ≥ 2% for any envelope
+  • Classification = STRUCTURALLY POTENT
+  • Non-trivial dependence across ≥2 k_b
+  • Correlated movement in any Rung-2 observable
+  Immediate halt if: low-k deviation >1% (k<0.05), BAO phase shift, any Rung-3 touched
+- 17B → 17C if any:
+  • |Δσ8| ≥ 5% with all constraints satisfied
+  • Convergence across envelopes on same σ8 band
+  • Persistence across B1 & B2 families
+  • Rung-2 tensions reduce without degrading Rung-1
+  Immediate halt if: any envelope resolves σ8 while altering BAO or τ, or ambiguity (non-monotone/sign flips)
+- 17C entry:
+  • σ8 suppression bounded, monotone, envelope-independent
+  • All Rung-3 invariants untouched
+  • Rung-1 improvements do not regress Rung-2
+  Otherwise: σ8 structurally irreducible under boundary mechanisms
+
+VIII. One-Glance Summary
+Phase-17 Envelope	Rung-1	Rung-2	Rung-3
+17A	⚠️ (exclude only)	✅	⚠️ (signal only)
+17B	❌	⚠️	✅
+17C	❌	❌	✅
+
+IX. Procedural Notes
+- σ8 is a diagnostic output, not a tuning target.
+- No projection fixes (Rung-1) are permitted in Phase-17.
+- Rung-3 forcing statements are gated to 17C and only after 17A/17B conditions are met.
+
+Status: Document written as control layer only. No execution, no tuning, no commits.
