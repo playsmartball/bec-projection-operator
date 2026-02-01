@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- given-names: "FMI Development"
+  family-names: "Team"
+title: "FMI Depth Interface: Deterministic Mathematical Interface for Depth-Stratified Systems"
+version: 0.1.0-fmi
+date-released: 2026-01-31
+url: "https://github.com/fmi-dev/fmi-depth-interface"
+license: MIT
+abstract: |
+  A deterministic, parameter-free mathematical interface for depth-stratified 
+  physical systems, with CPU/GPU parity and frozen reference outputs. Implements 
+  the ladder closure process with σ₈ containment, kernel support, and 
+  k-orthogonality constraints.
+keywords:
+- mathematical interface
+- deterministic systems
+- depth stratification
+- ladder closure
+- computational physics
+- GPU computing
