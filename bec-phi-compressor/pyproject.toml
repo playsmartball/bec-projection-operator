@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bec-phi-compressor"
+version = "1.0.0"
+description = "Deterministic numeric data compression using physics-inspired projection operators"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "BEC Development Team"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: System :: Archiving :: Compression",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "numpy>=1.20.0",
+    "scipy>=1.7.0",
+]
+
+[project.optional-dependencies]
+gpu = [
+    "cupy>=10.0.0",
+]
+dev = [
+    "pytest>=6.0.0",
+    "pytest-cov>=2.10.0",
+    "black>=21.0.0",
+    "flake8>=3.8.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/playsmartball/bec-projection-operator"
+Repository = "https://github.com/playsmartball/bec-projection-operator"
+
+[project.scripts]
+bec-phi-compress = "bec_phi_compress.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["bec_phi_compress*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
