@@ -1,0 +1,35 @@
+{
+  "run_id": "891ca0152cc2fc16",
+  "timestamp": 1770146888.2385998,
+  "prompt": "Verify this balance sheet: Assets: 1000, Liabilities: 600, Equity: 400",
+  "domain": "accounting",
+  "reference_data": {
+    "conserved_total": 1000.0
+  },
+  "response": {
+    "status": "REFUSE",
+    "output": null,
+    "reason": "instability",
+    "trace": {
+      "phi_hash": "88a6af90e011523a",
+      "metrics": {
+        "dimensional_saturation": 1.0,
+        "entropy_loss": 8.232623045697428,
+        "variance_concentration": 1.0,
+        "sparsity_ratio": 0.3156,
+        "information_density": 5.5838171358001976e-05,
+        "projection_efficiency": 0.03280039484946218
+      },
+      "constraints_checked": [
+        "arithmetic_closure",
+        "conservation_of_totals",
+        "ledger_balance",
+        "unit_consistency"
+      ],
+      "violations": [
+        "Conservation of totals violated (expected: 1000.000000, got: 173.750000, error: 8.26e+02)"
+      ],
+      "run_id": "891ca0152cc2fc16"
+    }
+  }
+}
