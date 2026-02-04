@@ -1,0 +1,30 @@
+{
+  "run_id": "983a25d53d84ed99",
+  "timestamp": 1770177294.300624,
+  "prompt": "Write a poem about flowers",
+  "domain": "accounting",
+  "reference_data": null,
+  "response": {
+    "status": "ALLOW",
+    "output": "This is a response from the Phi model.",
+    "reason": null,
+    "trace": {
+      "phi_hash": "23b23f5438495a17",
+      "metrics": {
+        "dimensional_saturation": 1.0,
+        "entropy_loss": 6.925218898508244,
+        "variance_concentration": 1.0,
+        "sparsity_ratio": 0.322,
+        "information_density": 6.740293315957435e-05,
+        "projection_efficiency": 0.04640647576382817
+      },
+      "constraints_checked": [
+        "arithmetic_closure",
+        "conservation_of_totals",
+        "ledger_balance",
+        "unit_consistency"
+      ],
+      "run_id": "983a25d53d84ed99"
+    }
+  }
+}

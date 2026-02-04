@@ -1,0 +1,32 @@
+{
+  "run_id": "8da0b763eba59d77",
+  "timestamp": 1770177485.8443265,
+  "prompt": "Calculate 2+2",
+  "domain": "accounting",
+  "reference_data": {
+    "expected_sum": 4.0
+  },
+  "response": {
+    "status": "ALLOW",
+    "output": "The total of the provided numbers is 4.0.",
+    "reason": null,
+    "trace": {
+      "phi_hash": "4eb05454d1223330",
+      "metrics": {
+        "dimensional_saturation": 1.0,
+        "entropy_loss": 7.836933429619041,
+        "variance_concentration": 1.0,
+        "sparsity_ratio": 0.3266,
+        "information_density": 8.089297909130937e-05,
+        "projection_efficiency": 0.04907721719031577
+      },
+      "constraints_checked": [
+        "arithmetic_closure",
+        "conservation_of_totals",
+        "ledger_balance",
+        "unit_consistency"
+      ],
+      "run_id": "8da0b763eba59d77"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "run_id": "f309101f7fe60217",
+  "timestamp": 1770177485.9602616,
+  "prompt": "Verify balance sheet: Assets: 1000, Liabilities: 600, Equity: 400",
+  "domain": "accounting",
+  "reference_data": {
+    "conserved_total": 1000.0
+  },
+  "response": {
+    "status": "ALLOW",
+    "output": "The balance sheet is correct: Assets (1000.0) = Liabilities (600.0) + Equity (400.0).",
+    "reason": null,
+    "trace": {
+      "phi_hash": "32a218555e4bd8f9",
+      "metrics": {
+        "dimensional_saturation": 1.0,
+        "entropy_loss": 8.164305784421515,
+        "variance_concentration": 1.0,
+        "sparsity_ratio": 0.3022,
+        "information_density": 3.865501338168362e-05,
+        "projection_efficiency": 0.023125719085966168
+      },
+      "constraints_checked": [
+        "arithmetic_closure",
+        "conservation_of_totals",
+        "ledger_balance",
+        "unit_consistency"
+      ],
+      "run_id": "f309101f7fe60217"
+    }
+  }
+}

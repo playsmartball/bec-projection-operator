@@ -1,0 +1,30 @@
+{
+  "run_id": "1cdbf7acfafd8e55",
+  "timestamp": 1770177486.0716329,
+  "prompt": "Write a poem about flowers",
+  "domain": "accounting",
+  "reference_data": null,
+  "response": {
+    "status": "ALLOW",
+    "output": "I can help with calculations and accounting tasks, but I'm not designed for creative writing.",
+    "reason": null,
+    "trace": {
+      "phi_hash": "e5773618db532796",
+      "metrics": {
+        "dimensional_saturation": 1.0,
+        "entropy_loss": 7.732429838411799,
+        "variance_concentration": 1.0,
+        "sparsity_ratio": 0.3062,
+        "information_density": 4.0537091442269265e-05,
+        "projection_efficiency": 0.025542849695024517
+      },
+      "constraints_checked": [
+        "arithmetic_closure",
+        "conservation_of_totals",
+        "ledger_balance",
+        "unit_consistency"
+      ],
+      "run_id": "1cdbf7acfafd8e55"
+    }
+  }
+}

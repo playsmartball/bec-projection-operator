@@ -1,0 +1,30 @@
+{
+  "run_id": "b224fcbced3cb319",
+  "timestamp": 1770177486.1244197,
+  "prompt": "Tell me about the balance",
+  "domain": "accounting",
+  "reference_data": null,
+  "response": {
+    "status": "ALLOW",
+    "output": "Please provide specific numeric values for accounting calculations.",
+    "reason": null,
+    "trace": {
+      "phi_hash": "e182f4a28c5045ff",
+      "metrics": {
+        "dimensional_saturation": 1.0,
+        "entropy_loss": 7.260356003996277,
+        "variance_concentration": 1.0,
+        "sparsity_ratio": 0.3128,
+        "information_density": 4.8831630610047397e-05,
+        "projection_efficiency": 0.032534838103773334
+      },
+      "constraints_checked": [
+        "arithmetic_closure",
+        "conservation_of_totals",
+        "ledger_balance",
+        "unit_consistency"
+      ],
+      "run_id": "b224fcbced3cb319"
+    }
+  }
+}

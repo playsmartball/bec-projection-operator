@@ -1,0 +1,32 @@
+{
+  "run_id": "1fac4dd7a4fc4b7b",
+  "timestamp": 1770177486.0151038,
+  "prompt": "Verify balance sheet: Assets: 1000, Liabilities: 600, Equity: 500",
+  "domain": "accounting",
+  "reference_data": {
+    "conserved_total": 1000.0
+  },
+  "response": {
+    "status": "ALLOW",
+    "output": "The balance sheet is incorrect: Assets (1000.0) \u2260 Liabilities (600.0) + Equity (500.0). Expected equity: 400.0.",
+    "reason": null,
+    "trace": {
+      "phi_hash": "bb993563c75117e1",
+      "metrics": {
+        "dimensional_saturation": 1.0,
+        "entropy_loss": 5.378749593171163,
+        "variance_concentration": 1.0,
+        "sparsity_ratio": 0.2952,
+        "information_density": 3.287826617385179e-05,
+        "projection_efficiency": 0.02965671145998361
+      },
+      "constraints_checked": [
+        "arithmetic_closure",
+        "conservation_of_totals",
+        "ledger_balance",
+        "unit_consistency"
+      ],
+      "run_id": "1fac4dd7a4fc4b7b"
+    }
+  }
+}

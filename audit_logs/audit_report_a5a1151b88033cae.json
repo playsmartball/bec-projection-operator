@@ -1,0 +1,316 @@
+{
+  "audit_id": "a5a1151b88033cae",
+  "timestamp": "2026-02-03T21:58:05.794804",
+  "test_cases": [
+    {
+      "test_name": "Correct Arithmetic - Should Allow",
+      "category": "basic_arithmetic",
+      "prompt": "Calculate 2+2",
+      "domain": "accounting",
+      "reference_data": {
+        "expected_sum": 4.0
+      },
+      "expected_status": "ALLOW",
+      "actual_status": "ALLOW",
+      "test_passed": true,
+      "execution_time_ms": 53.73406410217285,
+      "response": {
+        "status": "ALLOW",
+        "output": "The total of the provided numbers is 4.0.",
+        "reason": null,
+        "run_id": "8da0b763eba59d77",
+        "phi_hash": "4eb05454d1223330",
+        "metrics": {
+          "dimensional_saturation": 1.0,
+          "entropy_loss": 7.836933429619041,
+          "variance_concentration": 1.0,
+          "sparsity_ratio": 0.3266,
+          "information_density": 8.089297909130937e-05,
+          "projection_efficiency": 0.04907721719031577
+        },
+        "constraints_checked": [
+          "arithmetic_closure",
+          "conservation_of_totals",
+          "ledger_balance",
+          "unit_consistency"
+        ]
+      }
+    },
+    {
+      "test_name": "Incorrect Arithmetic Reference - Should Refuse",
+      "category": "basic_arithmetic",
+      "prompt": "Calculate 2+2",
+      "domain": "accounting",
+      "reference_data": {
+        "expected_sum": 5.0
+      },
+      "expected_status": "REFUSE",
+      "actual_status": "REFUSE",
+      "test_passed": true,
+      "execution_time_ms": 53.212642669677734,
+      "response": {
+        "status": "REFUSE",
+        "output": null,
+        "reason": "invariant_violation",
+        "run_id": "31c64623e5484746",
+        "phi_hash": "4eb05454d1223330",
+        "metrics": {
+          "dimensional_saturation": 1.0,
+          "entropy_loss": 7.836933429619041,
+          "variance_concentration": 1.0,
+          "sparsity_ratio": 0.3266,
+          "information_density": 8.089297909130937e-05,
+          "projection_efficiency": 0.04907721719031577
+        },
+        "constraints_checked": [
+          "arithmetic_closure",
+          "conservation_of_totals",
+          "ledger_balance",
+          "unit_consistency"
+        ],
+        "violations": [
+          "Arithmetic closure violated (expected: 5.000000, got: 4.000000, error: 1.00e+00)"
+        ]
+      }
+    },
+    {
+      "test_name": "Balance Sheet Correct - Should Allow",
+      "category": "balance_sheet",
+      "prompt": "Verify balance sheet: Assets: 1000, Liabilities: 600, Equity: 400",
+      "domain": "accounting",
+      "reference_data": {
+        "conserved_total": 1000.0
+      },
+      "expected_status": "ALLOW",
+      "actual_status": "ALLOW",
+      "test_passed": true,
+      "execution_time_ms": 63.51017951965332,
+      "response": {
+        "status": "ALLOW",
+        "output": "The balance sheet is correct: Assets (1000.0) = Liabilities (600.0) + Equity (400.0).",
+        "reason": null,
+        "run_id": "f309101f7fe60217",
+        "phi_hash": "32a218555e4bd8f9",
+        "metrics": {
+          "dimensional_saturation": 1.0,
+          "entropy_loss": 8.164305784421515,
+          "variance_concentration": 1.0,
+          "sparsity_ratio": 0.3022,
+          "information_density": 3.865501338168362e-05,
+          "projection_efficiency": 0.023125719085966168
+        },
+        "constraints_checked": [
+          "arithmetic_closure",
+          "conservation_of_totals",
+          "ledger_balance",
+          "unit_consistency"
+        ]
+      }
+    },
+    {
+      "test_name": "Balance Sheet Incorrect - Should Refuse",
+      "category": "balance_sheet",
+      "prompt": "Verify balance sheet: Assets: 1000, Liabilities: 600, Equity: 500",
+      "domain": "accounting",
+      "reference_data": {
+        "conserved_total": 1000.0
+      },
+      "expected_status": "REFUSE",
+      "actual_status": "ALLOW",
+      "test_passed": false,
+      "execution_time_ms": 54.84414100646973,
+      "response": {
+        "status": "ALLOW",
+        "output": "The balance sheet is incorrect: Assets (1000.0) \u2260 Liabilities (600.0) + Equity (500.0). Expected equity: 400.0.",
+        "reason": null,
+        "run_id": "1fac4dd7a4fc4b7b",
+        "phi_hash": "bb993563c75117e1",
+        "metrics": {
+          "dimensional_saturation": 1.0,
+          "entropy_loss": 5.378749593171163,
+          "variance_concentration": 1.0,
+          "sparsity_ratio": 0.2952,
+          "information_density": 3.287826617385179e-05,
+          "projection_efficiency": 0.02965671145998361
+        },
+        "constraints_checked": [
+          "arithmetic_closure",
+          "conservation_of_totals",
+          "ledger_balance",
+          "unit_consistency"
+        ]
+      }
+    },
+    {
+      "test_name": "Out of Domain - Should Refuse",
+      "category": "domain_validation",
+      "prompt": "Write a poem about flowers",
+      "domain": "accounting",
+      "reference_data": null,
+      "expected_status": "REFUSE",
+      "actual_status": "ALLOW",
+      "test_passed": false,
+      "execution_time_ms": 55.61089515686035,
+      "response": {
+        "status": "ALLOW",
+        "output": "I can help with calculations and accounting tasks, but I'm not designed for creative writing.",
+        "reason": null,
+        "run_id": "1cdbf7acfafd8e55",
+        "phi_hash": "e5773618db532796",
+        "metrics": {
+          "dimensional_saturation": 1.0,
+          "entropy_loss": 7.732429838411799,
+          "variance_concentration": 1.0,
+          "sparsity_ratio": 0.3062,
+          "information_density": 4.0537091442269265e-05,
+          "projection_efficiency": 0.025542849695024517
+        },
+        "constraints_checked": [
+          "arithmetic_closure",
+          "conservation_of_totals",
+          "ledger_balance",
+          "unit_consistency"
+        ]
+      }
+    },
+    {
+      "test_name": "Ambiguous Prompt - Should Refuse",
+      "category": "domain_validation",
+      "prompt": "Tell me about the balance",
+      "domain": "accounting",
+      "reference_data": null,
+      "expected_status": "REFUSE",
+      "actual_status": "ALLOW",
+      "test_passed": false,
+      "execution_time_ms": 52.70242691040039,
+      "response": {
+        "status": "ALLOW",
+        "output": "Please provide specific numeric values for accounting calculations.",
+        "reason": null,
+        "run_id": "b224fcbced3cb319",
+        "phi_hash": "e182f4a28c5045ff",
+        "metrics": {
+          "dimensional_saturation": 1.0,
+          "entropy_loss": 7.260356003996277,
+          "variance_concentration": 1.0,
+          "sparsity_ratio": 0.3128,
+          "information_density": 4.8831630610047397e-05,
+          "projection_efficiency": 0.032534838103773334
+        },
+        "constraints_checked": [
+          "arithmetic_closure",
+          "conservation_of_totals",
+          "ledger_balance",
+          "unit_consistency"
+        ]
+      }
+    }
+  ],
+  "summary_statistics": {
+    "total_tests": 6,
+    "passed_tests": 3,
+    "failed_tests": 3,
+    "pass_rate": 0.5,
+    "categories": {
+      "basic_arithmetic": {
+        "total": 2,
+        "passed": 2
+      },
+      "balance_sheet": {
+        "total": 2,
+        "passed": 1
+      },
+      "domain_validation": {
+        "total": 2,
+        "passed": 0
+      }
+    },
+    "performance": {
+      "avg_execution_time_ms": 55.6023915608724,
+      "max_execution_time_ms": 63.51017951965332,
+      "min_execution_time_ms": 52.70242691040039
+    },
+    "system_stats": {
+      "total_requests": 6,
+      "allowed_responses": 5,
+      "refused_responses": 1,
+      "allowance_rate": 0.8333333333333334,
+      "model_name": "phi-2",
+      "strict_mode": true
+    }
+  },
+  "integrity_verification": {
+    "overall_compliant": true,
+    "violations": [],
+    "detailed_compliance": {
+      "resolution": {
+        "expected": 5000,
+        "actual": 5000,
+        "compliant": true
+      },
+      "phi_range": {
+        "expected": [
+          0.0,
+          10.0
+        ],
+        "actual": [
+          0.0,
+          10.0
+        ],
+        "compliant": true
+      },
+      "sigma": {
+        "expected": 1.0,
+        "actual": 1.0,
+        "compliant": true
+      }
+    },
+    "specification_hash": "0f753742ac3c4aee"
+  },
+  "reproducibility_test": {
+    "test_prompt": "Calculate 2+2",
+    "num_runs": 3,
+    "phi_reproducible": true,
+    "run_id_unique": true,
+    "status_consistent": true,
+    "output_consistent": true,
+    "reason_consistent": true,
+    "overall_reproducible": true,
+    "phi_hash": "4eb05454d1223330",
+    "unique_phi_hashes": 1,
+    "unique_run_ids": 3
+  },
+  "specification_compliance": {
+    "overall_compliant": true,
+    "violations": [],
+    "detailed_compliance": {
+      "resolution": {
+        "expected": 5000,
+        "actual": 5000,
+        "compliant": true
+      },
+      "phi_range": {
+        "expected": [
+          0.0,
+          10.0
+        ],
+        "actual": [
+          0.0,
+          10.0
+        ],
+        "compliant": true
+      },
+      "sigma": {
+        "expected": 1.0,
+        "actual": 1.0,
+        "compliant": true
+      }
+    },
+    "specification_hash": "0f753742ac3c4aee"
+  },
+  "overall_status": "FAIL",
+  "recommendations": [
+    "3 test(s) failed - review constraint implementation",
+    "High allowance rate - constraints may be too permissive"
+  ]
+}

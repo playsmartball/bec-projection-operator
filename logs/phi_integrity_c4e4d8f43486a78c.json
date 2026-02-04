@@ -1,0 +1,30 @@
+{
+  "run_id": "c4e4d8f43486a78c",
+  "timestamp": 1770177294.3646615,
+  "prompt": "Tell me about the balance",
+  "domain": "accounting",
+  "reference_data": null,
+  "response": {
+    "status": "ALLOW",
+    "output": "The balance is $173.75.",
+    "reason": null,
+    "trace": {
+      "phi_hash": "469993bc86c07ebc",
+      "metrics": {
+        "dimensional_saturation": 1.0,
+        "entropy_loss": 6.881058781208593,
+        "variance_concentration": 1.0,
+        "sparsity_ratio": 0.3298,
+        "information_density": 9.175097062641218e-05,
+        "projection_efficiency": 0.0625022481605585
+      },
+      "constraints_checked": [
+        "arithmetic_closure",
+        "conservation_of_totals",
+        "ledger_balance",
+        "unit_consistency"
+      ],
+      "run_id": "c4e4d8f43486a78c"
+    }
+  }
+}

@@ -18,6 +18,7 @@ from .interfaces import (
     format_allow_response, format_refuse_response,
     InterfaceResult
 )
+from .efficient_llm import get_efficient_llm
 
 
 @dataclass
@@ -54,26 +55,9 @@ class MockPhiModel:
         """
         self.call_count += 1
         
-        # Simple deterministic responses based on prompt content
-        prompt_lower = prompt.lower()
-        
-        if "calculate" in prompt_lower and "2+2" in prompt_lower:
-            return "The answer is 4."
-        elif "balance" in prompt_lower:
-            return "The balance is $173.75."
-        elif "ledger" in prompt_lower or "accounting" in prompt_lower:
-            return "Based on standard accounting principles, the ledger balances."
-        elif "sum" in prompt_lower or "total" in prompt_lower:
-            # Extract numbers and calculate sum
-            import re
-            numbers = re.findall(r'-?\d+\.?\d*', prompt)
-            if numbers:
-                total = sum(float(n) for n in numbers)
-                return f"The total is {total}."
-            else:
-                return "I cannot determine the total without numeric values."
-        else:
-            return "This is a response from the Phi model."
+        # Use efficient LLM for better responses
+        efficient_llm = get_efficient_llm()
+        return efficient_llm.generate(prompt, **kwargs)
 
 
 class PhiIntegrityWrapper:

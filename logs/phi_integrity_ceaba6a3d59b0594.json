@@ -1,0 +1,35 @@
+{
+  "run_id": "ceaba6a3d59b0594",
+  "timestamp": 1770177294.1400805,
+  "prompt": "Calculate 2+2",
+  "domain": "accounting",
+  "reference_data": {
+    "expected_sum": 5.0
+  },
+  "response": {
+    "status": "REFUSE",
+    "output": null,
+    "reason": "invariant_violation",
+    "trace": {
+      "phi_hash": "4e7947367172c794",
+      "metrics": {
+        "dimensional_saturation": 1.0,
+        "entropy_loss": 6.695421261249385,
+        "variance_concentration": 1.0,
+        "sparsity_ratio": 0.3388,
+        "information_density": 0.00013391380483127605,
+        "projection_efficiency": 0.09091241105559722
+      },
+      "constraints_checked": [
+        "arithmetic_closure",
+        "conservation_of_totals",
+        "ledger_balance",
+        "unit_consistency"
+      ],
+      "violations": [
+        "Arithmetic closure violated (expected: 5.000000, got: 4.000000, error: 1.00e+00)"
+      ],
+      "run_id": "ceaba6a3d59b0594"
+    }
+  }
+}
